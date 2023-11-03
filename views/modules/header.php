@@ -7,6 +7,7 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
+    <base href="views/" />
 
     <title>Multiservices bolsa de trabajo</title>
     <link rel="icon" type="image/png" href="images/logo.png" />
@@ -59,18 +60,18 @@ Bootstrap 5 HTML CSS Template
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav align-items-center ms-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php">Inicio</a>
+                        <a class="nav-link active" href="/index.php">Inicio</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about.php">Nosotros</a>
+                        <a class="nav-link" href="/about.php">Nosotros</a>
                     </li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Más</a>
 
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                            <li><a class="dropdown-item" href="job-listings.php">Listado de trabajos</a></li>
+                            <li><a class="dropdown-item" href="">Listado de trabajos</a></li>
 
                             <li><a class="dropdown-item" href="job-details.php">Detalles del trabajo</a></li>
                         </ul>
