@@ -1,5 +1,12 @@
 <?php
 include 'modules/header.php';
+
+$url = CurlController::api() . "crear_vacantes";
+$method = "GET";
+$fields = array();
+$header = array();
+
+$totalVacantes = CurlController::request($url, $method, $fields, $header)->results;
 ?>
 
 <main>

@@ -60,11 +60,11 @@ Bootstrap 5 HTML CSS Template
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav align-items-center ms-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/index.php">Inicio</a>
+                        <a class="nav-link active" href="<?php echo $path ?>index.php">Inicio</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/about.php">Nosotros</a>
+                        <a class="nav-link" href="<?php echo $path ?>about.php">Nosotros</a>
                     </li>
 
                     <li class="nav-item dropdown">
@@ -73,12 +73,12 @@ Bootstrap 5 HTML CSS Template
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                             <li><a class="dropdown-item" href="">Listado de trabajos</a></li>
 
-                            <li><a class="dropdown-item" href="job-details.php">Detalles del trabajo</a></li>
+                            <li><a class="dropdown-item" href="">Detalles del trabajo</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.php">Contacto</a>
+                        <a class="nav-link" href="<?php echo $path ?>contact.php">Contacto</a>
                     </li>
 
                     <li class="nav-item ms-lg-auto">

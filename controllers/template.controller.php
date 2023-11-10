@@ -7,4 +7,10 @@ class TemplateController
     {
         include "views/template.php";
     }
+
+
+    static public function path()
+    {
+        return "http://prueba_bolsa_de_trabajo.com/";
+    }
 }
