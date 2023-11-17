@@ -41,6 +41,12 @@ if (!empty($urlParams[0])) {
         case "index.php":
             include 'pages/Home/home.php';
             break;
+        case "job-details.php":
+            include 'pages/Job-details/job-details.php';
+            break;
+        case "job-listings.php":
+            include 'pages/Job-listings/job-listings.php';
+            break;
     }
 }
 

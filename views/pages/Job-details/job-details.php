@@ -1,7 +1,3 @@
-<?php
-include 'modules/header.php';
-?>
-
 <main>
 
     <header class="site-header">
@@ -377,6 +373,3 @@ include 'modules/header.php';
         </div>
     </section>
 </main>
-<?php
-include 'modules/footer.php';
-?>

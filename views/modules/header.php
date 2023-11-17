@@ -71,9 +71,9 @@ Bootstrap 5 HTML CSS Template
                         <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Más</a>
 
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                            <li><a class="dropdown-item" href="">Listado de trabajos</a></li>
+                            <li><a class="dropdown-item" href="<?php echo $path ?>job-listings.php">Listado de trabajos</a></li>
 
-                            <li><a class="dropdown-item" href="">Detalles del trabajo</a></li>
+                            <li><a class="dropdown-item" href="<?php echo $path ?>job-details.php">Detalles del trabajo</a></li>
                         </ul>
                     </li>
 
