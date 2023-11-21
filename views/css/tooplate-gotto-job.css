@@ -248,6 +248,7 @@ nav[aria-label="breadcrumb"] {
 /*---------------------------------------
   CUSTOM FORM               
 -----------------------------------------*/
+
 .custom-form .input-group {
   background-color: var(--white-color);
   border-radius: var(--border-radius-medium);
@@ -657,9 +658,27 @@ nav[aria-label="breadcrumb"] {
 .hero-form {
   background: var(--custom-btn-bg-color);
   border-radius: var(--border-radius-small);
-  padding: 40px;
+  padding: 20px;
 }
-
+.form-login {
+  width: 92% !important;
+  margin: auto;
+}
+.input-radio span,
+.input-radio {
+  color: #fff;
+}
+.input-radio {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0px 0px 10px 0px;
+  width: 100%;
+}
+input[type="radio"] {
+  margin: 0px 15px;
+}
 .hero-form .form-control {
   padding-bottom: 10px;
 }
@@ -1368,6 +1387,10 @@ nav[aria-label="breadcrumb"] {
     max-width: 1120px;
     margin-right: auto;
     margin-left: auto;
+  }
+  .form-login {
+    width: 50% !important;
+    margin: auto;
   }
 }
 

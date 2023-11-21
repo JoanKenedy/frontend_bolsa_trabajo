@@ -47,6 +47,14 @@ if (!empty($urlParams[0])) {
         case "job-listings.php":
             include 'pages/Job-listings/job-listings.php';
             break;
+        case "register.php":
+            include 'pages/Account/Register/register.php';
+            break;
+        case "login.php":
+            include 'pages/Account/Login/login.php';
+            break;
+        default:
+            include 'pages/Home/home.php';
     }
 }
 

@@ -82,11 +82,11 @@ Bootstrap 5 HTML CSS Template
                     </li>
 
                     <li class="nav-item ms-lg-auto">
-                        <a class="nav-link" href="#">Registrate</a>
+                        <a class="nav-link" href="<?php echo $path ?>register.php">Registrarse</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link custom-btn btn" href="#">Acceso</a>
+                        <a class="nav-link custom-btn btn" href="<?php echo $path ?>login.php">Acceso</a>
                     </li>
                 </ul>
             </div>
