@@ -29,7 +29,9 @@ if (!empty(array_filter($routesArray)[1])) {
     $urlParams = explode('/', array_filter($routesArray)[1]);
 }
 
-echo $urlParams[0];
+
+
+
 if (!empty($urlParams[0])) {
     switch ($urlParams[0]) {
         case "about.php":
@@ -37,9 +39,6 @@ if (!empty($urlParams[0])) {
             break;
         case "contact.php":
             include 'pages/Contact/contact.php';
-            break;
-        case "index.php":
-            include 'pages/Home/home.php';
             break;
         case "job-details.php":
             include 'pages/Job-details/job-details.php';
@@ -53,9 +52,9 @@ if (!empty($urlParams[0])) {
         case "login.php":
             include 'pages/Account/Login/login.php';
             break;
-        default:
-            include 'pages/Home/home.php';
     }
+} else if ($path) {
+    include 'pages/Home/home.php';
 }
 
 ?>

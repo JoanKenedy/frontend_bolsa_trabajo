@@ -60,7 +60,7 @@ Bootstrap 5 HTML CSS Template
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav align-items-center ms-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link active" href="<?php echo $path ?>index.php">Inicio</a>
+                        <a class="nav-link active" href="<?php echo $path ?>">Inicio</a>
                     </li>
 
                     <li class="nav-item">

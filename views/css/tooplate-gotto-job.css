@@ -115,11 +115,24 @@ a {
   color: var(--primary-color);
   text-decoration: none;
 }
-
-a:hover {
-  color: var(--custom-btn-bg-color);
+.text-dorado {
+  color: var(--primary-color);
 }
-
+.text-dorado:hover {
+  color: var(--primary-color);
+}
+.text-gray {
+  color: #717275;
+}
+.text-gray:hover {
+  color: var(--primary-color);
+}
+.span {
+  color: #fff;
+}
+.was-validated {
+  border-radius: 15px;
+}
 b,
 strong {
   font-weight: var(--font-weight-bold);
@@ -257,11 +270,24 @@ nav[aria-label="breadcrumb"] {
   overflow: hidden;
   padding-left: 10px;
 }
+.input-group::placeholder {
+  padding-left: 20px;
+}
+.input-control {
+  position: relative;
+}
 
 .input-group-text {
   background: transparent;
   border: 0;
   padding-right: 0;
+}
+.input-icon {
+  position: absolute;
+  z-index: 1;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .custom-form label {

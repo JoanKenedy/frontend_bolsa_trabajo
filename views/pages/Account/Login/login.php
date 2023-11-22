@@ -1,7 +1,7 @@
 <div class="container">
     <form class="custom-form hero-form form-login" action="#" method="post" role="form">
-        <h3 class="text-white text-center mb-3">
-            <a href="<?php echo $path ?>register.php"> Registro</a>/ <a href="#">Iniciar sesión</a>
+        <h3 class=" text-center mb-3">
+            <a href="<?php echo $path ?>login.php" class="text-dorado">Iniciar sesión</a> &nbsp; <a href="<?php echo $path ?>register.php" class="text-gray"> Registro</a>
         </h3>
 
         <div class="row">
