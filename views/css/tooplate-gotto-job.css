@@ -195,7 +195,9 @@ strong {
 .custom-icon {
   color: var(--primary-color);
 }
-
+.custom-icon:valid {
+  color: green;
+}
 .instagram-block {
   position: relative;
   height: 100%;
@@ -588,6 +590,18 @@ nav[aria-label="breadcrumb"] {
     display: block;
     margin-top: 0;
   }
+  .select {
+    padding: 12px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAMAQMAAABcN9+FAAAAAXNSR0IB2cksfwAAAAZQTFRF3rEAAAAAoPTlNAAAAAJ0Uk5T/wDltzBKAAAAN0lEQVR4nGOQ//+Agf//AQb2/w0Mzf9ZGA7+42F48EeG4UOFDcMPgxqGP0D4j/EPw39mIG7/AwABoxZX/jo9xAAAAABJRU5ErkJggg=="),
+      linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right 2.5em top 50%, 0 0;
+    background-size: 0.65em auto, 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+  }
 }
 
 .navbar-toggler {
@@ -709,7 +723,7 @@ nav[aria-label="breadcrumb"] {
   padding: 20px;
 }
 .form-login {
-  width: 92% !important;
+  width: 95% !important;
   margin: auto;
 }
 .input-radio span,

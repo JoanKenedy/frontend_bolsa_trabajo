@@ -19,6 +19,41 @@ function validatedBs5() {
   })();
 }
 
+function validateEmailRepeat(event) {
+  var settings = {
+    url:
+      $("#urlApi").val() +
+      "usuarios?equalTo=" +
+      event.target.value +
+      "&linkTo=email",
+    method: "GET",
+    timeout: 0,
+  };
+
+  $.ajax(settings).done(function (response) {
+    if (response.status == 200) {
+      $(event.target).parent().addClass("requires-validation");
+      $(event.target)
+        .parent()
+        .children(".invalid-feedback")
+        .html("El correo ingresado ya existe");
+      $(event.target)
+        .parent()
+        .children(".invalid-feedback")
+        .addClass("aparecer");
+      event.target.value = "";
+      return;
+    } else {
+      $(event.target)
+        .parent()
+        .children(".invalid-feedback")
+        .removeClass("aparecer");
+    }
+  });
+
+  validateJS(event, "email");
+}
+
 function validateJS(event, type) {
   console.log("event", event.target.value);
 
@@ -45,8 +80,7 @@ function validateJS(event, type) {
   }
 
   if (type == "email") {
-    let expRegular =
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    let expRegular = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
     if (!expRegular.test(event.target.value)) {
       $(event.target).parent().addClass("requires-validation");
       $(event.target)
@@ -75,6 +109,27 @@ function validateJS(event, type) {
         .parent()
         .children(".invalid-feedback")
         .html("Ingresa tus 10 o 12 digitos de tu teléfono");
+      $(event.target)
+        .parent()
+        .children(".invalid-feedback")
+        .addClass("aparecer");
+      event.target.value = "";
+      return;
+    } else {
+      $(event.target)
+        .parent()
+        .children(".invalid-feedback")
+        .removeClass("aparecer");
+    }
+  }
+  if (type == "password") {
+    let expRegular = /^(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*$/;
+    if (!expRegular.test(event.target.value)) {
+      $(event.target).parent().addClass("requires-validation");
+      $(event.target)
+        .parent()
+        .children(".invalid-feedback")
+        .html("Debe tener al menos una mayúscula, una minúscula y un dígito");
       $(event.target)
         .parent()
         .children(".invalid-feedback")
