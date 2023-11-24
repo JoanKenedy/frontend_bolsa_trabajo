@@ -268,13 +268,20 @@ nav[aria-label="breadcrumb"] {
   margin-bottom: 24px;
   position: relative;
   overflow: hidden;
-  padding-left: 10px;
+  padding-left: 15px;
 }
 .input-group::placeholder {
-  padding-left: 20px;
+  padding-left: 0px;
 }
+
 .input-control {
   position: relative;
+}
+.text-label {
+  color: #fff;
+  font-size: 1em;
+  margin: 0 7px;
+  padding-left: 10px;
 }
 
 .input-group-text {
@@ -282,10 +289,25 @@ nav[aria-label="breadcrumb"] {
   border: 0;
   padding-right: 0;
 }
+.select {
+  padding: 12px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAMAQMAAABcN9+FAAAAAXNSR0IB2cksfwAAAAZQTFRF3rEAAAAAoPTlNAAAAAJ0Uk5T/wDltzBKAAAAN0lEQVR4nGOQ//+Agf//AQb2/w0Mzf9ZGA7+42F48EeG4UOFDcMPgxqGP0D4j/EPw39mIG7/AwABoxZX/jo9xAAAAABJRU5ErkJggg=="),
+    linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+}
+.select::-ms-expand {
+  display: none !important;
+}
 .input-icon {
   position: absolute;
   z-index: 1;
-  left: 12px;
+  left: 90%;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -693,6 +715,9 @@ nav[aria-label="breadcrumb"] {
 .input-radio span,
 .input-radio {
   color: #fff;
+}
+input:active {
+  padding-left: 15px;
 }
 .input-radio {
   display: flex;
