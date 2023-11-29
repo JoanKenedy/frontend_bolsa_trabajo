@@ -23,7 +23,7 @@ class UsersController
                 $url = CurlController::api() . 'usuarios?register=true';
                 $method = "POST";
                 $fields = array(
-                    "rol_id" => $_POST['regRol'],
+                    "rol_usuario_id" => $_POST['regRol'],
                     "nombre" => $_POST['regNombre'],
                     "apellidos" => $_POST['regApellidos'],
                     "email" => $email,
@@ -40,30 +40,32 @@ class UsersController
 
                 $register = CurlController::request($url, $method, $fields, $header);
                 if ($register->status == 200) {
+                 
                     $name = $_POST['regNombre'];
                     $subject = 'Verifica tu cuenta';
                     $email = $email;
                     $message = 'We must verify your account so that you can enter our bolsa de trabajo';
-                    $url = TemplateController::path() . "login.php" . base64_encode($email);
+                    $url = TemplateController::path() . "login&". base64_encode($email);
                     $sendEmail = TemplateController::sendEmail($name, $subject, $email, $message, $url);
 
                     if ($sendEmail == 'ok') {
                         echo '<div class="alert alert-success">
-                             El usuario se ha registrado con éxito, confit¿rme su cuenta de email (Cheque en la bandeja de spam)
+                             El usuario se ha registrado con éxito, confirme su cuenta de email (Cheque en la bandeja de spam)
                              </div>';
                     } else {
                         echo '<div class="alert alert-danger">
                         ' . $sendEmail . '
                     </div>';
                     }
-                } else {
-                }
+                } 
                 return;
             } else {
                 echo '<div class="alert alert-danger">
                 Error de sintaxis en alguno de los campos
             </div>';
             }
+                
+             
         }
     }
 
@@ -74,14 +76,14 @@ class UsersController
                 preg_match("/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/", $_POST['loginEmail']) &&
                 preg_match("/^(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*$/", $_POST['loginPassword'])
             ) {
-                $email = strtolower($_POST['loginEmail']);
+               
 
 
 
                 $url = CurlController::api() . 'usuarios?login=true';
                 $method = "POST";
                 $fields = array(
-                    "email" => $email,
+                    "email" =>  $_POST['loginEmail'],
                     "password" => $_POST['loginPassword'],
 
                 );
@@ -93,8 +95,14 @@ class UsersController
 
                 $login = CurlController::request($url, $method, $fields, $header);
                 if ($login->status == 200) {
+                      if($login->results[0]->verificacion_email == 1){
+                          echo '<div class="alert alert-success">Ha iniciado sesión.</div>';
+                      }else{
+                         echo '<div class="alert alert-danger">Esta cuenta aun no ha sido verificada, por favor checa tu correo.</div>';
+                      }
+
                 } else {
-                    echo '<div class="alert alert-danger">' . $login->results . '</div>';
+                    echo '<div class="alert alert-danger">' .$login->results. '</div>';
                 }
             } else {
                 echo '<div class="alert alert-danger">

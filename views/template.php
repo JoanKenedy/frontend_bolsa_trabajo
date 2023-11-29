@@ -29,6 +29,9 @@ if (!empty(array_filter($routesArray)[1])) {
     $urlParams = explode('/', array_filter($routesArray)[1]);
 }
 
+  
+
+
 
 
 
@@ -52,11 +55,13 @@ if (!empty($urlParams[0])) {
         case "login.php":
             include 'pages/Account/Login/login.php';
             break;
+        
+            
+            
     }
 } else if ($path) {
     include 'pages/Home/home.php';
-}
-
+} 
 ?>
 
 <?php
