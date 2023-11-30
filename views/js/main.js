@@ -53,7 +53,7 @@ function validateEmailRepeat(event) {
 
   validateJS(event, "email");
 }
-
+validateEmailRepeat();
 function validateJS(event, type) {
   console.log("event", event.target.value);
 
@@ -81,6 +81,7 @@ function validateJS(event, type) {
 
   if (type == "email") {
     let expRegular = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
     if (!expRegular.test(event.target.value)) {
       $(event.target).parent().addClass("requires-validation");
       $(event.target)

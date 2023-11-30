@@ -17,12 +17,12 @@ class TemplateController
     {
         return "http://prueba_bolsa_de_trabajo.com/";
     }
-    
+
     static public function sendEmail($name, $subject, $email, $message, $url)
     {
 
         date_default_timezone_set('America/Mexico_City');
-       $mail = new PHPMailer();
+        $mail = new PHPMailer();
         $mail->CharSet = 'UTF-8';
         $mail->isMail();
         $mail->setFrom('futmipasion@hotmail.com', 'Bolsa de trabajo Multiservices');

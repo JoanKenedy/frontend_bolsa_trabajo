@@ -29,7 +29,7 @@ if (!empty(array_filter($routesArray)[1])) {
     $urlParams = explode('/', array_filter($routesArray)[1]);
 }
 
-  
+
 
 
 
@@ -55,13 +55,13 @@ if (!empty($urlParams[0])) {
         case "login.php":
             include 'pages/Account/Login/login.php';
             break;
-        
-            
-            
+        case "verificar_cuenta.php":
+            include 'pages/Account/Verificar/verificar_cuenta.php';
+            break;
     }
 } else if ($path) {
     include 'pages/Home/home.php';
-} 
+}
 ?>
 
 <?php

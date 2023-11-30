@@ -17,7 +17,7 @@ class UsersController
             ) {
 
                 $email = strtolower($_POST['regEmail']);
-
+                $verify_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
 
 
                 $url = CurlController::api() . 'usuarios?register=true';
@@ -30,6 +30,7 @@ class UsersController
                     "telefono" => $_POST['regTelefono'],
                     "password" => $_POST['regPassword'],
                     "method_user" => 'directo',
+                    "verify_code" => $verify_code,
                     "created_at" => date('Y-m-d')
                 );
 
@@ -39,33 +40,33 @@ class UsersController
                 );
 
                 $register = CurlController::request($url, $method, $fields, $header);
+
                 if ($register->status == 200) {
-                 
+
                     $name = $_POST['regNombre'];
                     $subject = 'Verifica tu cuenta';
                     $email = $email;
-                    $message = 'We must verify your account so that you can enter our bolsa de trabajo';
-                    $url = TemplateController::path() . "login&". base64_encode($email);
+                    $message = 'Debemos verificar tu cuenta para que puedas ingresar a nuestra bolsa de trabajo aqui te enviamos tu codigo de verificación ' . $verify_code;
+                    $url = TemplateController::path() . "login.php";
                     $sendEmail = TemplateController::sendEmail($name, $subject, $email, $message, $url);
+                    $url2 = TemplateController::path() . "verificar_cuenta.php";
 
                     if ($sendEmail == 'ok') {
-                        echo '<div class="alert alert-success">
-                             El usuario se ha registrado con éxito, confirme su cuenta de email (Cheque en la bandeja de spam)
-                             </div>';
+                        echo '<script type="text/javascript">
+                         alert("Se ha registrado con exito, se le ha enviado un correo para verificar la cuenta");
+                            window.location.href="' . $url2 . '";
+                         </script>';
                     } else {
                         echo '<div class="alert alert-danger">
                         ' . $sendEmail . '
                     </div>';
                     }
-                } 
-                return;
+                }
             } else {
                 echo '<div class="alert alert-danger">
                 Error de sintaxis en alguno de los campos
             </div>';
             }
-                
-             
         }
     }
 
@@ -76,7 +77,7 @@ class UsersController
                 preg_match("/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/", $_POST['loginEmail']) &&
                 preg_match("/^(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*$/", $_POST['loginPassword'])
             ) {
-               
+
 
 
 
@@ -94,15 +95,20 @@ class UsersController
                 );
 
                 $login = CurlController::request($url, $method, $fields, $header);
+                $url2 = TemplateController::path() . "verificacion_cuenta.php";
                 if ($login->status == 200) {
-                      if($login->results[0]->verificacion_email == 1){
-                          echo '<div class="alert alert-success">Ha iniciado sesión.</div>';
-                      }else{
-                         echo '<div class="alert alert-danger">Esta cuenta aun no ha sido verificada, por favor checa tu correo.</div>';
-                      }
-
+                    if ($login->results[0]->verificacion_email == 1) {
+                        echo '<div class="alert alert-success">Su cuenta esta verificada y ha iniciado sesión.</div>';
+                    } else {
+                        echo '<div class="alert alert-warning">
+                        Su cuenta no esta verificada , vamos a verificar , antes ve a tu correo y busca tu codigo de verificación.
+                        <script>            
+                             setTimeout ("window.location=' . $url2 . '", 3000);        
+                            </script>
+                        </div>';
+                    }
                 } else {
-                    echo '<div class="alert alert-danger">' .$login->results. '</div>';
+                    echo '<div class="alert alert-danger">Esta cuenta de email no existe en nuestro sistema.</div>';
                 }
             } else {
                 echo '<div class="alert alert-danger">
