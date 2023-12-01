@@ -317,7 +317,11 @@ nav[aria-label="breadcrumb"] {
 .custom-form label {
   margin-bottom: 5px;
 }
-
+#btn-color {
+  border: none;
+  color: #deb100;
+  font-size: 1.1em;
+}
 .custom-form .form-control {
   background-color: var(--white-color);
   border: 2px solid transparent;

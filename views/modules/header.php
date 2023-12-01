@@ -17,7 +17,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,7 +29,14 @@
     <link href="css/owl.theme.default.min.css" rel="stylesheet">
 
     <link href="css/tooplate-gotto-job.css" rel="stylesheet">
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
+" rel="stylesheet">
 
+    <script src="js/header.js"></script>
     <!--
 
 Tooplate 2134 Gotto Job
@@ -53,7 +61,8 @@ Bootstrap 5 HTML CSS Template
                 </div>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -68,12 +77,15 @@ Bootstrap 5 HTML CSS Template
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Más</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Más</a>
 
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                            <li><a class="dropdown-item" href="<?php echo $path ?>job-listings.php">Listado de trabajos</a></li>
+                            <li><a class="dropdown-item" href="<?php echo $path ?>job-listings.php">Listado de
+                                    trabajos</a></li>
 
-                            <li><a class="dropdown-item" href="<?php echo $path ?>job-details.php">Detalles del trabajo</a></li>
+                            <li><a class="dropdown-item" href="<?php echo $path ?>job-details.php">Detalles del
+                                    trabajo</a></li>
                         </ul>
                     </li>
 
