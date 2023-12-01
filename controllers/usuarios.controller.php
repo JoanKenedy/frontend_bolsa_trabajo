@@ -6,7 +6,7 @@ class UsersController
     public function register()
     {
 
-        if (isset($_POST['regEmail'])) {
+        if (isset($_POST['enviaRegistro']) && isset($_POST['regEmail'])) {
             if (
                 preg_match("/^[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}$/", $_POST['regNombre']) &&
                 preg_match("/^[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}$/", $_POST['regApellidos']) &&
@@ -49,7 +49,7 @@ class UsersController
                     $message = 'Debemos verificar tu cuenta para que puedas ingresar a nuestra bolsa de trabajo aqui te enviamos tu codigo de verificación CODIGO ' . $verify_code;
                     $url = TemplateController::path() . "verificar_cuenta.php";
                     $sendEmail = TemplateController::sendEmail($name, $subject, $email, $message, $url);
-                   
+
 
                     if ($sendEmail == 'ok') {
                         echo '<div class="alert alert-success">
@@ -71,12 +71,10 @@ class UsersController
                              </script>
                     
                     
-                    '
-                    
-                    ;
+                    ';
                     }
                 }
-            } else {
+            } /* else {
                 echo '<div class="alert alert-danger">
                 Error de sintaxis en alguno de los campos
                   </div>
@@ -85,7 +83,29 @@ class UsersController
                 </script>
             
             ';
-            }
+            }*/
+        } else if (isset($_POST['entrarFacebook'])) {
+            $fb = new \Facebook\Facebook([
+                'app_id' => '806659777884862',
+                'app_secret' => 'b84395181f46127313869576bac552d6',
+                'default_graph_version' => 'v2.10',
+                //'default_access_token' => '{access-token}', // optional
+            ]);
+
+
+
+
+            $handler = $fb->getRedirectLoginHelper();
+            /* Solicitar datos relacionados al email */
+
+            $data = ['email'];
+            $url = 'https://localhost/frontend_bolsa_trabajo/';
+            $fullUrl = $handler->getLoginUrl($url, $data);
+            echo '<pre>';
+            print_r($fullUrl);
+            echo '</pre>';
+
+            echo '<script> window.location="' . $fullUrl . '" </script>';
         }
     }
 
@@ -114,7 +134,7 @@ class UsersController
                 );
 
                 $login = CurlController::request($url, $method, $fields, $header);
-                
+
                 if ($login->status == 200) {
                     if ($login->results[0]->verificacion_email == 1) {
                         echo '<div class="alert alert-success"> Ha iniciado sesión con éxito.</div>

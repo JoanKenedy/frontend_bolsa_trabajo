@@ -2,6 +2,7 @@
 
 
 $routesArray = explode("/", $_SERVER['REQUEST_URI']);
+
 $routesArray = array_filter($routesArray);
 $path = TemplateController::path();
 
@@ -24,13 +25,20 @@ Rutas de paginas
 
 <?php
 /* Capturar las rutas de la URL */
-
-if (!empty(array_filter($routesArray)[1])) {
-    $urlParams = explode('/', array_filter($routesArray)[1]);
+if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
+    if (!empty(array_filter($routesArray)[2])) {
+        $urlParams = explode('/', array_filter($routesArray)[2]);
+    }
+} else {
+    if (!empty(array_filter($routesArray)[1])) {
+        $urlParams = explode('/', array_filter($routesArray)[1]);
+    }
 }
 
 
-
+echo '<pre>';
+print_r($urlParams[0]);
+echo '</pre>';
 
 
 

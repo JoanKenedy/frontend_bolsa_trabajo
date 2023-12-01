@@ -468,9 +468,6 @@ nav[aria-label="breadcrumb"] {
   border: 2px #fff;
 }
 
-.custom-border-btn:hover {
-}
-
 .navbar-expand-lg .navbar-nav .nav-link.custom-btn {
   padding: 12px 22px;
   color: var(--white-color);
@@ -588,8 +585,53 @@ nav[aria-label="breadcrumb"] {
   left: 2px;
   border: 0;
 }
+.container-btn-sociales {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.container-btn-sociales button {
+  width: 100%;
+  border-radius: 20px;
+}
+.form-facebook {
+  background-color: #0dcaf0 !important;
+  font-size: 13px !important;
+}
+.form-gmail {
+  background-color: #ff5733 !important;
+  font-size: 13px !important;
+}
+.form-facebook i,
+.form-gmail i {
+  font-size: 22px;
+}
 
 @media screen and (min-width: 992px) {
+  .container-btn-sociales {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 100%;
+  }
+  .container-btn-sociales button {
+    width: 100%;
+    border-radius: 20px;
+  }
+  .form-facebook {
+    background-color: #0dcaf0 !important;
+    font-size: 15px !important;
+    padding-left: -10px !important;
+  }
+  .form-gmail {
+    background-color: #ff5733 !important;
+    font-size: 15px !important;
+  }
+  .form-facebook i,
+  .form-gmail i {
+    font-size: 22px;
+  }
   .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
@@ -1458,7 +1500,7 @@ input[type="radio"] {
     margin-left: auto;
   }
   .form-login {
-    width: 50% !important;
+    width: 45% !important;
     margin: auto;
   }
 }

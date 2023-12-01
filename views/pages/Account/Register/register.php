@@ -99,13 +99,29 @@
             </div>
 
 
-            <div class="col-lg-6 col-6 m-auto">
-                <button type="submit" class="form-control" id="btn-register">
+            <div class="col-lg-12 col-12 m-auto">
+                <button type="submit" class="form-control" id="btn-register" name="enviaRegistro">
                     Registrar
                 </button>
             </div>
 
 
         </div>
+        <div class="col-lg-12 col-md-12 col-12 my-3 ">
+            <div class="container-btn-sociales">
+
+                <button type="submit" class="form-facebook" name="entrarFacebook">
+                    Iniciar sesión con: <i class="bi bi-facebook"></i>
+                </button>
+
+
+                <button type="submit" class="form-gmail" value="entrar_gmail">
+                    Iniciar sesión con: <i class="bi bi-google"></i>
+                </button>
+
+            </div>
+
+        </div>
     </form>
+
 </div>

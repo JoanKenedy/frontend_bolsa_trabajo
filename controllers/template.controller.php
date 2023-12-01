@@ -15,7 +15,11 @@ class TemplateController
 
     static public function path()
     {
-        return "http://prueba_bolsa_de_trabajo.com/";
+        if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
+            return "https://localhost/frontend_bolsa_trabajo/";
+        } else {
+            return "http://prueba_bolsa_de_trabajo.com/";
+        }
     }
 
     static public function sendEmail($name, $subject, $email, $message, $url)
