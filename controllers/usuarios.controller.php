@@ -137,23 +137,43 @@ class UsersController
 
                 if ($login->status == 200) {
                     if ($login->results[0]->verificacion_email == 1) {
-                        echo '<div class="alert alert-success"> Ha iniciado sesión con éxito.</div>
-                             <script>
-                            fncFormatInputs()
-                            </script>
-                        
-                        
-                        ';
+                        $data = $login->results[0];
+                        $_SESSION['user'] = [
+                            'id' => $data->id_usuario,
+                            'nombre' => $data->nombre,
+                            'rol' => $data->rol_usuario_id
+                        ];
+                        if ($data->rol_usuario_id == 1) {
+                            // Supongamos que es administrador
+                            header('Location: profile.php');
+                            exit; // Debes finalizar el script
+                        } else if ($data->rol_usuario_id == 1) {
+                            // Supongamos que es administrador
+                            header('Location: reclutador.php');
+                            exit; // Debes finalizar el script
+                        }
                     } else {
-                        echo '<div class="alert alert-warning">
-                        Su cuenta no esta verificada , tiene que ir a su correo, ahi viene su codigo y de click en el enlace del correo .
-                     
-                        </div>
+?>
                         <script>
-                    fncFormatInputs()
-                </script>
-                        
-                        ';
+                            function modal() {
+                                Swal.fire({
+                                    position: "top",
+                                    icon: "error",
+                                    title: "Tu cuenta aun no esta verificada, es importante que ingreses tu codigo de verificación.",
+                                    showConfirmButton: false,
+                                    timer: 1500,
+
+
+                                });
+                            }
+                            modal();
+                            fncFormatInputs();
+
+                            setTimeout(() => {
+                                window.location = "http://prueba_bolsa_de_trabajo.com/verificar_cuenta.php";
+                            }, "2500");
+                        </script>
+<?php
                     }
                 } else {
                     echo '<div class="alert alert-danger">Esta cuenta de email no existe en nuestro sistema.</div> <script>

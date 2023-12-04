@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 $routesArray = explode("/", $_SERVER['REQUEST_URI']);
 
@@ -36,9 +36,7 @@ if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
 }
 
 
-echo '<pre>';
-print_r($urlParams[0]);
-echo '</pre>';
+
 
 
 
@@ -65,6 +63,12 @@ if (!empty($urlParams[0])) {
             break;
         case "verificar_cuenta.php":
             include 'pages/Account/Verificar/verificar_cuenta.php';
+            break;
+        case "profile.php":
+            include 'pages/Account/Candidato/profile.php';
+            break;
+        case "reclutador.php":
+            include 'pages/Account/Reclutador/reclutador.php';
             break;
     }
 } else if ($path) {
