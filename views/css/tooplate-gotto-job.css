@@ -607,7 +607,53 @@ nav[aria-label="breadcrumb"] {
 .form-gmail i {
   font-size: 22px;
 }
-
+/* estilos de mi perfil*/
+.container-padre-perfil {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 19px;
+}
+.box-perfil {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  border: 0.7px solid #c7c5c5;
+  border-radius: 12px;
+  padding: 15px;
+  margin: auto;
+  width: 100%;
+}
+.box-perfil .img-perfil {
+  display: block;
+  margin: 12px auto;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+}
+.box-perfil:nth-child(1) {
+  text-align: center;
+}
+.box-perfil h2 {
+  color: var(--primary-color);
+  font-size: 1.8em;
+}
+.box-perfil span {
+  color: gray;
+}
+.box-perfil h3 {
+  color: #000066;
+  font-size: 1.4em;
+}
+.box-perfil h4 {
+  color: var(--primary-color);
+  font-size: 1.3em;
+}
+.box-perfil h6 {
+  font-size: 1.1em;
+}
+.box-perfil p {
+  text-align: justify;
+  font-size: 1em;
+}
+/*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {
   .container-btn-sociales {
     display: flex;
@@ -648,6 +694,89 @@ nav[aria-label="breadcrumb"] {
     appearance: none;
     background-color: #fff;
   }
+  /* estilos de mi perfil*/
+  .container-padre-perfil {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  .box-perfil {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+    border: 0.7px solid #c7c5c5;
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto;
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .box-perfil .img-perfil {
+    display: block;
+    margin: 12px auto;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+  }
+  .box-perfil:nth-child(1) {
+    text-align: center !important;
+  }
+  .box-perfil h2 {
+    color: var(--primary-color);
+    font-size: 2.1em;
+  }
+  .box-perfil span {
+    color: gray;
+    font-size: 1.2em;
+  }
+  .box-perfil h3 {
+    color: #000066;
+    font-size: 1.6em;
+  }
+  .box-perfil h4 {
+    color: var(--primary-color);
+    font-size: 1.6em;
+  }
+  .box-perfil p {
+    text-align: justify;
+    font-size: 1.2em;
+  }
+  .box-perfil h6 {
+    font-size: 1.4em;
+  }
+  .box-perfil:nth-child(1) {
+    grid-column: 1/2;
+  }
+  .box-perfil:nth-child(2) {
+    grid-column: 2/4;
+  }
+  .box-perfil:nth-child(3) {
+    grid-column: 2/4;
+  }
+  .box-perfil:nth-child(4) {
+    grid-column: 2/4;
+  }
+  .box-perfil:nth-child(5) {
+    grid-column: 2/4;
+  }
+  .box-perfil:nth-child(6) {
+    grid-column: 2/4;
+  }
+  .box-perfil:nth-child(7) {
+    grid-column: 2/4;
+  }
+  .box-perfil:nth-child(8) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .box-perfil:nth-child(9) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  /*fin de estilos de mi perfil*/
 }
 
 .navbar-toggler {
