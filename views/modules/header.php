@@ -67,6 +67,7 @@ Bootstrap 5 HTML CSS Template
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
+
                 <ul class="navbar-nav align-items-center ms-lg-5">
                     <li class="nav-item">
                         <a class="nav-link active" href="<?php echo $path ?>">Inicio</a>
@@ -88,18 +89,32 @@ Bootstrap 5 HTML CSS Template
                                     trabajo</a></li>
                         </ul>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $path ?>contact.php">Contacto</a>
+                        <a class="nav-link " href="<?php echo $path ?>contact.php">Conctacto</a>
                     </li>
+                    <?php if (isset($_SESSION['rol'])): ?>
+                    <li class="nav-item ms-lg-auto">
+                        <?php if ($_SESSION['rol'] == 1): ?>
 
+                        <a class="nav-link custom-btn btn" href="<?php echo $path ?>candidate_profile.php">Mi cuenta</a>
+
+                        <?php elseif($_SESSION['rol'] == 2):  ?>
+
+                        <a class="nav-link custom-btn btn" href="<?php echo $path ?>recruiter_profile.php">Mi cuenta</a>
+
+                        <?php endif; ?>
+                    </li>
+                    <li class="nav-item ms-lg-auto">
+                        <a class="nav-link" href="<?php echo $path ?>logout.php">Salir</a>
+                    </li>
+                    <?php else:  ?>
                     <li class="nav-item ms-lg-auto">
                         <a class="nav-link" href="<?php echo $path ?>register.php">Registrarse</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link custom-btn btn" href="<?php echo $path ?>login.php">Acceso</a>
                     </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

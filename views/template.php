@@ -1,28 +1,15 @@
+<?php session_start();?>
 <?php
-session_start();
-
 $routesArray = explode("/", $_SERVER['REQUEST_URI']);
-
 $routesArray = array_filter($routesArray);
 $path = TemplateController::path();
-
-
-
-
 $url = CurlController::api() . "crear_vacantes";
 $method = "GET";
 $fields = array();
 $header = array();
-
 $totalVacantes = CurlController::request($url, $method, $fields, $header)->results;
 include 'modules/header.php';
-
 ?>
-
-<!--
-Rutas de paginas
-!-->
-
 <?php
 /* Capturar las rutas de la URL */
 if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
@@ -34,13 +21,6 @@ if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
         $urlParams = explode('/', array_filter($routesArray)[1]);
     }
 }
-
-
-
-
-
-
-
 if (!empty($urlParams[0])) {
     switch ($urlParams[0]) {
         case "about.php":
@@ -64,12 +44,15 @@ if (!empty($urlParams[0])) {
         case "verificar_cuenta.php":
             include 'pages/Account/Verificar/verificar_cuenta.php';
             break;
-        case "profile.php":
-            include 'pages/Account/Candidato/profile.php';
+        case "candidate_profile.php":
+            include 'pages/Account/Candidato/candidate_profile.php';
             break;
-        case "reclutador.php":
-            include 'pages/Account/Reclutador/reclutador.php';
+        case "recruiter_profile.php":
+            include 'pages/Account/Reclutador/recruiter_profile.php';
             break;
+        case "logout.php":
+            include 'pages/Account/Logout/logout.php';
+            break;    
     }
 } else if ($path) {
     include 'pages/Home/home.php';

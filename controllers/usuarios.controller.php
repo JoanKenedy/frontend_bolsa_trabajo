@@ -1,5 +1,5 @@
 <?php
-
+ ob_start();
 class UsersController
 {
 
@@ -137,42 +137,40 @@ class UsersController
 
                 if ($login->status == 200) {
                     if ($login->results[0]->verificacion_email == 1) {
-                        $data = $login->results[0];
-                        $_SESSION['user'] = [
-                            'id' => $data->id_usuario,
-                            'nombre' => $data->nombre,
-                            'rol' => $data->rol_usuario_id
-                        ];
-                        if ($data->rol_usuario_id == 1) {
-                            // Supongamos que es administrador
-                            header('Location: profile.php');
-                            exit; // Debes finalizar el script
-                        } else if ($data->rol_usuario_id == 1) {
-                            // Supongamos que es administrador
-                            header('Location: reclutador.php');
-                            exit; // Debes finalizar el script
+                        
+                        $rol = $login->results[0]->rol_usuario_id;
+                        $_SESSION['rol'] = $rol;
+                        if ( $_SESSION['rol'] == 1) {
+                            header('Location:candidate_profile.php');
+                             return;
+                        } else if ($_SESSION['rol'] == 2) {
+                            header('Location:recruiter_profile.php');
+                             return;
+                        }else{
+                             header('Location:login.php');
+                              return;
                         }
                     } else {
-?>
-                        <script>
-                            function modal() {
-                                Swal.fire({
-                                    position: "top",
-                                    icon: "error",
-                                    title: "Tu cuenta aun no esta verificada, es importante que ingreses tu codigo de verificación.",
-                                    showConfirmButton: false,
-                                    timer: 1500,
+                         ?>
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Tu cuenta aun no esta verificada, es importante que ingreses tu codigo de verificación.",
+        showConfirmButton: false,
+        timer: 1500,
 
 
-                                });
-                            }
-                            modal();
-                            fncFormatInputs();
+    });
+}
+modal();
+fncFormatInputs();
 
-                            setTimeout(() => {
-                                window.location = "http://prueba_bolsa_de_trabajo.com/verificar_cuenta.php";
-                            }, "2500");
-                        </script>
+setTimeout(() => {
+    window.location = "http://prueba_bolsa_de_trabajo.com/verificar_cuenta.php";
+}, "2500");
+</script>
 <?php
                     }
                 } else {
