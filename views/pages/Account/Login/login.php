@@ -3,10 +3,54 @@ $login = new UsersController();
 $login->login();
 if(isset($urlParams[2])){
     $verify = base64_decode($urlParams[2]);
-      
-     /*   $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
-        $sql = "UPDATE usuarios SET verificacion_email = '1' WHERE email = '$email '";
+    /* Verificamos que el usuario exista 
+    $url = CurlController::api()."usuarios?linkTo=email&equalTo=".$verify."&select=id_usuario";
+    $method = "GET";
+    $fields = array();
+    $header = array();
+    $verificar = CurlController::request($url, $method, $fields, $header);
+    echo '<pre>'; print_r($verificar); echo '</pre>';
+
+    if(!empty($verificar)){
+        if($verificar->status == 200){
+            $verif = $verificar->results[0]->verificacion_email;
+    $url = CurlController::api()."usuarios?linkTo=verificacion_email&equal";
+    $method = "PUT";
+    $fields = "verificacion_email=1";
+    $header = array();
+    $verificarUser = CurlController::request($url, $method, $fields, $header);  
+      
+    if($verificarUser->status == 200){
+         ?>
+<script>
+function modal() {
+
+    Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Tu cuenta ha sido verificada",
+        showConfirmButton: false,
+        footer: '<a href="<?php echo $path ?>account&login" class="btn btn-success">Ir al login</a>'
+
+
+    });
+}
+modal();
+</script>
+<?php
+    }
+  
+
+        }
+    }else{
+        
+
+    }*/
+      
+       $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+        $sql = "UPDATE usuarios SET verificacion_email = '1' WHERE email = '$verify '";
 
         $result = mysqli_query($conn, $sql);
 
@@ -43,49 +87,8 @@ modal();
 </script>
 <?php
 
-        }*/
-    /* Verificamos que el usuario exista */
-    $url = CurlController::api()."usuarios?linkTo=email&equalTo=".$verify."&select=id_usuario";
-    $method = "GET";
-    $fields = array();
-    $header = array();
-    $verificar = CurlController::request($url, $method, $fields, $header);
-    echo '<pre>'; print_r($verificar); echo '</pre>';
-
-    if(!empty($verificar)){
-        if($verificar->status == 200){
-    $url = CurlController::api()."usuarios?id=".$verificar->results[0]->id_usuario."&nameId=id_usuario&token=no&except=verificacion_email";
-    $method = "PUT";
-    $fields = "verificacion_email=1";
-    $header = array();
-    $verificarUser = CurlController::request($url, $method, $fields, $header);  
-      
-    if($verificarUser->status == 200){
-         ?>
-<script>
-function modal() {
-
-    Swal.fire({
-        position: "top",
-        icon: "success",
-        title: "Tu cuenta ha sido verificada",
-        showConfirmButton: false,
-        footer: '<a href="<?php echo $path ?>account&login" class="btn btn-success">Ir al login</a>'
-
-
-    });
-}
-modal();
-</script>
-<?php
-    }
-  
-
         }
-    }else{
-        
-
-    }
+    
 }
 ?>
 <div class="container">

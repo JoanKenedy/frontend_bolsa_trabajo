@@ -7,7 +7,7 @@ $url = CurlController::api() . "crear_vacantes";
 $method = "GET";
 $fields = array();
 $header = array();
-$totalVacantes = CurlController::request($url, $method, $fields, $header)->results;
+/*$totalVacantes = CurlController::request($url, $method, $fields, $header)->results;*/
 include 'modules/header.php';
 ?>
 <?php
