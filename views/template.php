@@ -18,12 +18,17 @@ if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
     }
 } else {
     if (!empty(array_filter($routesArray)[1])) {
-        $urlParams = explode('/', array_filter($routesArray)[1]);
+        $urlParams = explode('&', array_filter($routesArray)[1]);
     }
 }
+
 if (!empty($urlParams[0])) {
+     if($urlParams[0] == "account"){
+     include "pages/".$urlParams[0]."/".$urlParams[0].".php";
+    }
     switch ($urlParams[0]) {
         case "about.php":
+
             include 'pages/About/about.php';
             break;
         case "contact.php":
@@ -38,7 +43,7 @@ if (!empty($urlParams[0])) {
         case "register.php":
             include 'pages/Account/Register/register.php';
             break;
-        case "login.php":
+        /*case "login.php":
             include 'pages/Account/Login/login.php';
             break;
         case "verificar_cuenta.php":
@@ -52,7 +57,7 @@ if (!empty($urlParams[0])) {
             break;
         case "logout.php":
             include 'pages/Account/Logout/logout.php';
-            break;    
+            break;    */
     }
 } else if ($path) {
     include 'pages/Home/home.php';

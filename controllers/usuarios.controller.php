@@ -17,7 +17,7 @@ class UsersController
             ) {
 
                 $email = strtolower($_POST['regEmail']);
-                $verify_code = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+            
 
 
                 $url = CurlController::api() . 'usuarios?register=true';
@@ -30,7 +30,6 @@ class UsersController
                     "telefono" => $_POST['regTelefono'],
                     "password" => $_POST['regPassword'],
                     "method_user" => 'directo',
-                    "verify_code" => $verify_code,
                     "created_at" => date('Y-m-d')
                 );
 
@@ -46,8 +45,8 @@ class UsersController
                     $name = $_POST['regNombre'];
                     $subject = 'Verifica tu cuenta';
                     $email = $email;
-                    $message = 'Debemos verificar tu cuenta para que puedas ingresar a nuestra bolsa de trabajo aqui te enviamos tu codigo de verificación CODIGO ' . $verify_code;
-                    $url = TemplateController::path() . "verificar_cuenta.php";
+                    $message = 'Debemos verificar tu cuenta para que puedas ingresar a nuestra bolsa de trabajo haz click en el siguiente enlace';
+                    $url = TemplateController::path() . "account&login&".base64_encode($email);
                     $sendEmail = TemplateController::sendEmail($name, $subject, $email, $message, $url);
 
 
@@ -153,25 +152,21 @@ class UsersController
                         }
                     } else {
 ?>
-                        <script>
-                            function modal() {
-                                Swal.fire({
-                                    position: "top",
-                                    icon: "error",
-                                    title: "Tu cuenta aun no esta verificada, es importante que ingreses tu codigo de verificación.",
-                                    showConfirmButton: false,
-                                    timer: 1500,
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Tu cuenta aun no esta verificada, es importante que vallas a tu correo y confirmes con un click",
+        showConfirmButton: false,
 
 
-                                });
-                            }
-                            modal();
-                            fncFormatInputs();
 
-                            setTimeout(() => {
-                                window.location = "http://prueba_bolsa_de_trabajo.com/verificar_cuenta.php";
-                            }, "2500");
-                        </script>
+    });
+}
+modal();
+fncFormatInputs();
+</script>
 <?php
                     }
                 } else {

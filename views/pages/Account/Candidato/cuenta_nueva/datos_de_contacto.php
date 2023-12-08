@@ -5,15 +5,17 @@
     ?>
     <form class="custom-form hero-form form-login requires-validation" novalidate method="post" role="form">
         <h3 class=" text-center mb-3">
-            <a href="<?php echo $path ?>register.php" class="text-dorado"> Registro</a> &nbsp; <a href="<?php echo $path ?>login.php" class="text-gray">Iniciar sesión</a>
+            Datos de contacto
         </h3>
+        <p>Siempre ten actualizados tus datos para que la empresas te contacten</p>
         <input type="hidden" value="<?php echo CurlController::api() ?>" id="urlApi">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="input-control">
                     <span class="input-icon" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 
-                    <input type="text" name="regNombre" class="form-control input-group" placeholder="Nombre" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}" onchange="validateJS(event, 'text')" required>
+                    <input type="text" name="regNombre" class="form-control input-group" placeholder="Nombre"
+                        pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}" onchange="validateJS(event, 'text')" required>
 
                     <div class="valid-feedback">
                         Válido
@@ -32,7 +34,8 @@
                 <div class="input-control">
                     <span class="input-icon" id="basic-addon2"><i class="bi bi-person-plus custom-icon"></i></span>
 
-                    <input type="text" name="regApellidos" class="form-control input-group" placeholder="Apellidos" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}" onchange="validateJS(event,'text')" required>
+                    <input type="text" name="regApellidos" class="form-control input-group" placeholder="Apellidos"
+                        pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}" onchange="validateJS(event,'text')" required>
 
                     <div class="valid-feedback">
                         Válido
@@ -46,7 +49,9 @@
                 <div class="input-control">
                     <span class="input-icon" id="basic-addon2"><i class="bi bi-envelope custom-icon"></i></span>
 
-                    <input type="email" name="regEmail" class="form-control input-group" placeholder="Correo electronico" pattern="\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$" onchange="validateEmailRepeat(event)" required>
+                    <input type="email" name="regEmail" class="form-control input-group"
+                        placeholder="Correo electronico" pattern="\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$"
+                        onchange="validateEmailRepeat(event)" required>
 
                     <div class="valid-feedback">
                         Válido
@@ -60,7 +65,9 @@
                 <div class="input-control">
                     <span class="input-icon" id="basic-addon2"><i class="bi bi-telephone custom-icon"></i></span>
 
-                    <input type="tel" name="regTelefono" class="form-control input-group" pattern="(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)" onchange="validateJS(event, 'tel')" placeholder="Teléfono" required>
+                    <input type="tel" name="regTelefono" class="form-control input-group"
+                        pattern="(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)"
+                        onchange="validateJS(event, 'tel')" placeholder="Teléfono" required>
 
                     <div class="valid-feedback">
                         Válido
@@ -87,7 +94,9 @@
                 <div class="input-control">
                     <span class="input-icon"><i class="bi bi-eye-slash custom-icon"></i></span>
 
-                    <input type="password" name="regPassword" class="form-control input-group" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*" onchange="validateJS(event, 'password')" required>
+                    <input type="password" name="regPassword" class="form-control input-group" placeholder="Contraseña"
+                        pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*" onchange="validateJS(event, 'password')"
+                        required>
 
                     <div class="valid-feedback">
                         Válido

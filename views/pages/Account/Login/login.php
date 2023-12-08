@@ -1,14 +1,100 @@
 <?php
 $login = new UsersController();
 $login->login();
+if(isset($urlParams[2])){
+    $verify = base64_decode($urlParams[2]);
+      
+     /*   $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+        $sql = "UPDATE usuarios SET verificacion_email = '1' WHERE email = '$email '";
+
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_affected_rows($conn) == 0) { ?>
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifica tu email o codigo",
+        showConfirmButton: false,
+        timer: 1500,
+
+
+    });
+}
+modal();
+</script>
+<?php } else { ?>
+<script>
+function modal() {
+
+    Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Tu cuenta ha sido verificada",
+        showConfirmButton: false,
+        footer: '<a href="<?php echo $path ?>account&login" class="btn btn-success">Ir al login</a>'
+
+
+    });
+}
+modal();
+</script>
+<?php
+
+        }*/
+    /* Verificamos que el usuario exista */
+    $url = CurlController::api()."usuarios?linkTo=email&equalTo=".$verify."&select=id_usuario";
+    $method = "GET";
+    $fields = array();
+    $header = array();
+    $verificar = CurlController::request($url, $method, $fields, $header);
+    echo '<pre>'; print_r($verificar); echo '</pre>';
+
+    if(!empty($verificar)){
+        if($verificar->status == 200){
+    $url = CurlController::api()."usuarios?id=".$verificar->results[0]->id_usuario."&nameId=id_usuario&token=no&except=verificacion_email";
+    $method = "PUT";
+    $fields = "verificacion_email=1";
+    $header = array();
+    $verificarUser = CurlController::request($url, $method, $fields, $header);  
+      
+    if($verificarUser->status == 200){
+         ?>
+<script>
+function modal() {
+
+    Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Tu cuenta ha sido verificada",
+        showConfirmButton: false,
+        footer: '<a href="<?php echo $path ?>account&login" class="btn btn-success">Ir al login</a>'
+
+
+    });
+}
+modal();
+</script>
+<?php
+    }
+  
+
+        }
+    }else{
+        
+
+    }
+}
 ?>
 <div class="container">
 
 
     <form class="custom-form hero-form form-login requires-validation" novalidate method="post" role="form">
         <h3 class=" text-center mb-3">
-            <a href="<?php echo $path ?>login.php" class="text-dorado">Iniciar sesión</a> &nbsp; <a
-                href="<?php echo $path ?>register.php" class="text-gray"> Registro</a>
+            <a href="<?php echo $path ?>account&login" class="text-dorado">Iniciar sesión</a> &nbsp; <a
+                href="<?php echo $path ?>account&enrrollment" class="text-gray"> Registro</a>
         </h3>
 
         <div class="row">
