@@ -654,14 +654,35 @@ nav[aria-label="breadcrumb"] {
   text-align: justify;
   font-size: 1em;
 }
-.show-form {
-  position: absolute;
-  top: 85%;
-  right: 5%;
-  z-index: 1;
+.container-myaccount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.show-form i {
+.container-myaccount .cerrar a {
   font-size: 1.2em;
+  padding: 8px;
+}
+.cerrar:nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.perfil-photo .img_perfil {
+  border-radius: 50% !important;
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+.btn-compu {
+  display: none !important;
+}
+.perfil-photo p {
+  font-size: 1em;
+  font-weight: 600;
 }
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {
@@ -785,6 +806,42 @@ nav[aria-label="breadcrumb"] {
   .box-perfil:nth-child(9) {
     grid-column: 1/2;
     grid-row: 3/4;
+  }
+  .perfil-photo:nth-child(1) {
+    display: none;
+  }
+  .perfil-photo:nth-child(2) {
+    display: block;
+  }
+  .perfil-photo .img_perfil {
+    border-radius: 50% !important;
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+  }
+  .btn-compu {
+    display: block !important;
+  }
+  .perfil-photo p {
+    font-size: 1.2em;
+    color: #deb100;
+  }
+  .container-myaccount .cerrar a {
+    font-size: 1.3em;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer !important;
+    border-radius: 4px !important;
+    margin-right: 2px !important;
+    opacity: 0.6 !important;
+    filter: invert(0.8) !important;
+    background-color: #deb100 !important;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1 !important;
   }
   /*fin de estilos de mi perfil*/
 }

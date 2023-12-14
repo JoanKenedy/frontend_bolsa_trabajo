@@ -17,7 +17,7 @@ class UsersController
             ) {
 
                 $email = strtolower($_POST['regEmail']);
-            
+
 
 
                 $url = CurlController::api() . 'usuarios?register=true';
@@ -46,21 +46,30 @@ class UsersController
                     $subject = 'Verifica tu cuenta';
                     $email = $email;
                     $message = 'Debemos verificar tu cuenta para que puedas ingresar a nuestra bolsa de trabajo haz click en el siguiente enlace';
-                    $url = TemplateController::path() . "account&login&".base64_encode($email);
+                    $url = TemplateController::path() . "account&login&" . base64_encode($email);
                     $sendEmail = TemplateController::sendEmail($name, $subject, $email, $message, $url);
 
 
                     if ($sendEmail == 'ok') {
-                        echo '<div class="alert alert-success">
-                               Se ha registrado con éxito, se ha enviado un codigo de verificacion a su correo ingresado.
-                               Cheque tambien en la bandeja de spam.
-                            
-                             </div>
-                             <script>
-                             fncFormatInputs()
-                             </script>
-                             
-                             ';
+?>
+                        <script>
+                            function modal() {
+
+                                Swal.fire({
+                                    position: "top",
+                                    icon: "success",
+                                    title: " Se ha registrado con éxito, se te ha enviado un correo al que ingresaste , verifica tu cuenta solo dando click a el enlace.",
+                                    showConfirmButton: false,
+
+
+
+                                });
+                            }
+                            modal();
+                            fncFormatInputs();
+                        </script>
+                    <?php
+
                     } else {
                         echo '<div class="alert alert-danger">
                         ' . $sendEmail . '
@@ -141,33 +150,33 @@ class UsersController
                         $_SESSION['rol'] = $rol;
                         if ($_SESSION['rol']->rol_usuario_id == 1) {
 
-                            header('Location:candidate_profile.php');
+                            header('Location:account&candidate');
                             return;
                         } else if ($_SESSION['rol']->rol_usuario_id == 2) {
-                            header('Location:recruiter_profile.php');
+                            header('Location:account&recruiter');
                             return;
                         } else {
-                            header('Location:login.php');
+                            header('Location:account&login');
                             return;
                         }
                     } else {
-?>
-<script>
-function modal() {
-    Swal.fire({
-        position: "top",
-        icon: "error",
-        title: "Tu cuenta aun no esta verificada, es importante que vallas a tu correo y confirmes con un click",
-        showConfirmButton: false,
+                    ?>
+                        <script>
+                            function modal() {
+                                Swal.fire({
+                                    position: "top",
+                                    icon: "error",
+                                    title: "Tu cuenta aun no esta verificada, es importante que vallas a tu correo y confirmes con un click",
+                                    showConfirmButton: false,
 
 
 
-    });
-}
-modal();
-fncFormatInputs();
-</script>
-<?php
+                                });
+                            }
+                            modal();
+                            fncFormatInputs();
+                        </script>
+                <?php
                     }
                 } else {
                     echo '<div class="alert alert-danger">Esta cuenta de email no existe en nuestro sistema.</div> <script>
@@ -181,6 +190,76 @@ fncFormatInputs();
             <script>
                     fncFormatInputs()
                 </script>';
+            }
+        }
+    }
+
+    public function datosContacto()
+    {
+
+        $id_usuario = $_SESSION['rol']->id_usuario;
+        if (isset($_POST['datos_contacto'])) {
+            $fecha_nacimiento = intval($_POST['regNacimiento']);
+            $url = CurlController::api() . 'curriculums?datos_contacto=true&token="' . $_SESSION['rol']->token_user . '"';
+
+            $method = 'POST';
+            $fields = array(
+                'id_usuario_curriculum' => $id_usuario,
+                'pais' => $_POST['regPais'],
+                'estado' => $_POST['regEstado'],
+                'sexo' => $_POST['regGenero'],
+                'fecha_nacimiento' => date('Y-m-d', $fecha_nacimiento)
+
+            );
+            $header = array(
+                'Content-Type' =>  'application/x-www-form-urlencoded'
+            );
+
+            $datosContacto = CurlController::request($url, $method, $fields, $header);
+            if ($datosContacto->status == 200) {
+
+                ?>
+
+                <script>
+                    function modal() {
+                        let timerInterval;
+                        Swal.fire({
+                            title: "Cargando tus datos",
+                            html: "Cerraré en <b></b> milisegundos.",
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading();
+                                const timer = Swal.getPopup().querySelector("b");
+                                timerInterval = setInterval(() => {
+                                    timer.textContent = `${Swal.getTimerLeft()}`;
+
+                                }, 100);
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval);
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                console.log("I was closed by the timer");
+                            }
+                        });
+                    }
+                    modal();
+                    fncFormatInputs();
+
+                    setTimeout(() => {
+                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                        location.href = `${urlEnvio}account&candidate&profesion`;
+                    }, "2500");
+                </script>
+<?php
+
+            } else {
+                echo '<div class="alert alert-danger">Algo paso vuelva a intentar</div> <script>
+                fncFormatInputs()
+            </script>';
             }
         }
     }

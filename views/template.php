@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <?php
 $routesArray = explode("/", $_SERVER['REQUEST_URI']);
 $routesArray = array_filter($routesArray);
@@ -23,8 +23,8 @@ if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
 }
 
 if (!empty($urlParams[0])) {
-     if($urlParams[0] == "account"){
-     include "pages/".$urlParams[0]."/".$urlParams[0].".php";
+    if ($urlParams[0] == "account") {
+        include "pages/" . $urlParams[0] . "/" . $urlParams[0] . ".php";
     }
     switch ($urlParams[0]) {
         case "about.php":
@@ -43,7 +43,7 @@ if (!empty($urlParams[0])) {
         case "register.php":
             include 'pages/Account/Register/register.php';
             break;
-        /*case "login.php":
+            /*case "login.php":
             include 'pages/Account/Login/login.php';
             break;
         case "verificar_cuenta.php":
