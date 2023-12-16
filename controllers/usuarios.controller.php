@@ -52,23 +52,23 @@ class UsersController
 
                     if ($sendEmail == 'ok') {
 ?>
-<script>
-function modal() {
+                        <script>
+                            function modal() {
 
-    Swal.fire({
-        position: "top",
-        icon: "success",
-        title: " Se ha registrado con éxito, se te ha enviado un correo al que ingresaste , verifica tu cuenta solo dando click a el enlace.",
-        showConfirmButton: false,
+                                Swal.fire({
+                                    position: "top",
+                                    icon: "success",
+                                    title: " Se ha registrado con éxito, se te ha enviado un correo al que ingresaste , verifica tu cuenta solo dando click a el enlace.",
+                                    showConfirmButton: false,
 
 
 
-    });
-}
-modal();
-fncFormatInputs();
-</script>
-<?php
+                                });
+                            }
+                            modal();
+                            fncFormatInputs();
+                        </script>
+                    <?php
 
                     } else {
                         echo '<div class="alert alert-danger">
@@ -92,7 +92,7 @@ fncFormatInputs();
             
             ';
             }*/
-        } 
+        }
     }
 
     public function login()
@@ -139,22 +139,22 @@ fncFormatInputs();
                         }
                     } else {
                     ?>
-<script>
-function modal() {
-    Swal.fire({
-        position: "top",
-        icon: "error",
-        title: "Tu cuenta aun no esta verificada, es importante que vallas a tu correo y confirmes con un click",
-        showConfirmButton: false,
+                        <script>
+                            function modal() {
+                                Swal.fire({
+                                    position: "top",
+                                    icon: "error",
+                                    title: "Tu cuenta aun no esta verificada, es importante que vallas a tu correo y confirmes con un click",
+                                    showConfirmButton: false,
 
 
 
-    });
-}
-modal();
-fncFormatInputs();
-</script>
-<?php
+                                });
+                            }
+                            modal();
+                            fncFormatInputs();
+                        </script>
+                <?php
                     }
                 } else {
                     echo '<div class="alert alert-danger">Esta cuenta de email no existe en nuestro sistema.</div> <script>
@@ -176,14 +176,27 @@ fncFormatInputs();
     {
 
         $id_usuario = $_SESSION['rol']->id_usuario;
-  
+
+        echo '<pre>';
+        print_r($id_usuario);
+        echo '</pre>';
+        $url = CurlController::api() . "relations?rel=curriculums,usuarios&type=curriculum,usuario&linkTo=id_usuario&equalTo=" . $id_usuario . "";
+        $method = "GET";
+        $fields = array();
+        $header = array();
+        $verificarRel = CurlController::request($url, $method, $fields, $header);
+        echo '<pre>';
+        print_r($verificarRel);
+        echo '</pre>';
+
         if (isset($_POST['datos_contacto'])) {
             $fecha_nacimiento = intval($_POST['regNacimiento']);
             $url = CurlController::api() . 'curriculums?datos_contacto=true&token="' . $_SESSION['rol']->token_user . '"';
-
             $method = 'POST';
             $fields = array(
                 'id_usuario_curriculum' => $id_usuario,
+                'puesto' => $_POST['regPuesto'],
+                'sueldo_aprox' => $_POST['regSueldo'],
                 'pais' => $_POST['regPais'],
                 'estado' => $_POST['regEstado'],
                 'sexo' => $_POST['regGenero'],
@@ -199,40 +212,40 @@ fncFormatInputs();
 
                 ?>
 
-<script>
-function modal() {
-    let timerInterval;
-    Swal.fire({
-        title: "Cargando tus datos",
-        html: "Cerraré en <b></b> milisegundos.",
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: () => {
-            Swal.showLoading();
-            const timer = Swal.getPopup().querySelector("b");
-            timerInterval = setInterval(() => {
-                timer.textContent = `${Swal.getTimerLeft()}`;
+                <script>
+                    function modal() {
+                        let timerInterval;
+                        Swal.fire({
+                            title: "Cargando tus datos",
+                            html: "Cerraré en <b></b> milisegundos.",
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading();
+                                const timer = Swal.getPopup().querySelector("b");
+                                timerInterval = setInterval(() => {
+                                    timer.textContent = `${Swal.getTimerLeft()}`;
 
-            }, 100);
-        },
-        willClose: () => {
-            clearInterval(timerInterval);
-        }
-    }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-            console.log("I was closed by the timer");
-        }
-    });
-}
-modal();
-fncFormatInputs();
+                                }, 100);
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval);
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                console.log("I was closed by the timer");
+                            }
+                        });
+                    }
+                    modal();
+                    fncFormatInputs();
 
-setTimeout(() => {
-    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-    location.href = `${urlEnvio}account&candidate&profesion`;
-}, "2500");
-</script>
+                    setTimeout(() => {
+                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                        location.href = `${urlEnvio}account&candidate&profesion`;
+                    }, "2500");
+                </script>
 <?php
 
             } else {
@@ -241,37 +254,5 @@ setTimeout(() => {
             </script>';
             }
         }
-    }
-
-    public function datosProfesion(){
-          /* Verificamos que el usuario tenga un curriculum */
-        
-          $data = $_SESSION['rol']->id_usuario;
-         
-          $url = CurlController::api() . "relations?rel=curriculums,usuarios&type=curriculum,usuario&linkTo=id_usuario_curriculum&equalTo=". $data ."";
-          $method = "GET";
-          $fields = array();
-          $header = array();
-          $verificarRel = CurlController::request($url, $method, $fields, $header);
-              if($verificarRel->status == 200){
-                   if($verificarRel->results[0]->id_usuario_curriculum == $data){
-            $url = CurlController::api() . 'curriculums?id="'.$verificarRel->results[0]->id_curriculum.'"&nameId=id_curriculum&token="'. $_SESSION['rol']->token_user .'"';
-            $method = 'POST';
-            $fields = array(
-                'puesto' => $_POST['regPuesto'],
-                'sueldo_aprox' => $_POST['regSalario'],
-            );
-            $header = array(
-                'Content-Type' =>  'application/x-www-form-urlencoded'
-            );
-
-            $datosContactoProfesion = CurlController::request($url, $method, $fields, $header);
-            echo'<pre>'; print_r($datosContactoProfesion); echo '</pre>';
-                   }
-                
-              }
-          
-  
-       
     }
 }

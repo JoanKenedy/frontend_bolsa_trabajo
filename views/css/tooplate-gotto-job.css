@@ -272,6 +272,9 @@ nav[aria-label="breadcrumb"] {
   overflow: hidden;
   padding-left: 15px;
 }
+.form-login h6 {
+  font-weight: 400;
+}
 .input-group::placeholder {
   padding-left: 0px;
 }
