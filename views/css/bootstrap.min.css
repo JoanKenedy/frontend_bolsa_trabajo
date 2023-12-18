@@ -333,6 +333,13 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
+#myTextArea {
+  margin: 0;
+  border-radius: 0;
+  z-index: 2;
+  resize: none;
+  width: 100% !important;
+}
 button,
 select {
   text-transform: none;

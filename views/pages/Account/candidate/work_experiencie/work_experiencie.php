@@ -6,21 +6,23 @@
     $sql = "SELECT id_curriculum FROM curriculums WHERE id_usuario_curriculum = $id_usuario";
     $result = mysqli_query($conn, $sql);
     $arrayDatos = mysqli_fetch_array($result);
-    $id_curriculum_estudio = $arrayDatos[0];
+    $id_curriculum_trabajo = $arrayDatos[0];
     ?>
     <?php
-    if (isset($_POST['datos_estudio'])) {
+    if (isset($_POST['datos_trabajo'])) {
         $id_usuario = $_SESSION['rol']->id_usuario;
-        $nivel = $_POST['nivelAcademico'];
-        $carrera = $_POST['carrera'];
-        $escuela = $_POST['escuela'];
-        $fechaInicio = $_POST['fechaInicio'];
-        $fechaTermino = $_POST['fechaFinal'];
+
+
+        $nombreEmpresa = $_POST['nombreEmpresa'];
+        $puestoTrabajo = $_POST['puestoTrabajo'];
+        $fechaInicio = $_POST['inicioTrabajo'];
+        $fechaTermino = $_POST['finalTrabajo'];
+        $descripcionTrabajo = $_POST['descripcionTrabajo'];
 
         $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
-        $sql = "INSERT INTO estudios ( `id_usuario_estudio`, `id_curriculum_estudio`,`nivel_academico`, `title_carrera`, `nombre_escuela`, `fecha_inicio`, `fecha_termino`)
-        VALUES ('$id_usuario','$id_curriculum_estudio','$nivel','$carrera','$escuela','$fechaInicio','$fechaTermino')";
+        $sql = "INSERT INTO  trabajos (`id_usuario_trabajo`, `id_curriculum_trabajo`, `nombre_empresa`, `puesto_de_trabajo`, `fecha_inicio`, `fecha_termino`, `descripcion_trabajo`)
+        VALUES ('$id_usuario','$id_curriculum_trabajo','$nombreEmpresa','$puestoTrabajo','$fechaInicio','$fechaTermino','$descripcionTrabajo')";
 
         $result = mysqli_query($conn, $sql);
 
@@ -30,7 +32,7 @@
                     Swal.fire({
                         position: "top",
                         icon: "error",
-                        title: "Algo salio mal, verifica tu email o codigo",
+                        title: "Algo salio mal, verifiquemos que fue",
                         showConfirmButton: false,
                         timer: 1500,
 
@@ -45,8 +47,8 @@
                 function modal() {
                     let timerInterval;
                     Swal.fire({
-                        title: "Cargando tus datos de tus estudios",
-                        html: "Cerraré en <b></b> milisegundos.",
+                        title: "Cargando tus datos de tu experincia laboral",
+                        html: "Ya iremos a tu CV",
                         timer: 2000,
                         timerProgressBar: true,
                         didOpen: () => {
@@ -72,7 +74,7 @@
 
                 setTimeout(() => {
                     let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                    location.href = `${urlEnvio}account&candidate&work_experiencie`;
+                    location.href = `${urlEnvio}account&candidate&curriculum`;
                 }, "2500");
             </script>
     <?php
@@ -84,7 +86,7 @@
         <div class="container">
             <form class="custom-form hero-form form-login requires-validation" novalidate method="post" role="form">
                 <p class=" text-center text-white">
-                    Cuéntanos sobre tu ultimo nivel academico para estes listo para postular
+                    Cuéntanos tu experiencia laboral
                 </p>
 
                 <input type="hidden" value="<?php echo CurlController::api() ?>" id="urlApi">
@@ -92,19 +94,9 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="input-control">
 
-                            <p class="text-label">Nivel academico:</p>
+                            <p class="text-label">Nombre de la empresa o negocio:</p>
+                            <input type="text" name="nombreEmpresa" class="form-control input-group" placeholder="Bimbo" required>
 
-                            <select name="nivelAcademico" class=" input-group select">
-                                <option value="Primaria">Primaria</option>
-                                <option value="Secundaria">Secundaria</option>
-                                <option value="Preparatoria">Preparatoria</option>
-                                <option value="Universidad trunca">Universidad trunca</option>
-                                <option value="Universidad concluida">Universidad concluida</option>
-                                <option value="Maestria">Maestria</option>
-                                <option value="Doctorado">Doctorado</option>
-
-
-                            </select>
 
                             <div class="valid-feedback">
                                 Válido
@@ -117,8 +109,8 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="input-control">
 
-                            <p class="text-label">Titulo o carrera:</p>
-                            <input type="text" name="carrera" class="form-control input-group" placeholder="Administración de empresas" required>
+                            <p class="text-label">Puesto desempeñado:</p>
+                            <input type="text" name="puestoTrabajo" class="form-control input-group" placeholder="Administración de empresas" required>
 
                             <div class="valid-feedback">
                                 Válido
@@ -128,22 +120,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-12">
-                        <div class="input-control">
-
-                            <p class="text-label">Institución:</p>
-                            <input type="text" name="escuela" class="form-control input-group" placeholder="Unam" required>
-
-
-                        </div>
-                    </div>
-
-
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="input-control">
 
                             <p class="text-label">Año de incio:</p>
-                            <input type="text" name="fechaInicio" class="form-control input-group" placeholder="Año de inicio" required>
+                            <input type="text" name="inicioTrabajo" class="form-control input-group" placeholder="Año de inicio" required>
 
 
                             <div class="valid-feedback">
@@ -158,7 +139,7 @@
                         <div class="input-control">
 
                             <p class="text-label">Ultimo año:</p>
-                            <input type="text" name="fechaFinal" class="form-control input-group" placeholder="Ultimo año" required>
+                            <input type="text" name="finalTrabajo" class="form-control input-group" placeholder="Ultimo año" required>
 
                             <div class="valid-feedback">
                                 Válido
@@ -168,8 +149,26 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-12 col-md-12 col-12 mb-2">
+                        <div class="input-control">
+
+                            <p class="text-label">Actividades desempeñadas en tu puesto:</p>
+                            <div class="text-center">
+                                <textarea id="myTextArea" name="descripcionTrabajo" rows="5">
+
+                            </textarea>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+
                     <div class="col-lg-12 col-12 m-auto">
-                        <button type="submit" class="form-control" id="btn-register" name="datos_estudio">
+                        <button type="submit" class="form-control" id="btn-register" name="datos_trabajo">
                             Guardar y continuar
                         </button>
                     </div>
