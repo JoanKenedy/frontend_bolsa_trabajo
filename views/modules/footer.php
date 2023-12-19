@@ -72,8 +72,7 @@
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1"><i class="bi-person"></i></span>
 
-                        <input type="text" name="newsletter-name" id="newsletter-name" class="form-control"
-                            placeholder="yourname@gmail.com" required>
+                        <input type="text" name="newsletter-name" id="newsletter-name" class="form-control" placeholder="yourname@gmail.com" required>
 
                         <button type="submit" class="form-control">
                             <i class="bi-send"></i>
@@ -129,8 +128,7 @@
                             Inspiración</a></p>
                 </div>
 
-                <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center"
-                    href="#top"></a>
+                <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center" href="#top"></a>
 
             </div>
         </div>
@@ -144,6 +142,8 @@
 <script src="js/counter.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/main.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="js/peticiones.js"></script>
 
 
 </body>
