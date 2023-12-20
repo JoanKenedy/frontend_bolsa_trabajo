@@ -11,10 +11,7 @@ if (!isset($_SESSION['rol']->rol_usuario_id)) {
 ?>
 <?php
 /* Verificamos que el usuario exista */
-$data = $_GET['id_usuario'];
-echo '<pre>';
-print_r($data);
-echo '</pre>';
+$data = $_SESSION['rol']->id_usuario;
 
 $url = CurlController::api() . "relations?rel=estudios,curriculums,usuarios&type=estudio,curriculum,usuario&linkTo=id_usuario&equalTo=" . $data . "";
 $method = "GET";
@@ -26,26 +23,23 @@ $verificarRel = CurlController::request($url, $method, $fields, $header);
 if ($verificarRel->status == 404) {
 
     header('location:account&candidate&datos_contacto');
-} else {
-    header('location:account&candidate&curriculum?id_usuario=' . $data . '');
-}
-
+};
 
 ?>
 <?php
-/* Verificamos que el usuario exista */
-/* $data = $_SESSION['rol']->id_usuario;
+
+$data = $_SESSION['rol']->id_usuario;
 
 $url = CurlController::api() . "relations?rel=trabajos,curriculums,usuarios&type=trabajo,curriculum,usuario&linkTo=id_usuario&equalTo=" . $data . "";
 $method = "GET";
 $fields = array();
 $header = array();
-$verificarRel2 = CurlController::request($url, $method, $fields, $header); */
+$verificarRel2 = CurlController::request($url, $method, $fields, $header);
 
 ?>
 <div class="container grid-padre">
 
-    <p><?php echo $data ?></p>
+
     <div class="grid-container">
         <div class="grid-1">
             <div class="grid-inter">
@@ -96,7 +90,7 @@ $verificarRel2 = CurlController::request($url, $method, $fields, $header); */
             </div>
             <div class="grid-body">
                 <span>Sueldo aproximado</span>
-                <p><?php echo $verificarRel->results[0]->sueldo_aprox  ?></p>
+                <p><?php echo $verificarRel->results[0]->sueldo_aprox  ?> MXN</p>
             </div>
         </div>
         <div class="grid-4">

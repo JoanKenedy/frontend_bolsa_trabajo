@@ -142,8 +142,6 @@
 <script src="js/counter.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/main.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="js/peticiones.js"></script>
 
 
 </body>

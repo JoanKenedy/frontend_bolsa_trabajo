@@ -1,4 +1,4 @@
-const urlBase = "http://bolsa_de_trabajo.com/";
+/*const urlBase = "http://bolsa_de_trabajo.com/";
 
 const obtenerCurriculumPersonal = (id_usuario) => {
   axios
@@ -9,4 +9,4 @@ const obtenerCurriculumPersonal = (id_usuario) => {
     .catch((error) => console.log(error));
 };
 
-obtenerCurriculumPersonal();
+obtenerCurriculumPersonal();*/

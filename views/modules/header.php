@@ -93,7 +93,7 @@ Bootstrap 5 HTML CSS Template
                         <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
 
                             <li class="nav-item ms-lg-auto mx-3 ">
-                                <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&candidate&curriculum?id_usuario=<?php echo $_SESSION['rol']->id_usuario  ?>">MI CV</a>
+                                <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&candidate&curriculum">MI CV</a>
                             </li>
 
                             <li class="nav-item ms-lg-auto btn-compu">

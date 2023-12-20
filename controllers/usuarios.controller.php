@@ -128,7 +128,7 @@ class UsersController
                         $_SESSION['rol'] = $rol;
                         if ($_SESSION['rol']->rol_usuario_id == 1) {
 
-                            header('Location:account&candidate');
+                            header('Location:account&candidate&dashboard');
                             return;
                         } else if ($_SESSION['rol']->rol_usuario_id == 2) {
                             header('Location:account&recruiter');
@@ -177,17 +177,7 @@ class UsersController
 
         $id_usuario = $_SESSION['rol']->id_usuario;
 
-        echo '<pre>';
-        print_r($id_usuario);
-        echo '</pre>';
-        $url = CurlController::api() . "relations?rel=curriculums,usuarios&type=curriculum,usuario&linkTo=id_usuario&equalTo=" . $id_usuario . "";
-        $method = "GET";
-        $fields = array();
-        $header = array();
-        $verificarRel = CurlController::request($url, $method, $fields, $header);
-        echo '<pre>';
-        print_r($verificarRel);
-        echo '</pre>';
+
 
         if (isset($_POST['datos_contacto'])) {
             $fecha_nacimiento = intval($_POST['regNacimiento']);
