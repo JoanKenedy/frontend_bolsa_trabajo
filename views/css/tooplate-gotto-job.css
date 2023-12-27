@@ -881,23 +881,47 @@ textarea {
 .job-titulo p {
   font-size: 0.7em;
 }
-.grid-curriculum-index {
+.container-grid-curriculum-index {
   display: grid;
   width: 100%;
   gap: 10px;
 }
 .grid-item-curriculum-index {
   border-radius: 7px;
-  padding: 15px;
+  padding: 10px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
+.grid-item-curriculum-index:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.grid-item-curriculum-index:nth-child(1) h6 {
+  margin-top: 7px;
+  margin-bottom: 0;
+}
+.grid-item-curriculum-index:nth-child(2) .grid-item-body {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  gap: 12px;
+}
+.grid-item-curriculum-index:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .section-space {
-  padding-top: 15px;
+  padding-top: 0px;
   padding-bottom: 15px;
 }
 /*fin de estilos de mi perfil*/
@@ -1037,6 +1061,122 @@ textarea {
   }
 
   /*fin de estilos de mi perfil*/
+  /*dashboard*/
+  .container-body {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-father {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: minmax(500px);
+  }
+  .section-space {
+    grid-column: 1/4;
+  }
+  .grid-curriculum-index {
+    grid-column: 4/6;
+  }
+  .wraper-job {
+    width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 12px;
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+      0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+      0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+      0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  }
+  .wraper-footer-job {
+    width: 90%;
+  }
+  .img-wraper-job {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover !important;
+    display: block;
+    margin: auto;
+  }
+  .wraper-footer-job p {
+    font-size: 1.1em;
+    margin: 7px 0px;
+  }
+  .container-btn-postular {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .job-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+  }
+  .job-titulo a {
+    font-size: 0.9em;
+  }
+  .job-titulo p {
+    font-size: 0.6em;
+  }
+  .grid-curriculum-index {
+    display: grid;
+    width: 100%;
+    gap: 10px;
+  }
+  .grid-item-curriculum-index {
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+      0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+      0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+      0 1px 6px 0 rgba(0, 29, 124, 0.05);
+    width: 100%;
+    margin: auto;
+  }
+  .grid-item-curriculum-index:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .grid-item-curriculum-index:nth-child(1) h6 {
+    margin-top: 7px;
+    margin-bottom: 0;
+  }
+  .grid-item-curriculum-index:nth-child(2) .grid-item-body {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+  }
+  .grid-item-curriculum-index:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .section-space {
+    padding-top: 0px;
+    padding-bottom: 15px;
+  }
+  .title-6 {
+    font-size: 1.5em;
+  }
+  .grid-item-curriculum-index span {
+    font-size: 1.2em;
+  }
+  /*fin dashboard*/
 }
 
 .navbar-toggler {

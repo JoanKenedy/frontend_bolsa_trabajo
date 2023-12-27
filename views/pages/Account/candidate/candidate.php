@@ -15,4 +15,3 @@ if (isset($urlParams[2])) {
     include $urlParams[2] . "/" . $urlParams[2] . ".php";
 };
 ?>
-        

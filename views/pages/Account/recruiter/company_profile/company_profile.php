@@ -3,7 +3,7 @@ if (!isset($_SESSION['rol']->rol_usuario_id)) {
     header('location:account&login');
     return;
 } else {
-    if ($_SESSION['rol']->rol_usuario_id != 1) {
+    if ($_SESSION['rol']->rol_usuario_id != 2) {
         header('location:account&login');
         return;
     }
@@ -13,30 +13,22 @@ if (!isset($_SESSION['rol']->rol_usuario_id)) {
 /* Verificamos que el usuario exista */
 $data = $_SESSION['rol']->id_usuario;
 
-$url = CurlController::api() . "relations?rel=estudios,curriculums,usuarios&type=estudio,curriculum,usuario&linkTo=id_usuario&equalTo=" . $data . "";
+
+$url = CurlController::api() . "relations?rel=reclutadores,usuarios&type=reclutador,usuario&linkTo=id_usuario&equalTo=" . $data . "";
 $method = "GET";
 $fields = array();
 $header = array();
-$verificarRel = CurlController::request($url, $method, $fields, $header);
+$verificarRelation = CurlController::request($url, $method, $fields, $header);
 
 
-if ($verificarRel->status == 404) {
 
-    header('location:account&candidate&datos_contacto');
+if ($verificarRelation->status == 404) {
+
+    header('location:account&recruiter&datos_empresa');
 };
 
 ?>
-<?php
 
-$data = $_SESSION['rol']->id_usuario;
-
-$url = CurlController::api() . "relations?rel=trabajos,curriculums,usuarios&type=trabajo,curriculum,usuario&linkTo=id_usuario&equalTo=" . $data . "";
-$method = "GET";
-$fields = array();
-$header = array();
-$verificarRel2 = CurlController::request($url, $method, $fields, $header);
-
-?>
 <div class="container grid-padre">
 
 
@@ -47,17 +39,16 @@ $verificarRel2 = CurlController::request($url, $method, $fields, $header);
                     <img src="images/avatar/usuario.png" alt="">
                 </div>
                 <div class="grid-body">
-                    <p><?php echo $verificarRel->results[0]->nombre  ?>
-                        <?php echo $verificarRel->results[0]->apellidos  ?></p>
-                    <p><?php echo $verificarRel->results[0]->estado  ?> <?php echo $verificarRel->results[0]->pais  ?>
+                    <p><?php echo $verificarRelation->results[0]->name_empresa ?></p>
+                    <p>
                     </p>
-                    <p>Email: <?php echo $verificarRel->results[0]->email  ?> </p>
-                    <p>Teléfono: <?php echo $verificarRel->results[0]->telefono  ?></p>
+                    <p>Email:<?php echo $verificarRelation->results[0]->email_empresa ?> </p>
+                    <p>Teléfono:<?php echo $verificarRelation->results[0]->telefono_empresa ?> </p>
                 </div>
             </div>
 
         </div>
-        <div class="grid-2">
+        <!--  <div class="grid-2">
             <div class="grid-inter">
                 <div class="grid-header">
                     <h6>Habilidades</h6>
@@ -80,52 +71,51 @@ $verificarRel2 = CurlController::request($url, $method, $fields, $header);
                 </div>
             </div>
 
-        </div>
+        </div> -->
 
     </div>
     <div class="grid-container">
         <div class="grid-3">
             <div class="grid-header">
-                <h6>Objetivo Profesional</h6>
-                <span>Puesto</span>
-                <p><?php echo $verificarRel->results[0]->puesto  ?></p>
+
+                <span>Pais: <?php echo $verificarRelation->results[0]->pais ?></span>
+                <p>Estado o ciudad: <?php echo $verificarRelation->results[0]->estado ?></p>
             </div>
             <div class="grid-body">
-                <span>Sueldo aproximado</span>
-                <p><?php echo $verificarRel->results[0]->sueldo_aprox  ?> MXN</p>
+                <span>Dirección: <?php echo $verificarRelation->results[0]->direccion ?></span>
+                <p>Codigó postal: <?php echo $verificarRelation->results[0]->codigo_postal ?> </p>
             </div>
         </div>
         <div class="grid-4">
             <div class="grid-header">
-                <h6>Grado Academico</h6>
-                <p><?php echo $verificarRel->results[0]->nombre_escuela  ?></p>
-                <p><?php echo $verificarRel->results[0]->title_carrera  ?></p>
-                <p><?php echo $verificarRel->results[0]->fecha_inicio  ?>-<?php echo $verificarRel->results[0]->fecha_termino  ?>
+                <h6>Datos Generales</h6>
+                <p>Giro de la empresa: <?php echo $verificarRelation->results[0]->giro_empresa ?> </p>
+                <p>Numero de Trabajadores : <?php echo $verificarRelation->results[0]->num_trabajadores ?></p>
+                <p>
+                    Descripción: <?php echo $verificarRelation->results[0]->descripcion ?>
                 </p>
             </div>
             <div class="grid-body">
-                <span>Estatus</span>
-                <p><?php echo $verificarRel->results[0]->nivel_academico  ?> </p>
+
             </div>
         </div>
         <div class="grid-5">
             <div class="grid-header">
-                <h6>Experiencia profesional</h6>
-                <p><?php echo $verificarRel2->results[0]->nombre_empresa  ?> </p>
-                <p><?php echo $verificarRel2->results[0]->puesto_de_trabajo  ?></p>
-                <p><?php echo $verificarRel2->results[0]->fecha_inicio  ?>-<?php echo $verificarRel2->results[0]->fecha_termino  ?>
+                <h6>Datos ante la ley</h6>
+                <p>Razón social: <?php echo $verificarRelation->results[0]->razon_social ?> </p>
+                <p>Rfc: <?php echo $verificarRelation->results[0]->rfc ?></p>
+                <p>
                 </p>
 
 
             </div>
             <div class="grid-body">
-                <span>Descripción</span>
-                <p><?php echo $verificarRel2->results[0]->descripcion_trabajo  ?> </p>
+
             </div>
         </div>
 
 
-        <div class="grid-7">
+        <!--   <div class="grid-7">
             <div class="grid-header">
                 <h6>Idiomas</h6>
                 <p>Describe los idiomas que conoces, incluso tu idioma nativo.</p>
@@ -151,6 +141,6 @@ $verificarRel2 = CurlController::request($url, $method, $fields, $header);
             <div class="grid-body">
                 <i class="bi bi-plus-circle-fill icon-agregar"></i> <span>Agregar</span>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

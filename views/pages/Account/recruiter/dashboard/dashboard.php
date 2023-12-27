@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-12 form-mobil" id="form-mobil">
                 <form class="custom-form hero-form " action="#" method="get" role="form">
                     <h6 class="text-white mb-3 text-center">
-                        Busca el trabajo de tus sueños</h6>
+                        Estas en perfil de empresa</h6>
 
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">

@@ -25,61 +25,78 @@
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_affected_rows($conn) == 0) { ?>
-            <script>
-                function modal() {
-                    Swal.fire({
-                        position: "top",
-                        icon: "error",
-                        title: "Algo salio mal, verifica tu email o codigo",
-                        showConfirmButton: false,
-                        timer: 1500,
+    <script>
+    function modal() {
+        Swal.fire({
+            position: "top",
+            icon: "error",
+            title: "Algo salio mal, verifica tu email o codigo",
+            showConfirmButton: false,
+            timer: 1500,
 
 
-                    });
-                }
-                modal();
-            </script>
-        <?php } else { ?>
+        });
+    }
+    modal();
+    </script>
+    <?php } else { ?>
 
-            <script>
-                function modal() {
-                    let timerInterval;
-                    Swal.fire({
-                        title: "Cargando tus datos de tus estudios",
-                        html: "Cerraré en <b></b> milisegundos.",
-                        timer: 2000,
-                        timerProgressBar: true,
-                        didOpen: () => {
-                            Swal.showLoading();
-                            const timer = Swal.getPopup().querySelector("b");
-                            timerInterval = setInterval(() => {
-                                timer.textContent = `${Swal.getTimerLeft()}`;
+    <script>
+    function modal() {
+        let timerInterval;
+        Swal.fire({
+            title: "Cargando tus datos de tus estudios",
+            html: "Cerraré en <b></b> milisegundos.",
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading();
+                const timer = Swal.getPopup().querySelector("b");
+                timerInterval = setInterval(() => {
+                    timer.textContent = `${Swal.getTimerLeft()}`;
 
-                            }, 100);
-                        },
-                        willClose: () => {
-                            clearInterval(timerInterval);
-                        }
-                    }).then((result) => {
-                        /* Read more about handling dismissals below */
-                        if (result.dismiss === Swal.DismissReason.timer) {
-                            console.log("I was closed by the timer");
-                        }
-                    });
-                }
-                modal();
-                fncFormatInputs();
+                }, 100);
+            },
+            willClose: () => {
+                clearInterval(timerInterval);
+            }
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+                console.log("I was closed by the timer");
+            }
+        });
+    }
+    modal();
+    fncFormatInputs();
 
-                setTimeout(() => {
-                    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                    location.href = `${urlEnvio}account&candidate&work_experiencie`;
-                }, "2500");
-            </script>
+    setTimeout(() => {
+        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+        location.href = `${urlEnvio}account&candidate&work_experiencie`;
+    }, "2500");
+    </script>
     <?php
 
         }
     }
     ?>
+    <?php
+/* Verificamos que el usuario exista */
+$data = $_SESSION['rol']->id_usuario;
+
+$url = CurlController::api() . "relations?rel=estudios,curriculums,usuarios&type=estudio,curriculum,usuario&linkTo=id_usuario&equalTo=" . $data . "";
+$method = "GET";
+$fields = array();
+$header = array();
+$verificarRel = CurlController::request($url, $method, $fields, $header);
+
+
+if ($verificarRel->status == 200) {
+
+    header('location:account&candidate&dashboard');
+};
+
+?>
     <div class="ps-my-account">
         <div class="container">
             <form class="custom-form hero-form form-login requires-validation" novalidate method="post" role="form">
@@ -118,7 +135,8 @@
                         <div class="input-control">
 
                             <p class="text-label">Titulo o carrera:</p>
-                            <input type="text" name="carrera" class="form-control input-group" placeholder="Administración de empresas" required>
+                            <input type="text" name="carrera" class="form-control input-group"
+                                placeholder="Administración de empresas" required>
 
                             <div class="valid-feedback">
                                 Válido
@@ -132,7 +150,8 @@
                         <div class="input-control">
 
                             <p class="text-label">Institución:</p>
-                            <input type="text" name="escuela" class="form-control input-group" placeholder="Unam" required>
+                            <input type="text" name="escuela" class="form-control input-group" placeholder="Unam"
+                                required>
 
 
                         </div>
@@ -143,7 +162,8 @@
                         <div class="input-control">
 
                             <p class="text-label">Año de incio:</p>
-                            <input type="text" name="fechaInicio" class="form-control input-group" placeholder="Año de inicio" required>
+                            <input type="text" name="fechaInicio" class="form-control input-group"
+                                placeholder="Año de inicio" required>
 
 
                             <div class="valid-feedback">
@@ -158,7 +178,8 @@
                         <div class="input-control">
 
                             <p class="text-label">Ultimo año:</p>
-                            <input type="text" name="fechaFinal" class="form-control input-group" placeholder="Ultimo año" required>
+                            <input type="text" name="fechaFinal" class="form-control input-group"
+                                placeholder="Ultimo año" required>
 
                             <div class="valid-feedback">
                                 Válido
