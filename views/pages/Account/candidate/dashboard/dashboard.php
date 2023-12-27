@@ -10,21 +10,17 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1"><i
-                                        class="bi-person custom-icon"></i></span>
+                                <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 
-                                <input type="text" name="job-title" class="form-control" placeholder="Job Title"
-                                    required>
+                                <input type="text" name="job-title" class="form-control" placeholder="Job Title" required>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="input-group">
-                                <span class="input-group-text" id="basic-addon2"><i
-                                        class="bi-geo-alt custom-icon"></i></span>
+                                <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
 
-                                <input type="text" name="job-location" id="job-location" class="form-control"
-                                    placeholder="Location" required>
+                                <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Location" required>
                             </div>
                         </div>
 
@@ -52,21 +48,17 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1"><i
-                                        class="bi-person custom-icon"></i></span>
+                                <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 
-                                <input type="text" name="job-title" id="job-title" class="form-control"
-                                    placeholder="Job Title" required>
+                                <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Job Title" required>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="input-group">
-                                <span class="input-group-text" id="basic-addon2"><i
-                                        class="bi-geo-alt custom-icon"></i></span>
+                                <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
 
-                                <input type="text" name="job-location" id="job-location" class="form-control"
-                                    placeholder="Location" required>
+                                <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Location" required>
                             </div>
                         </div>
 
@@ -156,11 +148,11 @@
 
 </div>
 <script>
-let btnForm = document.getElementById("busquedaMobil");
-let btnHidden = document.getElementById("form-mobil");
+    let btnForm = document.getElementById("busquedaMobil");
+    let btnHidden = document.getElementById("form-mobil");
 
-btnForm.addEventListener("click", () => {
-    btnHidden.classList.add("aparecerInput");
-    btnForm.style.display = 'none';
-});
+    btnForm.addEventListener("click", () => {
+        btnHidden.classList.add("aparecerInput");
+        btnForm.style.display = 'none';
+    });
 </script>

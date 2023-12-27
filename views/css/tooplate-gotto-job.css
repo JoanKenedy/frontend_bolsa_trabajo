@@ -288,7 +288,16 @@ nav[aria-label="breadcrumb"] {
   margin: 0 7px;
   padding-left: 10px;
 }
-
+.text-label2 {
+  color: #000066;
+  font-size: 1.1em;
+  margin: 0 7px;
+  padding-left: 10px;
+  font-weight: 800;
+}
+.textVacante {
+  color: #deb100;
+}
 .input-group-text {
   background: transparent;
   border: 0;
@@ -323,6 +332,12 @@ nav[aria-label="breadcrumb"] {
 #btn-color {
   border: none;
   color: #deb100;
+  font-size: 1.1em;
+}
+#btn-register {
+  border: none;
+  background-color: #deb100;
+  color: #fff;
   font-size: 1.1em;
 }
 .custom-form .form-control {
@@ -924,6 +939,16 @@ textarea {
   padding-top: 0px;
   padding-bottom: 15px;
 }
+.section-space .container form {
+  border-radius: 7px;
+  padding: 10px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  width: 100%;
+  margin: auto;
+}
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {
   .container-btn-sociales {
@@ -1109,11 +1134,11 @@ textarea {
     margin: 7px 0px;
   }
   .container-btn-postular {
-    width: 100%;
+    width: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start !important;
+    text-align: left;
   }
   .job-titulo {
     display: flex;
