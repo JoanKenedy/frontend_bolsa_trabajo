@@ -744,6 +744,9 @@ textarea {
   text-align: center;
   font-size: 1.2em;
 }
+.grid-body button {
+  border: 0 !important;
+}
 
 .grid-header p,
 .grid-body p {
@@ -948,6 +951,23 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
   width: 100%;
   margin: auto;
+}
+.container-idioma {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 10px auto;
+  text-align: center;
+}
+.item-container-idioma {
+  border-radius: 7px;
+  padding: 10px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  width: 100%;
 }
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {

@@ -52,23 +52,23 @@ class UsersController
 
                     if ($sendEmail == 'ok') {
 ?>
-<script>
-function modal() {
+                        <script>
+                            function modal() {
 
-    Swal.fire({
-        position: "top",
-        icon: "success",
-        title: " Se ha registrado con éxito, se te ha enviado un correo al que ingresaste , verifica tu cuenta solo dando click a el enlace.",
-        showConfirmButton: false,
+                                Swal.fire({
+                                    position: "top",
+                                    icon: "success",
+                                    title: " Se ha registrado con éxito, se te ha enviado un correo al que ingresaste , verifica tu cuenta solo dando click a el enlace.",
+                                    showConfirmButton: false,
 
 
 
-    });
-}
-modal();
-fncFormatInputs();
-</script>
-<?php
+                                });
+                            }
+                            modal();
+                            fncFormatInputs();
+                        </script>
+                    <?php
 
                     } else {
                         echo '<div class="alert alert-danger">
@@ -138,22 +138,22 @@ fncFormatInputs();
                         }
                     } else {
                     ?>
-<script>
-function modal() {
-    Swal.fire({
-        position: "top",
-        icon: "error",
-        title: "Tu cuenta aun no esta verificada, es importante que vallas a tu correo y confirmes con un click",
-        showConfirmButton: false,
+                        <script>
+                            function modal() {
+                                Swal.fire({
+                                    position: "top",
+                                    icon: "error",
+                                    title: "Tu cuenta aun no esta verificada, es importante que vallas a tu correo y confirmes con un click",
+                                    showConfirmButton: false,
 
 
 
-    });
-}
-modal();
-fncFormatInputs();
-</script>
-<?php
+                                });
+                            }
+                            modal();
+                            fncFormatInputs();
+                        </script>
+                <?php
                     }
                 } else {
                     echo '<div class="alert alert-danger">Esta cuenta de email no existe en nuestro sistema.</div> <script>
@@ -201,41 +201,41 @@ fncFormatInputs();
 
                 ?>
 
-<script>
-function modal() {
-    let timerInterval;
-    Swal.fire({
-        title: "Cargando tus datos",
-        html: "Cerraré en <b></b> milisegundos.",
-        timer: 2000,
-        timerProgressBar: true,
-        didOpen: () => {
-            Swal.showLoading();
-            const timer = Swal.getPopup().querySelector("b");
-            timerInterval = setInterval(() => {
-                timer.textContent = `${Swal.getTimerLeft()}`;
+                <script>
+                    function modal() {
+                        let timerInterval;
+                        Swal.fire({
+                            title: "Cargando tus datos",
+                            html: "Cerraré en <b></b> milisegundos.",
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading();
+                                const timer = Swal.getPopup().querySelector("b");
+                                timerInterval = setInterval(() => {
+                                    timer.textContent = `${Swal.getTimerLeft()}`;
 
-            }, 100);
-        },
-        willClose: () => {
-            clearInterval(timerInterval);
-        }
-    }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-            console.log("I was closed by the timer");
-        }
-    });
-}
-modal();
-fncFormatInputs();
+                                }, 100);
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval);
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                console.log("I was closed by the timer");
+                            }
+                        });
+                    }
+                    modal();
+                    fncFormatInputs();
 
-setTimeout(() => {
-    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-    location.href = `${urlEnvio}account&candidate&profesion`;
-}, "2500");
-</script>
-<?php
+                    setTimeout(() => {
+                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                        location.href = `${urlEnvio}account&candidate&profesion`;
+                    }, "2500");
+                </script>
+                <?php
 
             } else {
                 echo '<div class="alert alert-danger">Algo paso vuelva a intentar</div> <script>
@@ -244,6 +244,248 @@ setTimeout(() => {
             }
         }
     }
+    public function datosIdioma()
+    {
+        $id_usuario = $_SESSION['rol']->id_usuario;
+        $url = CurlController::api() . 'relations?rel=curriculums,usuarios&type=curriculum,usuario&linkTo=id_usuario&equalTo=' . $id_usuario . '';
+        $method = 'GET';
+        $fields = array();
+        $header = array();
+        $datosIdioma = CurlController::request($url, $method, $fields, $header);
+        $id_curriculum_idioma = $datosIdioma->results[0]->id_curriculum;
+        if ($datosIdioma->status == 200) {
+            if (isset($_POST['datos_idioma'])) {
 
- 
+                $id_user = $_SESSION['rol']->id_usuario;
+                $id_usuario_idioma = $id_user;
+                $id_curriculum_idioma = $id_curriculum_idioma;
+                $title_idioma = $_POST['title_idioma'];
+                $nivel_idioma = $_POST['nivel_idioma'];
+
+
+                $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                $sql = "INSERT INTO idiomas ( `id_usuario_idioma`, `id_curriculum_idioma`,`title_idioma`, `nivel_idioma`)
+                 VALUES ('$id_usuario_idioma','$id_curriculum_idioma','$title_idioma','$nivel_idioma')";
+
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_affected_rows($conn) == 0) { ?>
+                    <script>
+                        function modal() {
+                            Swal.fire({
+                                position: "top",
+                                icon: "error",
+                                title: "Algo salio mal, verifiquemos que fue",
+                                showConfirmButton: false,
+                                timer: 1500,
+
+
+                            });
+                        }
+                        modal();
+                    </script>
+                <?php } else { ?>
+
+                    <script>
+                        function modal() {
+                            let timerInterval;
+                            Swal.fire({
+                                title: "Cargando tus datos de idiomas",
+                                html: "Ya iremos a tu CV",
+                                timer: 2000,
+                                timerProgressBar: true,
+                                didOpen: () => {
+                                    Swal.showLoading();
+                                    const timer = Swal.getPopup().querySelector("b");
+                                    timerInterval = setInterval(() => {
+                                        timer.textContent = `${Swal.getTimerLeft()}`;
+
+                                    }, 100);
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval);
+                                }
+                            }).then((result) => {
+                                /* Read more about handling dismissals below */
+                                if (result.dismiss === Swal.DismissReason.timer) {
+                                    console.log("I was closed by the timer");
+                                }
+                            });
+                        }
+                        modal();
+                        fncFormatInputs();
+
+                        setTimeout(() => {
+                            let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                        }, "2500");
+                    </script>
+                <?php
+
+                }
+            }
+        }
+    }
+    public function datosHabilidad()
+    {
+        $id_usuario = $_SESSION['rol']->id_usuario;
+        $url = CurlController::api() . 'relations?rel=curriculums,usuarios&type=curriculum,usuario&linkTo=id_usuario&equalTo=' . $id_usuario . '';
+        $method = 'GET';
+        $fields = array();
+        $header = array();
+        $datosHabilidad = CurlController::request($url, $method, $fields, $header);
+        $id_curriculum_habilidad = $datosHabilidad->results[0]->id_curriculum;
+        if ($datosHabilidad->status == 200) {
+            if (isset($_POST['datos_habilidad'])) {
+
+                $id_user = $_SESSION['rol']->id_usuario;
+                $id_usuario_habilidad = $id_user;
+                $id_curriculum_habilidad = $id_curriculum_habilidad;
+                $title_habilidad = $_POST['title_habilidad'];
+
+
+                $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                $sql = "INSERT INTO habilidades ( `id_usuario_habilidad`, `id_curriculum_habilidad`,`title_habilidad`)
+                 VALUES ('$id_usuario_habilidad','$id_curriculum_habilidad','$title_habilidad')";
+
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_affected_rows($conn) == 0) { ?>
+                    <script>
+                        function modal() {
+                            Swal.fire({
+                                position: "top",
+                                icon: "error",
+                                title: "Algo salio mal, verifiquemos que fue",
+                                showConfirmButton: false,
+                                timer: 1500,
+
+
+                            });
+                        }
+                        modal();
+                    </script>
+                <?php } else { ?>
+
+                    <script>
+                        function modal() {
+                            let timerInterval;
+                            Swal.fire({
+                                title: "Cargando tus habilidades",
+                                html: "Ya iremos a tu CV",
+                                timer: 2000,
+                                timerProgressBar: true,
+                                didOpen: () => {
+                                    Swal.showLoading();
+                                    const timer = Swal.getPopup().querySelector("b");
+                                    timerInterval = setInterval(() => {
+                                        timer.textContent = `${Swal.getTimerLeft()}`;
+
+                                    }, 100);
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval);
+                                }
+                            }).then((result) => {
+                                /* Read more about handling dismissals below */
+                                if (result.dismiss === Swal.DismissReason.timer) {
+                                    console.log("I was closed by the timer");
+                                }
+                            });
+                        }
+                        modal();
+                        fncFormatInputs();
+
+                        setTimeout(() => {
+                            let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                        }, "2500");
+                    </script>
+                <?php
+
+                }
+            }
+        }
+    }
+    public function datosEspecialidad()
+    {
+        $id_usuario = $_SESSION['rol']->id_usuario;
+        $url = CurlController::api() . 'relations?rel=curriculums,usuarios&type=curriculum,usuario&linkTo=id_usuario&equalTo=' . $id_usuario . '';
+        $method = 'GET';
+        $fields = array();
+        $header = array();
+        $datosEspecialidad = CurlController::request($url, $method, $fields, $header);
+        $id_curriculum_especialidad = $datosEspecialidad->results[0]->id_curriculum;
+        if ($datosEspecialidad->status == 200) {
+            if (isset($_POST['datos_especialidad'])) {
+
+                $id_user = $_SESSION['rol']->id_usuario;
+                $id_usuario_especialidad = $id_user;
+                $id_curriculum_especialidad = $id_curriculum_especialidad;
+                $title_especialidad = $_POST['title_especialidad'];
+
+
+                $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                $sql = "INSERT INTO especialidades ( `id_usuario_especialidad`, `id_curriculum_especialidad`, `title_especialidad`)
+                 VALUES ('$id_usuario_especialidad','$id_curriculum_especialidad','$title_especialidad')";
+
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_affected_rows($conn) == 0) { ?>
+                    <script>
+                        function modal() {
+                            Swal.fire({
+                                position: "top",
+                                icon: "error",
+                                title: "Algo salio mal, verifiquemos que fue",
+                                showConfirmButton: false,
+                                timer: 1500,
+
+
+                            });
+                        }
+                        modal();
+                    </script>
+                <?php } else { ?>
+
+                    <script>
+                        function modal() {
+                            let timerInterval;
+                            Swal.fire({
+                                title: "Cargando tus especialidades",
+                                html: "Ya iremos a tu CV",
+                                timer: 2000,
+                                timerProgressBar: true,
+                                didOpen: () => {
+                                    Swal.showLoading();
+                                    const timer = Swal.getPopup().querySelector("b");
+                                    timerInterval = setInterval(() => {
+                                        timer.textContent = `${Swal.getTimerLeft()}`;
+
+                                    }, 100);
+                                },
+                                willClose: () => {
+                                    clearInterval(timerInterval);
+                                }
+                            }).then((result) => {
+                                /* Read more about handling dismissals below */
+                                if (result.dismiss === Swal.DismissReason.timer) {
+                                    console.log("I was closed by the timer");
+                                }
+                            });
+                        }
+                        modal();
+                        fncFormatInputs();
+
+                        setTimeout(() => {
+                            let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                        }, "2500");
+                    </script>
+<?php
+
+                }
+            }
+        }
+    }
 }
