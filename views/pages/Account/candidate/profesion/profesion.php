@@ -91,10 +91,7 @@ $header = array();
 $verificarRel = CurlController::request($url, $method, $fields, $header);
 
 
-if ($verificarRel->status == 200) {
 
-    header('location:account&candidate&dashboard');
-};
 
 ?>
     <div class="ps-my-account">

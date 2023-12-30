@@ -732,6 +732,7 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(126, 120, 120, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  position: relative;
 }
 .grid-header img {
   display: block;
@@ -771,6 +772,7 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  position: relative;
 }
 .grid-3 {
   border-radius: 7px;
@@ -779,6 +781,7 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  position: relative;
 }
 .grid-4 {
   border-radius: 7px;
@@ -787,6 +790,7 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  position: relative;
 }
 .grid-5 {
   border-radius: 7px;
@@ -795,6 +799,7 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  position: relative;
 }
 .grid-6 {
   border-radius: 7px;
@@ -803,6 +808,7 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  position: relative;
 }
 .grid-7 {
   border-radius: 7px;
@@ -811,6 +817,7 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  position: relative;
 }
 .grid-8 {
   border-radius: 7px;
@@ -819,6 +826,7 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  position: relative;
 }
 .grid-9 {
   border-radius: 7px;
@@ -827,9 +835,36 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  position: relative;
 }
 .grid-container p {
   font-size: 1.1em;
+}
+.grid-1:hover .editar {
+  opacity: 1;
+  transition: all 0.5s;
+}
+.img-redonda {
+  border-radius: 50% !important;
+  width: 150px !important;
+  height: 150px !important;
+  object-fit: cover;
+}
+.editar {
+  border: 0 !important;
+  padding: 4px !important;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.editar span {
+  color: #deb100;
+}
+.editar .icon-editar {
+  color: #deb100;
+  margin-right: 5px;
 }
 .icon-agregar {
   color: #deb100;
