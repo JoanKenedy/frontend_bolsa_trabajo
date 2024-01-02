@@ -28,7 +28,8 @@
                         <div class="input-control">
 
                             <p class="text-label">Nombre de la empresa o negocio:</p>
-                            <input type="text" name="nameEmpresa" class="form-control input-group" placeholder="ej: Grupo Bimbo" required>
+                            <input type="text" name="nameEmpresa" class="form-control input-group"
+                                placeholder="ej: Grupo Bimbo" required>
 
                             <div class="valid-feedback">
                                 Válido
@@ -42,7 +43,8 @@
                         <div class="input-control">
 
                             <p class="text-label">Teléfono empresarial o de contacto:</p>
-                            <input type="text" name="telContacto" class="form-control input-group" placeholder="Teléfono empresarial o contacto principal" required>
+                            <input type="text" name="telContacto" class="form-control input-group"
+                                placeholder="Teléfono empresarial o contacto principal" required>
 
                             <div class="valid-feedback">
                                 Válido
@@ -56,7 +58,8 @@
                         <div class="input-control">
 
                             <p class="text-label">Email empresarial o de contacto:</p>
-                            <input type="email" name="emailContacto" class="form-control input-group" placeholder="Email " required>
+                            <input type="email" name="emailContacto" class="form-control input-group"
+                                placeholder="Email " required>
 
                             <div class="valid-feedback">
                                 Válido
@@ -106,7 +109,8 @@
                         <div class="input-control">
 
                             <p class="text-label">Estado, ciudad o provincia:</p>
-                            <input type="text" name="estadoEmpresa" class="form-control input-group" placeholder="Estado o Provincia" required>
+                            <input type="text" name="estadoEmpresa" class="form-control input-group"
+                                placeholder="Estado o Provincia" required>
 
                             <div class="valid-feedback">
                                 Válido
@@ -120,7 +124,8 @@
                         <div class="input-control">
 
                             <p class="text-label">Codigó postal:</p>
-                            <input type="text" name="postalEmpresa" class="form-control input-group" placeholder="Codigó postal" required>
+                            <input type="text" name="postalEmpresa" class="form-control input-group"
+                                placeholder="Codigó postal" required>
 
                             <div class="valid-feedback">
                                 Válido
@@ -134,7 +139,8 @@
                         <div class="input-control">
 
                             <p class="text-label">Dirección:</p>
-                            <input type="text" name="direccionEmpresa" class="form-control input-group" placeholder="Dirección Completa" required>
+                            <input type="text" name="direccionEmpresa" class="form-control input-group"
+                                placeholder="Dirección Completa" required>
 
                             <div class="valid-feedback">
                                 Válido

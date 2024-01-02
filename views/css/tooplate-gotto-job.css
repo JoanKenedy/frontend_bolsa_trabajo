@@ -844,6 +844,60 @@ textarea {
   opacity: 1;
   transition: all 0.5s;
 }
+.grid-3:hover .editar {
+  opacity: 1 !important;
+  transition: all 0.5s !important;
+}
+.grid-4:hover .editar {
+  opacity: 1 !important;
+  transition: all 0.5s !important;
+}
+.grid-5:hover .editar {
+  opacity: 1 !important;
+  transition: all 0.5s !important;
+}
+.item-container-idioma:hover .editar {
+  opacity: 1 !important;
+  transition: all 0.5s !important;
+}
+.item-container-habilidades:hover .editar {
+  opacity: 1 !important;
+  transition: all 0.5s !important;
+}
+.container-idioma-edit {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.item-container-idioma-edit:hover .editar {
+  opacity: 1 !important;
+  transition: all 0.5s !important;
+}
+.item-container-idioma-edit {
+  position: relative;
+  border-radius: 7px;
+  padding: 10px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05);
+}
+.item-container-idioma-edit .editar {
+  border: 0 !important;
+  padding: 4px !important;
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.item-container-idioma-edit .editar .icon-editar {
+  color: #deb100;
+  margin-right: 5px;
+}
+
 .img-redonda {
   border-radius: 50% !important;
   width: 150px !important;
@@ -859,6 +913,7 @@ textarea {
   opacity: 0;
   transition: all 0.5s;
 }
+
 .editar span {
   color: #deb100;
 }
@@ -987,13 +1042,31 @@ textarea {
   width: 100%;
   margin: auto;
 }
+.container-habilidades {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  margin: 10px auto;
+  position: relative;
+}
+.item-container-habilidades {
+  border-radius: 7px;
+  padding: 10px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
+    0 1px 6px 0 rgba(0, 29, 124, 0.05);
+  width: 100%;
+  position: relative;
+}
 .container-idioma {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 10px;
   margin: 10px auto;
-  text-align: center;
+  position: relative;
 }
 .item-container-idioma {
   border-radius: 7px;
@@ -1003,9 +1076,91 @@ textarea {
     0 1px 6px 0 rgba(0, 29, 124, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.12),
     0 1px 6px 0 rgba(0, 29, 124, 0.05);
   width: 100%;
+  position: relative;
 }
+.container-edit {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-edit .modal-dialog {
+  width: 100%;
+}
+.container-vacante {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto !important;
+  gap: 7px;
+  border-radius: var(--border-radius-small);
+  margin-bottom: 10px;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+
+.container-vacante:hover {
+  background: var(--white-color);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+.job-vacante {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {
+  .container-vacante {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto !important;
+    gap: 7px;
+    border-radius: var(--border-radius-small);
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: all 0.5s ease;
+    gap: 0px;
+    width: 100%;
+  }
+
+  .container-vacante:hover {
+    background: var(--white-color);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  }
+
+  .job-vacante {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+  .container-idioma-edit {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .container-idioma {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 10px auto;
+    position: relative;
+  }
   .container-btn-sociales {
     display: flex;
     flex-direction: row;
@@ -1888,7 +2043,7 @@ input[type="radio"] {
 }
 
 .job-section-btn-wrap {
-  margin-left: auto;
+  display: flex;
 }
 
 /*---------------------------------------

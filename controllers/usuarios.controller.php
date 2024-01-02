@@ -601,7 +601,7 @@ setTimeout(() => {
                 $id_usuario_certificacion = $id_user;
                 $id_curriculum_certificacion = $id_curriculum_certificacion;
                 $nombre_certificacion = $_POST['title_certificacion'];
-                $descripcion = $_POST['leve_descripcion'];
+              
                
                 $carpeta_final = "views/images/descargas/"; 
                 $nombre_documento = basename($_FILES['doc_file']['name']);
@@ -612,8 +612,8 @@ setTimeout(() => {
 
                           $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
-                $sql = "INSERT INTO cursos_certificaciones ( `id_usuario_certificacion`, `id_curriculum_certificacion`, `nombre_certificacion`, `enlace`, `descripcion` )
-                 VALUES ('$id_usuario_certificacion','$id_curriculum_certificacion','$nombre_certificacion', '$nombre_documento','$descripcion')";
+                $sql = "INSERT INTO cursos_certificaciones ( `id_usuario_certificacion`, `id_curriculum_certificacion`, `nombre_certificacion`, `enlace` )
+                 VALUES ('$id_usuario_certificacion','$id_curriculum_certificacion','$nombre_certificacion', '$nombre_documento')";
 
                 $result = mysqli_query($conn, $sql);
                     if (mysqli_affected_rows($conn) == 0) {
@@ -766,6 +766,541 @@ setTimeout(() => {
 
             }
         }
+    }
+
+     public function editarCurriculumPerfil($verificarCv3){
+       
+        if($verificarCv3->status == 200){
+           if (isset($_POST['datos_edit_contacto'])) {
+            $genero = $_POST['regEditGenero'];
+            $pais = $_POST['regEditPais'];
+            $estado = $_POST['regEditEstado'];
+            $puesto = $_POST['regEditPuesto'];
+            $sueldo = $_POST['regEditSueldo'];
+            $fecha_nacimiento = intval($_POST['regEditNacimiento']);
+             $fecha = date('Y-m-d', strtotime($fecha_nacimiento));
+                
+           
+                $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                $sql = "UPDATE curriculums SET sexo='".$genero."',fecha_nacimiento='".$fecha."',pais='".$pais."',estado='".$estado."', puesto='".$puesto."', sueldo_aprox='".$sueldo."' WHERE id_curriculum = '".$verificarCv3->results[0]->id_curriculum ."'";
+
+                      $result = mysqli_query($conn, $sql);
+                     if (mysqli_affected_rows($conn) == 0) {
+                      ?>
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
+
+
+    });
+}
+modal();
+</script>
+<?php } else { ?>
+
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando datos de perfil",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
+
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&candidate&curriculum`;
+}, "2500");
+</script>
+<?php
+
+
+                        
+                    }
+
+             
+            }
+        }
+         
+
+     }
+     public function editarEstudioPerfil($verificarCv4){
+         if($verificarCv4->status == 200){
+           if (isset($_POST['datos_edit_estudio'])) {
+            $nivel_academico = $_POST['nivelEditAcademico'];
+            $title_carrera = $_POST['editCarrera'];
+            $escuela = $_POST['editEscuela'];
+            $fecha1 = $_POST['fechaEditInicio'];
+            $fecha2= $_POST['fechaEditFinal'];
+          
+                
+           
+                $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                $sql = "UPDATE estudios SET nivel_academico='".$nivel_academico."',title_carrera='".$title_carrera."',nombre_escuela='".$escuela."',fecha_inicio='".$fecha1."', fecha_termino='".$fecha2."' WHERE id_estudio = '".$verificarCv4->results[0]->id_estudio ."'";
+
+                      $result = mysqli_query($conn, $sql);
+                     if (mysqli_affected_rows($conn) == 0) {
+                      ?>
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
+
+
+    });
+}
+modal();
+</script>
+<?php } else { ?>
+
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando datos de tus estudios",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
+
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&candidate&curriculum`;
+}, "2500");
+</script>
+<?php
+
+
+                        
+                    }
+
+             
+            }
+        }
+        
+     }
+     public function editarTrabajoPerfil($verificarCv5){
+        if($verificarCv5->status == 200){
+           if (isset($_POST['datos_edit_trabajo'])) {
+            $name_empresa = $_POST['nombreEditEmpresa'];
+            $puesto_trabajo = $_POST['puestoEditTrabajo'];
+            $incio = $_POST['inicioEditTrabajo'];
+            $termino = $_POST['finalEditTrabajo'];
+            $texto= $_POST['descripcionEditTrabajo'];
+                $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                $sql = "UPDATE trabajos SET nombre_empresa='".$name_empresa."',puesto_de_trabajo='".$puesto_trabajo."',fecha_inicio='".$incio."',fecha_termino='".$termino."', descripcion_trabajo='".$texto."' WHERE id_trabajo = '".$verificarCv5->results[0]->id_trabajo ."'";
+
+                      $result = mysqli_query($conn, $sql);
+                     if (mysqli_affected_rows($conn) == 0) {
+                      ?>
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
+
+
+    });
+}
+modal();
+</script>
+<?php } else { ?>
+
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando datos de tu trabajo",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
+
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&candidate&curriculum`;
+}, "2500");
+</script>
+<?php
+
+
+                        
+                    }
+
+             
+            }
+        }
+        
+     }
+
+     public function editEspecialidadPerfil($verificarEspecialidad){
+          if($verificarEspecialidad->status == 200){
+           if (isset($_POST['datos_edit_especialidad'])) {
+            $title = $_POST['title_edit_especialidad'];
+                $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                $sql = "UPDATE especialidades SET title_especialidad='".$title."' WHERE id_especialidad = '".$verificarEspecialidad->results[0]->id_especialidad ."'";
+
+                      $result = mysqli_query($conn, $sql);
+                     if (mysqli_affected_rows($conn) == 0) {
+                      ?>
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
+
+
+    });
+}
+modal();
+</script>
+<?php } else { ?>
+
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando tu especialidad",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
+
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&candidate&curriculum`;
+}, "2500");
+</script>
+<?php
+
+
+                        
+                    }
+
+             
+            }
+        }
+     }
+     public function editHabilidadPerfil($verificarHabilidad){
+         if($verificarHabilidad->status == 200){
+           if (isset($_POST['datos_edit_habilidad'])) {
+            $title = $_POST['title_edit_habilidad'];
+                $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                $sql = "UPDATE habilidades SET title_habilidad='".$title."' WHERE id_habilidad = '".$verificarHabilidad->results[0]->id_habilidad ."'";
+
+                      $result = mysqli_query($conn, $sql);
+                     if (mysqli_affected_rows($conn) == 0) {
+                      ?>
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
+
+
+    });
+}
+modal();
+</script>
+<?php } else { ?>
+
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando tu habilidad",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
+
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&candidate&curriculum`;
+}, "2500");
+</script>
+<?php
+
+
+                        
+                    }
+
+             
+            }
+        }
+     }
+
+    public function editIdiomaPerfil($verificarIdioma){
+        if($verificarIdioma->status == 200){
+           if (isset($_POST['datos_edit_idioma'])) {
+            $title = $_POST['title_edit_idioma'];
+            $nivel = $_POST['nivel_edit_idioma'];
+                $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                $sql = "UPDATE idiomas SET title_idioma='".$title."',nivel_idioma='".$nivel."' WHERE id_idioma = '".$verificarIdioma->results[0]->id_idioma ."'";
+
+                      $result = mysqli_query($conn, $sql);
+                     if (mysqli_affected_rows($conn) == 0) {
+                      ?>
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
+
+
+    });
+}
+modal();
+</script>
+<?php } else { ?>
+
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando tu idioma",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
+
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&candidate&curriculum`;
+}, "2500");
+</script>
+<?php
+
+
+                        
+                    }
+
+             
+            }
+        }
+    } 
+    public function editCertificacionPerfil($verificarCertificacion){
+        if($verificarCertificacion->status == 200){
+            if(isset($_FILES['doc_edit_file'])){
+                $nombre = $_POST['title_edit_certificacion'];
+                $carpeta_fin = "views/images/descargas/"; 
+                $nombre_docu = basename($_FILES['doc_edit_file']['name']);
+                $extensions = strtolower(pathinfo($nombre_docu, PATHINFO_EXTENSION));
+                   if($extensions == "pdf" || $extensions == "doc" || $extensions == 'docx'){
+                   
+                    if(move_uploaded_file($_FILES['doc_edit_file']['tmp_name'], $carpeta_fin . $nombre_docu)){
+                           $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                $sql = "UPDATE cursos_certificaciones SET nombre_certificacion='".$nombre."',enlace='".$nombre_docu."' WHERE id_certificacion = '".$verificarCertificacion->results[0]->id_certificacion ."' ";
+
+                      $result = mysqli_query($conn, $sql);
+                    if (mysqli_affected_rows($conn) == 0) {
+                      ?>
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
+
+
+    });
+}
+modal();
+</script>
+<?php } else { ?>
+
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando tu certifiacion",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
+
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&candidate&curriculum`;
+}, "2500");
+</script>
+<?php
+
+
+                        
+                    }
+
+                    }
+
+            }
+        }
+        }
+         
+        
     }
     
 }

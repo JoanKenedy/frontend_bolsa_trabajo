@@ -5,16 +5,16 @@
         </div>
         <?php if (isset($_SESSION['rol'])) : ?>
 
-            <div class="cerrar">
-                <div class="perfil-photo">
-                    <img src="images/avatar/usuario.png" alt="" class="img_perfil">
-                    <p><?php echo $_SESSION['rol']->nombre ?></p>
-                </div>
-                <div class="perfil-photo">
-                    <a href="<?php echo $path ?>account&logout">Salir</a>
-                </div>
-
+        <div class="cerrar">
+            <div class="perfil-photo">
+                <img src="images/avatar/usuario.png" alt="" class="img_perfil">
+                <p><?php echo $_SESSION['rol']->nombre ?></p>
             </div>
+            <div class="perfil-photo">
+                <a href="<?php echo $path ?>account&logout">Salir</a>
+            </div>
+
+        </div>
         <?php endif; ?>
     </div>
 
