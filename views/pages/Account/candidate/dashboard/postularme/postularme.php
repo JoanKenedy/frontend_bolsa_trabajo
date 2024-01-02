@@ -6,12 +6,12 @@ $potularmeVacante->potularmeVacante();
     <div class="modal-content px-3 py-3">
         <form class="" novalidate method="post" role="form">
             <?php
-                $id_data = $_GET['vacante'];
-                $data = $_SESSION['rol']->id_usuario;
-              ?>
+            $id_data = $_GET['vacante'];
+            $data = $_SESSION['rol']->id_usuario;
+            ?>
 
             <input type="hidden" value="<?php echo CurlController::api() ?>" id="urlApi">
-            <input type="hidden" value="<?php echo $id_data?>" name="id_vacante">
+            <input type="hidden" value="<?php echo $id_data ?>" name="id_vacante">
 
             <div class="row ">
                 <h6 class="text-center text-dorado">Da click en enviar cv y ya estaras correctamente postulado.</h6>
