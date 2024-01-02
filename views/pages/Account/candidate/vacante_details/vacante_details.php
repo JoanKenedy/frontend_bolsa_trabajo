@@ -2,11 +2,13 @@
     <?php
      $id_vacante = $_GET['id_vacante'];
       $data = $_SESSION['rol']->id_usuario;
+    
                     $url = CurlController::api() . "crear_vacantes?linkTo=id_vacante&equalTo=" . $id_vacante . "&token=no";
                     $method = "GET";
                     $fields = array();
                     $header = array();
                     $verificarVacante = CurlController::request($url, $method, $fields, $header);
+                    
           
                
                   
@@ -99,9 +101,10 @@
 
 
                         <div class="d-flex justify-content-center flex-wrap mt-5 border-top pt-4">
-                            <a href="#" class="custom-btn btn mt-2">Postularme</a>
+                            <a class="custom-btn btn mt-2"
+                                href="<?php echo $path ?>account&candidate&dashboard&postularme?vacante=<?php echo $verificarVacante->results[0]->id_vacante  ?>">Postularme</a>
 
-                            <a href="#" class="custom-btn custom-border-btn btn mt-2 ms-lg-4 ms-3">Regresar</a>
+                            <a href="" class="custom-btn custom-border-btn btn mt-2 ms-lg-4 ms-3">Regresar</a>
 
                             <div class="job-detail-share d-flex align-items-center">
                                 <p class="mb-0 me-lg-4 me-3">Share:</p>

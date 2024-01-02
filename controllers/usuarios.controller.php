@@ -1302,5 +1302,81 @@ setTimeout(() => {
          
         
     }
+     
+    public function potularmeVacante(){
+           if (isset($_POST['btn_postular'])) {
+            $id_vacante = $_POST['id_vacante'];
+            $id_user = $_SESSION['rol']->id_usuario;
+           
+                $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+                  $sql = "INSERT INTO postulaciones ( `id_vacante_postulacion`, `id_usuario_postulacion` )
+                 VALUES ('$id_vacante','$id_user')";
+
+                      $result = mysqli_query($conn, $sql);
+                     if (mysqli_affected_rows($conn) == 0) {
+                      ?>
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
+
+
+    });
+}
+modal();
+</script>
+<?php } else { ?>
+
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Estamos enviando tu postulacion y tu Cv.",
+        html: "Gracias",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
+
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&candidate&dashboard`;
+}, "2500");
+</script>
+<?php
+
+
+                        
+                    }
+
+             
+            }
+        
+
+          
+    }
     
 }
