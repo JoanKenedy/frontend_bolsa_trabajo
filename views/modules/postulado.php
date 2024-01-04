@@ -1,0 +1,1 @@
+  <a class="custom-btn btn mt-2" data-bs-toggle="modal" data-bs-target="#postulado">Ya estas postulado</a>

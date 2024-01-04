@@ -99,15 +99,25 @@
 
 
                         <div class="d-flex justify-content-center flex-wrap mt-5 border-top pt-4">
+
                             <?php
                             $id_vacante = $_GET['id_vacante'];
                             $data = $_SESSION['rol']->id_usuario;
 
-                            $url = CurlController::api() . "relations?rel=postulaciones,crear_vacantes,usuarios&type=postulacion,vacante,usuario&linkTo=id_vacante&equalTo=" . $id_vacante . "&token=no";
+                            $url = CurlController::api() . "postulaciones?linkTo=id_vacante_postulacion&equalTo=" . $id_vacante . "&token=no";
                             $method = "GET";
                             $fields = array();
                             $header = array();
-                            $verificarSiPostulacion = CurlController::request($url, $method, $fields, $header);
+                            $verificarVacante2 = CurlController::request($url, $method, $fields, $header);
+                            echo '<pre>';
+                            print_r($verificarVacante2);
+                            echo '</pre>';
+                            if ($verificarVacante2->status == 200) {
+                                $map = $verificarVacante2->results;
+                                $id = $verificarVacante2->results[0]->id_usuario_postulacion;
+                                array_filter($map, ($id)=>{
+                                    $id == $data});
+                            }
 
 
 
@@ -115,14 +125,18 @@
 
 
                             ?>
-                            <?php if ($verificarSiPostulacion->status == 200) : ?>
-                                <a class="custom-btn btn mt-2" href="#" data-bs-toggle="modal" data-bs-target="#postulado">Postularme</a>
-                            <?php else :  ?>
-                                <a class="custom-btn btn mt-2" href="<?php echo $path ?>account&candidate&dashboard&postularme?vacante=<?php echo $verificarVacante->results[0]->id_vacante  ?>">Postularme</a>
-                            <?php endif; ?>
 
 
-                            <a href="" class="custom-btn custom-border-btn btn mt-2 ms-lg-4 ms-3">Regresar</a>
+
+
+
+
+
+
+
+
+
+                            <a href="<?php echo $path ?>account&candidate&dashboard" class="custom-btn custom-border-btn btn mt-2 ms-lg-4 ms-3">Regresar</a>
 
                             <div class="job-detail-share d-flex align-items-center">
                                 <p class="mb-0 me-lg-4 me-3">Share:</p>

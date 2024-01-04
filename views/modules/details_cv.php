@@ -50,6 +50,11 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
                     $header = array();
                     $verificarHabilidades = CurlController::request($url, $method, $fields, $header);
                     if ($verificarHabilidades->status == 404) {
+                    ?>
+
+                        <p class="text-dorado">El candidato aun no llena esta sección, cuando lo haga se actualizaran automaticamente los datos </p>
+
+                    <?php
                     } else {
                     ?>
 
@@ -70,10 +75,7 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
                                     <div class="item-container-habilidades">
 
                                         <p><?php echo $value->title_habilidad ?></p>
-                                        <a href='<?php echo $path ?>account&candidate&curriculum&edit_habilidad?id_habilidad=<?php echo $value->id_habilidad ?>' class="editar">
-                                            <i class=" bi bi-pencil-fill icon-editar"></i>
 
-                                        </a>
 
                                     </div>
                                 <?php endforeach ?>
@@ -94,7 +96,7 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
         <div class="grid-9">
             <div class="grid-inter">
                 <div class="grid-header">
-                    <h6>Archivos</h6>
+                    <h6>Archivo</h6>
                     <p>Adjunta tu currículum en Word/PDF para conocer más sobre ti.</p>
                     <?php
 
@@ -105,6 +107,11 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
                     $header = array();
                     $verificarCv = CurlController::request($url, $method, $fields, $header);
                     if ($verificarCv->status == 404) {
+                    ?>
+
+                        <p class="text-dorado">El candidato aun no llena esta sección, cuando lo haga se actualizaran automaticamente los datos </p>
+
+                    <?php
                     } else {
                     ?>
 
@@ -137,9 +144,7 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
                     ?>
                 </div>
                 <div class="grid-body">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#archivos">
-                        <i class="bi bi-plus-circle-fill icon-agregar"></i> <span>Agregar</span>
-                    </button>
+
                 </div>
             </div>
 
@@ -231,6 +236,11 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
                 $header = array();
                 $verificarCv = CurlController::request($url, $method, $fields, $header);
                 if ($verificarCv->status == 404) {
+                ?>
+
+                    <p class="text-dorado">El candidato aun no llena esta sección, cuando lo haga se actualizaran automaticamente los datos </p>
+
+                <?php
                 } else {
                 ?>
 
@@ -278,9 +288,8 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
         </div>
         <div class="grid-8">
             <div class="grid-header">
-                <h6>Cursos y certificaciones</h6>
-                <p> Compártenos si tienes cursos complementarios o certificados que validan tus conocimientos. Solo
-                    documentos (WORD O PDF)</p>
+                <h6>Cartas de recomendacion</h6>
+                <p> </p>
                 <?php
 
                 $data = $_GET['id_cv'];
@@ -290,6 +299,11 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
                 $header = array();
                 $verificarEspecialidaes = CurlController::request($url, $method, $fields, $header);
                 if ($verificarEspecialidaes->status == 404) {
+                ?>
+
+                    <p class="text-dorado">El candidato aun no llena esta sección, cuando lo haga se actualizaran automaticamente los datos </p>
+
+                <?php
                 } else {
                 ?>
 
@@ -311,10 +325,7 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
                                     <p><?php echo $value->nombre_certificacion ?></p>
 
                                     <a href="images/descargas/<?php echo $value->enlace ?>" target="_blank">Certificado <i class="bi bi-cloud-download-fill"></i></a>
-                                    <a href='<?php echo $path ?>account&candidate&curriculum&edit_certificacion?id_certificacion=<?php echo $value->id_certificacion ?>' class="editar">
-                                        <i class=" bi bi-pencil-fill icon-editar"></i>
 
-                                    </a>
 
 
                                 </div>
@@ -329,9 +340,7 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
                 ?>
             </div>
             <div class="grid-body">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#certificaciones">
-                    <i class="bi bi-plus-circle-fill icon-agregar"></i> <span>Agregar</span>
-                </button>
+
             </div>
         </div>
         <div class="grid-6" id="container-especialidades">
@@ -347,7 +356,14 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
                 $header = array();
                 $verificarEspecialidaes = CurlController::request($url, $method, $fields, $header);
                 if ($verificarEspecialidaes->status == 404) {
+                ?>
+
+                    <p class="text-dorado">El candidato aun no llena esta sección, cuando lo haga se actualizaran automaticamente los datos </p>
+
+                <?php
+
                 } else {
+
                 ?>
 
 
@@ -367,10 +383,7 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
 
                                     <p><?php echo $value->title_especialidad ?></p>
 
-                                    <a href='<?php echo $path ?>account&candidate&curriculum&edit_especialidad?id_especialidad=<?php echo $value->id_especialidad ?>' class="editar editar-especialidades" name="id-especialidad">
-                                        <i class=" bi bi-pencil-fill icon-editar"></i>
 
-                                    </a>
 
                                 </div>
 
@@ -387,9 +400,7 @@ $verificarCv = CurlController::request($url, $method, $fields, $header);
                 ?>
             </div>
             <div class="grid-body">
-                <button type="button" data-bs-toggle="modal" data-bs-target="#especialidades">
-                    <i class="bi bi-plus-circle-fill icon-agregar"></i> <span>Agregar</span>
-                </button>
+
             </div>
 
 

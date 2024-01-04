@@ -15,7 +15,7 @@
                 <p class="mb-2">
                     <i class="custom-icon bi-globe me-1"></i>
 
-                    <a href="#" class="site-footer-link">
+                    <a href="https://multiservicescard.com.mx/" class="site-footer-link" target="_blank">
                         multiservicescard.com.mx
                     </a>
                 </p>
@@ -31,7 +31,7 @@
                 <p>
                     <i class="custom-icon bi-envelope me-1"></i>
 
-                    <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                    <a href="mailto:infomultiservices@gmail.com" class="site-footer-link">
                         infomultiservices@gmail.com
                     </a>
                 </p>
@@ -42,13 +42,34 @@
                 <h6 class="site-footer-title">Compañia</h6>
 
                 <ul class="footer-menu">
-                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Nosotros</a></li>
+                    <?php if (isset($_SESSION['rol'])) : ?>
+                        <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
+                            <li class="footer-menu-item">
+                                <a class="footer-menu-link" href="<?php echo $path ?>account&candidate&about">Nosotros</a>
+                            </li>
+
+                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&candidate&job-listings" class="footer-menu-link">Trabajos</a></li>
+
+                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&candidate&contact" class="footer-menu-link">Contacto</a></li>
+
+                        <?php elseif ($_SESSION['rol']->rol_usuario_id  == 2) :  ?>
+                            <li class="footer-menu-item">
+                                <a class="footer-menu-link" href="<?php echo $path ?>account&recruiter&about">Nosotros</a>
+                            </li>
+
+                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&recruiter&job-listings" class="footer-menu-link">Trabajos</a></li>
+
+                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&recruiter&contact" class="footer-menu-link">Contacto</a></li>
+                        <?php endif; ?>
+                    <?php else :  ?>
+                        <li class="footer-menu-item"><a href="<?php echo $path ?>about.php" class="footer-menu-link">Nosotros</a></li>
+                        <li class="footer-menu-item"><a href="<?php echo $path ?>job-listings.php" class="footer-menu-link">Trabajos</a></li>
+                        <li class="footer-menu-item"><a href="<?php echo $path ?>contact.php" class="footer-menu-link">Contacto</a></li>
+                    <?php endif; ?>
 
 
 
-                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Trabajos</a></li>
 
-                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contacto</a></li>
                 </ul>
             </div>
 
@@ -56,9 +77,9 @@
                 <h6 class="site-footer-title">Resources</h6>
 
                 <ul class="footer-menu">
-                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">Guía</a></li>
+                    <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">Guía</a></li>
 
-                    <li class="footer-menu-item"><a href="#" class="footer-menu-link">¿Cómo funciona?</a></li>
+                    <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">¿Cómo funciona?</a></li>
 
                 </ul>
             </div>
@@ -92,40 +113,31 @@
                     <p class="copyright-text">Copyright © MultiservicesCard 2023</p>
 
                     <ul class="footer-menu d-flex">
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Política de privacidad</a>
+                        <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">Política de privacidad</a>
                         </li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Términos</a></li>
+                        <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">Términos</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-5 col-12 mt-2 mt-lg-0">
                     <ul class="social-icon">
+
                         <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-twitter"></a>
+                            <a href="https://www.facebook.com/multiservice.card" class="social-icon-link bi-facebook" target="_blank"></a>
                         </li>
 
                         <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-facebook"></a>
+                            <a href="https://www.instagram.com/multiservicecard/" class="social-icon-link bi-instagram" target="_blank"></a>
                         </li>
 
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-linkedin"></a>
-                        </li>
 
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-instagram"></a>
-                        </li>
-
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-youtube"></a>
-                        </li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-12 mt-2 d-flex align-items-center mt-lg-0">
-                    <p>Diseñado: <a class="sponsored-link" rel="sponsored" href="#" target="_blank">Agencia
-                            Inspiración</a></p>
+                    <p class="text-white">Diseñado: <a class=" text-white" rel="sponsored" href="#" target="_blank">Agencia
+                            de Marketing Digital Inspiración</a></p>
                 </div>
 
                 <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center" href="#top"></a>

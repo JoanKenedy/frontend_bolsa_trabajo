@@ -1147,6 +1147,11 @@ textarea {
     display: flex;
     flex-direction: column;
   }
+  .grid-jobs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px;
+  }
 
   .container-grid-curriculum-index {
     display: grid;
@@ -1169,10 +1174,8 @@ textarea {
   }
 
   .container-vacante {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     margin: 30px auto !important;
     gap: 7px;
     border-radius: var(--border-radius-small);
@@ -1181,6 +1184,17 @@ textarea {
     transition: all 0.5s ease;
     gap: 0px;
     width: 100%;
+  }
+  .item-container-vacante:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .job-price {
+    margin-left: 0px !important;
+  }
+  .item-container-vacante:nth-child(2) {
+    grid-column: 2/4;
   }
 
   .container-vacante:hover {
@@ -1928,14 +1942,9 @@ input[type="radio"] {
 
 .job-thumb {
   border-radius: var(--border-radius-small);
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   padding: 25px;
   transition: all 0.5s ease;
-}
-
-.job-thumb:hover,
-.job-thumb:nth-of-type(even) {
-  background: var(--white-color);
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 

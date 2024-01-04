@@ -12,7 +12,7 @@
 
                         <h1 class="hero-title text-white mt-4 mb-4">Comienza tu historia de éxito</h1>
 
-                        <a href="#categories-section" class="custom-btn custom-border-btn btn">Categorías</a>
+
                     </div>
                 </div>
 
@@ -169,15 +169,12 @@
                     <div class="custom-text-block">
                         <h2 class="text-white mb-2">Nuestro plus...</h2>
 
-                        <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil explicabo
-                            vel doloremque laudantium a! Enim, error aliquam nihil eaque quibusdam, incidunt consequatur
-                            earum dignissimos ullam sit consequuntur rerum fuga minus voluptatem, harum odio corporis
-                            fugit.</p>
+                        <p class="text-white">Encuentra trabajos desde casa, medio tiempo y más, en la bolsa de trabajo de México. En Multiservices puedes buscar empleos ideales de acuerdo a tu perfil.</p>
 
                         <div class="custom-border-btn-wrap d-flex align-items-center mt-5">
-                            <a href="about.php" class="custom-btn custom-border-btn btn me-4">Conócenos</a>
+                            <a href="<?php echo $path ?>account&recruiter&about" class="custom-btn custom-border-btn btn me-4">Conócenos</a>
 
-                            <a href="#job-section" class="custom-link smoothscroll">Explorar Trabajos</a>
+
                         </div>
                     </div>
                 </div>
@@ -187,7 +184,7 @@
                         <img src="images/jobs/jobs.jpg" class="about-image custom-border-radius-end img-fluid" alt="">
 
                         <div class="instagram-block-text">
-                            <a href="https://www.instagram.com/multiservicecard/?igshid=ZDdkNTZiNTM%3D" class="custom-btn btn">
+                            <a href="https://www.instagram.com/multiservicecard/" class="custom-btn btn" target="_blank">
                                 <i class="bi-instagram"></i>
                                 @Multiservicescard
                             </a>
@@ -211,47 +208,56 @@
                 </div>
 
                 <div class="col-lg-12 col-12">
-                    <?php foreach ($totalVacantes as $key => $value) : ?>
+                    <div class="grid-jobs">
+                        <?php foreach ($totalVacantes as $key => $value) : ?>
 
 
-                        <div class="job-thumb d-flex">
-                            <div class="job-image-wrap bg-white shadow-lg">
-                                <img src="images/logos/google.png" class="job-image img-fluid" alt="">
-                            </div>
+                            <div class="job-thumb d-flex">
+                                <div class="job-image-wrap bg-white shadow-lg">
+                                    <img src="images/logos/google.png" class="job-image img-fluid" alt="">
+                                </div>
 
-                            <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                                <div class="mb-3">
-                                    <h4 class="job-title mb-lg-0">
-                                        <a href="job-details.html" class="job-title-link">
-                                            <?php echo $value->title_vacante ?></a>
-                                    </h4>
+                                <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+                                    <div class="mb-3">
+                                        <h4 class="job-title mb-lg-0">
+                                            <a href="job-details.html" class="job-title-link">
+                                                <?php echo $value->title_vacante ?></a>
+                                        </h4>
 
-                                    <div class="d-flex flex-wrap align-items-center">
-                                        <p class="job-location mb-0">
-                                            <i class="custom-icon bi-geo-alt me-1"></i>
-                                            <?php echo $value->lugar_de_trabajo ?>
-                                        </p>
+                                        <div class="d-flex flex-wrap align-items-center">
+                                            <p class="job-location mb-0">
+                                                <i class="custom-icon bi-geo-alt me-1"></i>
+                                                <?php echo $value->lugar_de_trabajo ?>
+                                            </p>
 
-                                        <p class="job-date mb-0">
-                                            <i class="custom-icon bi-clock me-1"></i>
-                                            <?php echo $value->fecha_de_publicacion ?>
-                                        </p>
+                                            <p class="job-date mb-0">
+                                                <i class="custom-icon bi-clock me-1"></i>
+                                                <?php echo $value->fecha_de_publicacion ?>
+                                            </p>
 
-                                        <p class="job-price mb-0">
-                                            <i class="custom-icon bi-cash me-1"></i>
-                                            $<?php echo $value->rango_sueldo ?>
-                                        </p>
+                                            <p class="job-price mb-0">
+                                                <i class="custom-icon bi-cash me-1"></i>
+                                                $<?php echo $value->rango_sueldo ?>
+                                            </p>
 
+                                        </div>
+                                    </div>
+
+                                    <div class="job-section-btn-wrap">
+                                        <a href="<?php echo $path ?>account&recruiter&dashboard&ver_vacante?id_vacante=<?php echo $value->id_vacante  ?>" class="custom-btn btn">Solo ver</a>
                                     </div>
                                 </div>
-
-                                <div class="job-section-btn-wrap">
-                                    <a href="job-details.html" class="custom-btn btn">Postularme</a>
-                                </div>
                             </div>
-                        </div>
 
-                    <?php endforeach ?>
+
+
+
+
+
+
+                        <?php endforeach ?>
+                    </div>
+
 
 
 
@@ -351,391 +357,6 @@
     </section>
 
 
-    <section class="job-section recent-jobs-section section-padding">
-        <div class="container">
-            <div class="row align-items-center">
-
-                <div class="col-lg-6 col-12 mb-4">
-                    <h2>Trabajos recientes</h2>
-
-                    <p><strong>Más de 10.000 puestos de trabajo abiertos.</strong> </p>
-                </div>
-
-                <div class="clearfix"></div>
-
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="job-thumb job-thumb-box">
-                        <div class="job-image-box-wrap">
-                            <a href="job-details.html">
-                                <img src="images/jobs/it-professional-works-startup-project.jpg" class="job-image img-fluid" alt="">
-                            </a>
-
-                            <div class="job-image-box-wrap-info d-flex align-items-center">
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge badge-level">Internship</a>
-                                </p>
-
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge">Freelance</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="job-body">
-                            <h4 class="job-title">
-                                <a href="job-details.html" class="job-title-link">Technical Lead</a>
-                            </h4>
-
-                            <div class="d-flex align-items-center">
-                                <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
-                                    <img src="images/logos/salesforce.png" class="job-image me-3 img-fluid" alt="">
-
-                                    <p class="mb-0">Salesforce</p>
-                                </div>
-
-                                <a href="#" class="bi-bookmark ms-auto me-2">
-                                </a>
-
-                                <a href="#" class="bi-heart">
-                                </a>
-                            </div>
-
-                            <div class="d-flex align-items-center">
-                                <p class="job-location">
-                                    <i class="custom-icon bi-geo-alt me-1"></i>
-                                    Kuala, Malaysia
-                                </p>
-
-                                <p class="job-date">
-                                    <i class="custom-icon bi-clock me-1"></i>
-                                    10 hours ago
-                                </p>
-                            </div>
-
-                            <div class="d-flex align-items-center border-top pt-3">
-                                <p class="job-price mb-0">
-                                    <i class="custom-icon bi-cash me-1"></i>
-                                    $50k
-                                </p>
-
-                                <a href="job-details.html" class="custom-btn btn ms-auto">Apply now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="job-thumb job-thumb-box">
-                        <div class="job-image-box-wrap">
-                            <a href="job-details.html">
-                                <img src="images/jobs/marketing-assistant.jpg" class="job-image img-fluid" alt="marketing assistant">
-                            </a>
-
-                            <div class="job-image-box-wrap-info d-flex align-items-center">
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge badge-level">Senior</a>
-                                </p>
-
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge">Part Time</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="job-body">
-                            <h4 class="job-title">
-                                <a href="job-details.html" class="job-title-link">Marketing Assistant</a>
-                            </h4>
-
-                            <div class="d-flex align-items-center">
-                                <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
-                                    <img src="images/logos/spotify.png" class="job-image me-3 img-fluid" alt="">
-
-                                    <p class="mb-0">Spotify</p>
-                                </div>
-
-                                <a href="#" class="bi-bookmark ms-auto me-2">
-                                </a>
-
-                                <a href="#" class="bi-heart">
-                                </a>
-                            </div>
-
-                            <div class="d-flex align-items-center">
-                                <p class="job-location">
-                                    <i class="custom-icon bi-geo-alt me-1"></i>
-                                    California, USA
-                                </p>
-
-                                <p class="job-date">
-                                    <i class="custom-icon bi-clock me-1"></i>
-                                    8 days ago
-                                </p>
-                            </div>
-
-                            <div class="d-flex align-items-center border-top pt-3">
-                                <p class="job-price mb-0">
-                                    <i class="custom-icon bi-cash me-1"></i>
-                                    $20k
-                                </p>
-
-                                <a href="job-details.html" class="custom-btn btn ms-auto">Apply now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="job-thumb job-thumb-box">
-                        <div class="job-image-box-wrap">
-                            <a href="job-details.html">
-                                <img src="images/jobs/coding-man.jpg" class="job-image img-fluid" alt="">
-                            </a>
-
-                            <div class="job-image-box-wrap-info d-flex align-items-center">
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge badge-level">Junior</a>
-                                </p>
-
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge">Contract</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="job-body">
-                            <h4 class="job-title">
-                                <a href="job-details.html" class="job-title-link">Programmer</a>
-                            </h4>
-
-                            <div class="d-flex align-items-center">
-                                <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
-                                    <img src="images/logos/twitter.png" class="job-image me-3 img-fluid" alt="">
-
-                                    <p class="mb-0">Twiter</p>
-                                </div>
-
-                                <a href="#" class="bi-bookmark ms-auto me-2">
-                                </a>
-
-                                <a href="#" class="bi-heart">
-                                </a>
-                            </div>
-
-                            <div class="d-flex align-items-center">
-                                <p class="job-location">
-                                    <i class="custom-icon bi-geo-alt me-1"></i>
-                                    California, USA
-                                </p>
-
-                                <p class="job-date">
-                                    <i class="custom-icon bi-clock me-1"></i>
-                                    23 hours ago
-                                </p>
-                            </div>
-
-                            <div class="d-flex align-items-center border-top pt-3">
-                                <p class="job-price mb-0">
-                                    <i class="custom-icon bi-cash me-1"></i>
-                                    $68k
-                                </p>
-
-                                <a href="job-details.html" class="custom-btn btn ms-auto">Apply now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="job-thumb job-thumb-box">
-                        <div class="job-image-box-wrap">
-                            <a href="job-details.html">
-                                <img src="images/jobs/pretty-blogger-posing-cozy-apartment.jpg" class="job-image img-fluid" alt="">
-                            </a>
-
-                            <div class="job-image-box-wrap-info d-flex align-items-center">
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge badge-level">Junior</a>
-                                </p>
-
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge">Contract</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="job-body">
-                            <h4 class="job-title">
-                                <a href="job-details.html" class="job-title-link">HR Manager</a>
-                            </h4>
-
-                            <div class="d-flex align-items-center">
-                                <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
-                                    <img src="images/logos/yelp.png" class="job-image me-3 img-fluid" alt="">
-
-                                    <p class="mb-0">Yelp</p>
-                                </div>
-
-                                <a href="#" class="bi-bookmark ms-auto me-2">
-                                </a>
-
-                                <a href="#" class="bi-heart">
-                                </a>
-                            </div>
-
-                            <div class="d-flex align-items-center">
-                                <p class="job-location">
-                                    <i class="custom-icon bi-geo-alt me-1"></i>
-                                    California, USA
-                                </p>
-
-                                <p class="job-date">
-                                    <i class="custom-icon bi-clock me-1"></i>
-                                    15 hours ago
-                                </p>
-                            </div>
-
-                            <div class="d-flex align-items-center border-top pt-3">
-                                <p class="job-price mb-0">
-                                    <i class="custom-icon bi-cash me-1"></i>
-                                    $35k - 45k
-                                </p>
-
-                                <a href="job-details.html" class="custom-btn btn ms-auto">Apply now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="job-thumb job-thumb-box">
-                        <div class="job-image-box-wrap">
-                            <a href="job-details.html">
-                                <img src="images/jobs/paper-analysis.jpg" class="job-image img-fluid" alt="">
-                            </a>
-
-                            <div class="job-image-box-wrap-info d-flex align-items-center">
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge badge-level">Junior</a>
-                                </p>
-
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge">Contract</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="job-body">
-                            <h4 class="job-title">
-                                <a href="job-details.html" class="job-title-link">Sales Representative</a>
-                            </h4>
-
-                            <div class="d-flex align-items-center">
-                                <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
-                                    <img src="images/logos/paypal.png" class="job-image me-3 img-fluid" alt="">
-
-                                    <p class="mb-0">Paypal</p>
-                                </div>
-
-                                <a href="#" class="bi-bookmark ms-auto me-2">
-                                </a>
-
-                                <a href="#" class="bi-heart">
-                                </a>
-                            </div>
-
-                            <div class="d-flex align-items-center">
-                                <p class="job-location">
-                                    <i class="custom-icon bi-geo-alt me-1"></i>
-                                    Bangkok, Thailand
-                                </p>
-
-                                <p class="job-date">
-                                    <i class="custom-icon bi-clock me-1"></i>
-                                    30 mins ago
-                                </p>
-                            </div>
-
-                            <div class="d-flex align-items-center border-top pt-3">
-                                <p class="job-price mb-0">
-                                    <i class="custom-icon bi-cash me-1"></i>
-                                    $20k - 35k
-                                </p>
-
-                                <a href="job-details.html" class="custom-btn btn ms-auto">Apply now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="job-thumb job-thumb-box">
-                        <div class="job-image-box-wrap">
-                            <a href="job-details.html">
-                                <img src="images/jobs/logo-designer-working-computer-desktop.jpg" class="job-image img-fluid" alt="">
-                            </a>
-
-                            <div class="job-image-box-wrap-info d-flex align-items-center">
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge badge-level">Mid Level</a>
-                                </p>
-
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge">Full Time</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="job-body">
-                            <h4 class="job-title">
-                                <a href="job-details.html" class="job-title-link">Graphic Designer</a>
-                            </h4>
-
-                            <div class="d-flex align-items-center">
-                                <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
-                                    <img src="images/logos/envato.png" class="job-image me-3 img-fluid" alt="">
-
-                                    <p class="mb-0">Envato</p>
-                                </div>
-
-                                <a href="#" class="bi-bookmark ms-auto me-2">
-                                </a>
-
-                                <a href="#" class="bi-heart">
-                                </a>
-                            </div>
-
-                            <div class="d-flex align-items-center">
-                                <p class="job-location">
-                                    <i class="custom-icon bi-geo-alt me-1"></i>
-                                    Melbourne, Australia
-                                </p>
-
-                                <p class="job-date">
-                                    <i class="custom-icon bi-clock me-1"></i>
-                                    2 days ago
-                                </p>
-                            </div>
-
-                            <div class="d-flex align-items-center border-top pt-3">
-                                <p class="job-price mb-0">
-                                    <i class="custom-icon bi-cash me-1"></i>
-                                    $20k
-                                </p>
-
-                                <a href="job-details.html" class="custom-btn btn ms-auto">Apply now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-12 recent-jobs-bottom d-flex ms-auto my-4">
-                    <a href="job-listings.html" class="custom-btn btn ms-lg-auto">Browse Job Listings</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
 
 
     <section class="reviews-section section-padding">
@@ -909,9 +530,9 @@
 
                 <div class="col-lg-4 col-12 ms-auto">
                     <div class="custom-border-btn-wrap d-flex align-items-center mt-lg-4 mt-2">
-                        <a href="#" class="custom-btn custom-border-btn btn me-4">Crea una cuenta</a>
+                        <a href="#" onclick="return false" class="custom-btn custom-border-btn btn me-4">Crea una cuenta</a>
 
-                        <a href="#" class="custom-link">Anunciar un trabajo</a>
+                        <a href="#" onclick="return false" class="custom-link">Anunciar un trabajo</a>
                     </div>
                 </div>
 

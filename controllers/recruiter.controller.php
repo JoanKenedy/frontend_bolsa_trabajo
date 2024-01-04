@@ -448,6 +448,74 @@ class RecruitersController
         }
     }
 
+    public function editarEmpresaPerfil4()
+    {
+        if (isset($_POST['datos_edit_empresa4'])) {
+            $id_user = $_SESSION['rol']->id_usuario;
+            $razon = $_POST['razonEditEmpresa'];
+            $rfc = $_POST['rfcEditContacto'];
+
+            $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+
+            $sql = "UPDATE reclutadores SET razon_social='" . $razon . "',rfc='" . $rfc . "' WHERE id_usuario_reclutador = '" . $id_user . "'";
+
+            $result = mysqli_query($conn, $sql);
+            if (mysqli_affected_rows($conn) == 0) {
+            ?>
+                <script>
+                    function modal() {
+                        Swal.fire({
+                            position: "top",
+                            icon: "error",
+                            title: "Algo salio mal, verifiquemos que fue",
+                            showConfirmButton: false,
+                            timer: 1500,
+
+
+                        });
+                    }
+                    modal();
+                </script>
+            <?php } else { ?>
+
+                <script>
+                    function modal() {
+                        let timerInterval;
+                        Swal.fire({
+                            title: "Actualizando datos de tu perfil de empresa",
+                            html: "Iremos a tu cv",
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading();
+                                const timer = Swal.getPopup().querySelector("b");
+                                timerInterval = setInterval(() => {
+                                    timer.textContent = `${Swal.getTimerLeft()}`;
+
+                                }, 100);
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval);
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                                console.log("I was closed by the timer");
+                            }
+                        });
+                    }
+                    modal();
+                    fncFormatInputs();
+
+                    setTimeout(() => {
+                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                        location.href = `${urlEnvio}account&recruiter&company_profile`;
+                    }, "2500");
+                </script>
+            <?php   }
+        }
+    }
+
     public function editVacanteRecruiterPerfil($verificarEditarVacante)
     {
 

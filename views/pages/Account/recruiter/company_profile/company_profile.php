@@ -25,7 +25,8 @@ $editEmpresPerfil12 = new RecruitersController();
 $editEmpresPerfil12->editarEmpresaPerfil2();
 $editEmpresPerfil13 = new RecruitersController();
 $editEmpresPerfil13->editarEmpresaPerfil3();
-
+$editEmpresPerfil14 = new RecruitersController();
+$editEmpresPerfil14->editarEmpresaPerfil4();
 
 
 if ($verificarRelation->status == 404) {
@@ -42,11 +43,10 @@ if ($verificarRelation->status == 404) {
         <div class="grid-1">
             <div class="grid-inter">
                 <div class="grid-header">
-                    <?php if($verificarRelation->results[0]->logo_empresa != '' ): ?>
-                    <img src="images/descargas/<?php echo $verificarRelation->results[0]->logo_empresa ?>" alt=""
-                        class="img-redonda">
+                    <?php if ($verificarRelation->results[0]->logo_empresa != '') : ?>
+                        <img src="images/descargas/<?php echo $verificarRelation->results[0]->logo_empresa ?>" alt="" class="img-redonda">
                     <?php else :  ?>
-                    <img src="images/avatar/usuario.png" alt="">
+                        <img src="images/avatar/usuario.png" alt="">
                     <?php endif; ?>
 
                 </div>
@@ -170,20 +170,19 @@ if ($verificarRelation->status == 404) {
             </div>
         </div> -->
     </div>
-    <div class="modal fade" id="edit1" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;"
-        aria-hidden="true">
+    <div class="modal fade" id="edit1" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;" aria-hidden="true">
         <div class="modal-dialog" style="width: 80%;">
-            <?php 
-             
-               $data = $_SESSION['rol']->id_usuario;
-                $url = CurlController::api() . "reclutadores?linkTo=id_usuario_reclutador&equalTo=" . $data . "";
-                $method = "GET";
-                $fields = array();
-                $header = array();
-                $verificarCvRe = CurlController::request($url, $method, $fields, $header);
-              
-               
-            
+            <?php
+
+            $data = $_SESSION['rol']->id_usuario;
+            $url = CurlController::api() . "reclutadores?linkTo=id_usuario_reclutador&equalTo=" . $data . "";
+            $method = "GET";
+            $fields = array();
+            $header = array();
+            $verificarCvRe = CurlController::request($url, $method, $fields, $header);
+
+
+
             ?>
             <div class="modal-content px-3 py-3">
                 <form class=" requires-validation" novalidate method="post" role="form" enctype="multipart/form-data">
@@ -197,9 +196,7 @@ if ($verificarRelation->status == 404) {
                             <div class="input-control">
 
                                 <p class="text-label2">Nombre de la empresa o negocio:</p>
-                                <input type="text" name="nameEditEmpresa" class="form-control input-group"
-                                    placeholder="ej: Grupo Bimbo" required
-                                    value="<?php echo $verificarCvRe->results[0]->name_empresa ?>">
+                                <input type="text" name="nameEditEmpresa" class="form-control input-group" placeholder="ej: Grupo Bimbo" required value="<?php echo $verificarCvRe->results[0]->name_empresa ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -213,9 +210,7 @@ if ($verificarRelation->status == 404) {
                             <div class="input-control">
 
                                 <p class="text-label2">Teléfono empresarial o de contacto:</p>
-                                <input type="text" name="telEditContacto" class="form-control input-group"
-                                    placeholder="Teléfono empresarial o contacto principal" required
-                                    value="<?php echo $verificarCvRe->results[0]->telefono_empresa ?>">
+                                <input type="text" name="telEditContacto" class="form-control input-group" placeholder="Teléfono empresarial o contacto principal" required value="<?php echo $verificarCvRe->results[0]->telefono_empresa ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -229,9 +224,7 @@ if ($verificarRelation->status == 404) {
                             <div class="input-control">
 
                                 <p class="text-label2">Email empresarial o de contacto:</p>
-                                <input type="email" name="emailEditContacto" class="form-control input-group"
-                                    placeholder="Email " required
-                                    value="<?php echo $verificarCvRe->results[0]->email_empresa ?>">
+                                <input type="email" name="emailEditContacto" class="form-control input-group" placeholder="Email " required value="<?php echo $verificarCvRe->results[0]->email_empresa ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -269,20 +262,19 @@ if ($verificarRelation->status == 404) {
             </div>
         </div>
     </div>
-    <div class="modal fade" id="edit2" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;"
-        aria-hidden="true">
+    <div class="modal fade" id="edit2" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;" aria-hidden="true">
         <div class="modal-dialog" style="width: 80%;">
-            <?php 
-             
-               $data = $_SESSION['rol']->id_usuario;
-                $url = CurlController::api() . "reclutadores?linkTo=id_usuario_reclutador&equalTo=" . $data . "";
-                $method = "GET";
-                $fields = array();
-                $header = array();
-                $verificarCvRe2 = CurlController::request($url, $method, $fields, $header);
-              
-               
-            
+            <?php
+
+            $data = $_SESSION['rol']->id_usuario;
+            $url = CurlController::api() . "reclutadores?linkTo=id_usuario_reclutador&equalTo=" . $data . "";
+            $method = "GET";
+            $fields = array();
+            $header = array();
+            $verificarCvRe2 = CurlController::request($url, $method, $fields, $header);
+
+
+
             ?>
             <div class="modal-content px-3 py-3">
                 <form class=" requires-validation" novalidate method="post" role="form">
@@ -332,9 +324,7 @@ if ($verificarRelation->status == 404) {
                             <div class="input-control">
 
                                 <p class="text-label2">Estado, ciudad o provincia:</p>
-                                <input type="text" name="estadoEditEmpresa" class="form-control input-group"
-                                    placeholder="Estado o Provincia" required
-                                    value="<?php echo $verificarCvRe2->results[0]->estado ?>">
+                                <input type="text" name="estadoEditEmpresa" class="form-control input-group" placeholder="Estado o Provincia" required value="<?php echo $verificarCvRe2->results[0]->estado ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -348,9 +338,7 @@ if ($verificarRelation->status == 404) {
                             <div class="input-control">
 
                                 <p class="text-label2">Codigó postal:</p>
-                                <input type="text" name="postalEditEmpresa" class="form-control input-group"
-                                    placeholder="Codigó postal" required
-                                    value="<?php echo $verificarCvRe2->results[0]->codigo_postal ?>">
+                                <input type="text" name="postalEditEmpresa" class="form-control input-group" placeholder="Codigó postal" required value="<?php echo $verificarCvRe2->results[0]->codigo_postal ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -364,9 +352,7 @@ if ($verificarRelation->status == 404) {
                             <div class="input-control">
 
                                 <p class="text-label2">Dirección:</p>
-                                <input type="text" name="direccionEditEmpresa" class="form-control input-group"
-                                    placeholder="Dirección Completa" required
-                                    value="<?php echo $verificarCvRe2->results[0]->direccion ?>">
+                                <input type="text" name="direccionEditEmpresa" class="form-control input-group" placeholder="Dirección Completa" required value="<?php echo $verificarCvRe2->results[0]->direccion ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -390,20 +376,19 @@ if ($verificarRelation->status == 404) {
             </div>
         </div>
     </div>
-    <div class="modal fade" id="edit3" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;"
-        aria-hidden="true">
+    <div class="modal fade" id="edit3" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;" aria-hidden="true">
         <div class="modal-dialog" style="width: 80%;">
-            <?php 
-             
-               $data = $_SESSION['rol']->id_usuario;
-                $url = CurlController::api() . "reclutadores?linkTo=id_usuario_reclutador&equalTo=" . $data . "";
-                $method = "GET";
-                $fields = array();
-                $header = array();
-                $verificarCvRe3 = CurlController::request($url, $method, $fields, $header);
-              
-               
-            
+            <?php
+
+            $data = $_SESSION['rol']->id_usuario;
+            $url = CurlController::api() . "reclutadores?linkTo=id_usuario_reclutador&equalTo=" . $data . "";
+            $method = "GET";
+            $fields = array();
+            $header = array();
+            $verificarCvRe3 = CurlController::request($url, $method, $fields, $header);
+
+
+
             ?>
             <div class="modal-content px-3 py-3">
                 <form class=" requires-validation" novalidate method="post" role="form" enctype="multipart/form-data">
@@ -416,9 +401,7 @@ if ($verificarRelation->status == 404) {
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="input-control">
                                 <p class="text-label2">Numero de trabajadores:</p>
-                                <input type="text" name="giroEditEmpresa" class="form-control input-group"
-                                    placeholder="Teléfono empresarial o contacto principal" required
-                                    value="<?php echo $verificarCvRe->results[0]->giro_empresa ?>">
+                                <input type="text" name="giroEditEmpresa" class="form-control input-group" placeholder="Teléfono empresarial o contacto principal" required value="<?php echo $verificarCvRe->results[0]->giro_empresa ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -431,9 +414,7 @@ if ($verificarRelation->status == 404) {
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="input-control">
                                 <p class="text-label2">Numero de trabajadores:</p>
-                                <input type="text" name="numEditEmpleado" class="form-control input-group"
-                                    placeholder="Teléfono empresarial o contacto principal" required
-                                    value="<?php echo $verificarCvRe->results[0]->num_trabajadores ?>">
+                                <input type="text" name="numEditEmpleado" class="form-control input-group" placeholder="Teléfono empresarial o contacto principal" required value="<?php echo $verificarCvRe->results[0]->num_trabajadores ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -447,9 +428,7 @@ if ($verificarRelation->status == 404) {
                             <div class="input-control">
 
                                 <p class="text-label2">Descripcion:</p>
-                                <input type="text" name="descripcionEditR" class="form-control input-group"
-                                    placeholder="Email " required
-                                    value="<?php echo $verificarCvRe->results[0]->descripcion ?>">
+                                <input type="text" name="descripcionEditR" class="form-control input-group" placeholder="Email " required value="<?php echo $verificarCvRe->results[0]->descripcion ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -473,20 +452,19 @@ if ($verificarRelation->status == 404) {
             </div>
         </div>
     </div>
-    <div class="modal fade" id="edit4" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;"
-        aria-hidden="true">
+    <div class="modal fade" id="edit4" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;" aria-hidden="true">
         <div class="modal-dialog" style="width: 80%;">
-            <?php 
-             
-               $data = $_SESSION['rol']->id_usuario;
-                $url = CurlController::api() . "reclutadores?linkTo=id_usuario_reclutador&equalTo=" . $data . "";
-                $method = "GET";
-                $fields = array();
-                $header = array();
-                $verificarCvRe = CurlController::request($url, $method, $fields, $header);
-              
-               
-            
+            <?php
+
+            $data = $_SESSION['rol']->id_usuario;
+            $url = CurlController::api() . "reclutadores?linkTo=id_usuario_reclutador&equalTo=" . $data . "";
+            $method = "GET";
+            $fields = array();
+            $header = array();
+            $verificarCvRe = CurlController::request($url, $method, $fields, $header);
+
+
+
             ?>
             <div class="modal-content px-3 py-3">
                 <form class=" requires-validation" novalidate method="post" role="form" enctype="multipart/form-data">
@@ -499,10 +477,8 @@ if ($verificarRelation->status == 404) {
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="input-control">
 
-                                <p class="text-label2">Nombre de la empresa o negocio:</p>
-                                <input type="text" name="nameEditEmpresa" class="form-control input-group"
-                                    placeholder="ej: Grupo Bimbo" required
-                                    value="<?php echo $verificarCvRe->results[0]->name_empresa ?>">
+                                <p class="text-label2">Razón social:</p>
+                                <input type="text" name="razonEditEmpresa" class="form-control input-group" placeholder="ej: Grupo Bimbo" required value="<?php echo $verificarCvRe->results[0]->razon_social ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -515,40 +491,8 @@ if ($verificarRelation->status == 404) {
                         <div class="col-lg-12 col-md-12 col-12">
                             <div class="input-control">
 
-                                <p class="text-label2">Teléfono empresarial o de contacto:</p>
-                                <input type="text" name="telEditContacto" class="form-control input-group"
-                                    placeholder="Teléfono empresarial o contacto principal" required
-                                    value="<?php echo $verificarCvRe->results[0]->telefono_empresa ?>">
-
-                                <div class="valid-feedback">
-                                    Válido
-                                </div>
-                                <div class="invalid-feedback">
-                                    ¡Apellidos es requerido!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="input-control">
-
-                                <p class="text-label2">Email empresarial o de contacto:</p>
-                                <input type="email" name="emailEditContacto" class="form-control input-group"
-                                    placeholder="Email " required
-                                    value="<?php echo $verificarCvRe->results[0]->email_empresa ?>">
-
-                                <div class="valid-feedback">
-                                    Válido
-                                </div>
-                                <div class="invalid-feedback">
-                                    ¡Apellidos es requerido!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-12">
-                            <div class="input-control">
-
-                                <p class="text-label2">Logo de la empresa:</p>
-                                <input type="file" name="fotoEditEmpresa" class="form-control input-group" required>
+                                <p class="text-label2">Rfc:</p>
+                                <input type="text" name="rfcEditContacto" class="form-control input-group" placeholder="Teléfono empresarial o contacto principal" required value="<?php echo $verificarCvRe->results[0]->rfc ?>">
 
                                 <div class="valid-feedback">
                                     Válido
@@ -559,7 +503,7 @@ if ($verificarRelation->status == 404) {
                             </div>
                         </div>
                         <div class="col-lg-12 col-12 m-auto my-3">
-                            <button type="submit" class="form-control" id="btn-register" name="datos_edit_empresa">
+                            <button type="submit" class="form-control" id="btn-register" name="datos_edit_empresa4">
                                 Guardar y continuar
                             </button>
                         </div>

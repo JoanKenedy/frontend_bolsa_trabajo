@@ -17,8 +17,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -61,8 +60,7 @@ Bootstrap 5 HTML CSS Template
                 </div>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -70,75 +68,74 @@ Bootstrap 5 HTML CSS Template
 
                 <ul class="navbar-nav align-items-center ms-lg-5">
                     <?php if (isset($_SESSION['rol'])) : ?>
-                    <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="<?php echo $path ?>account&candidate&inicio">Inicio</a>
-                    </li>
-                    <?php elseif ($_SESSION['rol']->rol_usuario_id  == 2) :  ?>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="<?php echo $path ?>account&recruiter&inicio">Inicio</a>
-                    </li>
-                    <?php endif; ?>
+                        <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="<?php echo $path ?>account&candidate&inicio">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo $path ?>account&candidate&about">Nosotros</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo $path ?>account&candidate&job-listings">Listado detrabajos</a></li>
+                            <li class="nav-item"><a class="nav-link " href="<?php echo $path ?>account&candidate&contact">Conctacto</a></li>
+                        <?php elseif ($_SESSION['rol']->rol_usuario_id  == 2) :  ?>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="<?php echo $path ?>account&recruiter&inicio">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo $path ?>account&recruiter&about">Nosotros</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="<?php echo $path ?>account&recruiter&job-listings">Listado detrabajos</a></li>
+                            <li class="nav-item"><a class="nav-link " href="<?php echo $path ?>account&recruiter&contact">Conctacto</a></li>
+                        <?php endif; ?>
                     <?php else :  ?>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="<?php echo $path ?> ">Inicio</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="<?php echo $path ?> ">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo $path ?>about.php">Nosotros</a>
+                        </li>
+                        <li><a class="dropdown-item" href="<?php echo $path ?>job-listings.php">Listado de
+                                trabajos</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="<?php echo $path ?>contact.php">Conctacto</a>
+                        </li>
                     <?php endif; ?>
 
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $path ?>about.php">Nosotros</a>
-                    </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">Más</a>
-
-                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                            <li><a class="dropdown-item" href="<?php echo $path ?>job-listings.php">Listado de
-                                    trabajos</a></li>
-
-                            <li><a class="dropdown-item" href="<?php echo $path ?>job-details.php">Detalles del
-                                    trabajo</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="<?php echo $path ?>contact.php">Conctacto</a>
-                    </li>
                     <?php if (isset($_SESSION['rol'])) : ?>
-                    <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
+                        <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
 
-                    <li class="nav-item ms-lg-auto mx-3 ">
-                        <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&candidate&curriculum">MI
-                            CV</a>
-                    </li>
-                    <li class="nav-item ms-lg-auto mx-3 ">
-                        <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&candidate&dashboard">Mi
-                            perfil</a>
-                    </li>
-                    <li class="nav-item ms-lg-auto btn-compu">
-                        <a href="nav-link custom-btn btn"> <img src="images/avatar/usuario.png" alt=""
-                                class="img_perfil">
-                            <p><?php echo $_SESSION['rol']->nombre ?></p>
-                        </a>
-                    </li>
-                    <?php elseif ($_SESSION['rol']->rol_usuario_id  == 2) :  ?>
-                    <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&recruiter&company_profile">CV
-                        Empresa</a>
-                    <a class="nav-link custom-btn btn " href="<?php echo $path ?>account&recruiter&dashboard">Mi
-                        cuenta</a>
-
+                            <li class="nav-item ms-lg-auto mx-3 ">
+                                <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&candidate&curriculum">MI
+                                    CV</a>
+                            </li>
+                            <li class="nav-item ms-lg-auto mx-3 ">
+                                <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&candidate&dashboard">Mi
+                                    perfil</a>
+                            </li>
+                            <li class="nav-item ms-lg-auto btn-compu">
+                                <a href="nav-link custom-btn btn"> <img src="images/avatar/usuario.png" alt="" class="img_perfil">
+                                    <p><?php echo $_SESSION['rol']->nombre ?></p>
+                                </a>
+                            </li>
+                        <?php elseif ($_SESSION['rol']->rol_usuario_id  == 2) :  ?>
+                            <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&recruiter&company_profile">CV
+                                Empresa</a>
+                            <a class="nav-link custom-btn btn " href="<?php echo $path ?>account&recruiter&dashboard">Mi
+                                cuenta</a>
 
 
-                    </li>
-                    <?php endif; ?>
+
+                            </li>
+                        <?php endif; ?>
                     <?php else :  ?>
-                    <li class="nav-item ms-lg-auto">
-                        <a class="nav-link" href="<?php echo $path ?>account&enrrollment">Registrarse</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&login">Acceso</a>
-                    </li>
+                        <li class="nav-item ms-lg-auto">
+                            <a class="nav-link" href="<?php echo $path ?>account&enrrollment">Registrarse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&login">Acceso</a>
+                        </li>
                     <?php endif; ?>
                 </ul>
             </div>
