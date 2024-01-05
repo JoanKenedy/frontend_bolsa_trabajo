@@ -64,13 +64,11 @@
 
                             <div class="d-flex">
                                 <p class="mb-0">
-                                    <a href="job-listings.html"
-                                        class="badge badge-level"><?php echo $verificarVacante->results[0]->educacion_requerida ?></a>
+                                    <a href="job-listings.html" class="badge badge-level"><?php echo $verificarVacante->results[0]->educacion_requerida ?></a>
                                 </p>
 
                                 <p class="mb-0">
-                                    <a href="job-listings.html"
-                                        class="badge"><?php echo $verificarVacante->results[0]->tipo_contratacion ?></a>
+                                    <a href="job-listings.html" class="badge"><?php echo $verificarVacante->results[0]->tipo_contratacion ?></a>
                                 </p>
                             </div>
                         </div>
@@ -79,22 +77,37 @@
 
                         <p><?php echo $verificarVacante->results[0]->descripcion ?></p>
 
-                        <h5 class="mt-4 mb-3">The Role</h5>
+                        <h5 class="mt-4 mb-3">Requisitos</h5>
+                        <?php
+                        $decodedArray = json_decode($verificarVacante->results[0]->requisitos);
 
-                        <p class="mb-1"><strong>Benefits:</strong> Lorem Ipsum dolor sit amet, consectetur adipsicing
-                            kengan omeg kohm tokito adipcingi elit</p>
-
-                        <p><strong>Good salary:</strong> Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg
-                            kohm tokito</p>
-
-                        <h5 class="mt-4 mb-3">Requirements</h5>
-
+                        ?>
                         <ul>
-                            <li>Strong knowledge in computing skill</li>
+                            <?php foreach ($decodedArray as $requisito) : ?>
 
-                            <li>Minimum 5 years of working experiences consectetur omeg</li>
+                                <li><?php echo $requisito ?></li>
 
-                            <li>Excellent interpersonal skills</li>
+
+
+
+                            <?php endforeach ?>
+                        </ul>
+                        <h5 class="mt-1 mb-1">Beneficios:</h5>
+
+
+                        <?php
+                        $decodedBeneficio = json_decode($verificarVacante->results[0]->beneficios);
+
+                        ?>
+                        <ul>
+                            <?php foreach ($decodedBeneficio as $beneficio) : ?>
+
+                                <li><?php echo $beneficio ?></li>
+
+
+
+
+                            <?php endforeach ?>
                         </ul>
 
 
@@ -102,13 +115,11 @@
 
                         <div class="d-flex justify-content-center flex-wrap mt-5 border-top pt-4">
 
-                            <a class="custom-btn btn mt-2"
-                                href="<?php echo $path ?>account&candidate&dashboard&postularme?vacante=<?php echo $verificarVacante->results[0]->id_vacante ?>">Postulate</a>
+                            <a class="custom-btn btn mt-2" href="<?php echo $path ?>account&candidate&dashboard&postularme?vacante=<?php echo $verificarVacante->results[0]->id_vacante ?>">Postulate</a>
 
 
 
-                            <a href="<?php echo $path ?>account&candidate&dashboard"
-                                class="custom-btn custom-border-btn btn mt-2 ms-lg-4 ms-3">Regresar</a>
+                            <a href="<?php echo $path ?>account&candidate&dashboard" class="custom-btn custom-border-btn btn mt-2 ms-lg-4 ms-3">Regresar</a>
 
                             <div class="job-detail-share d-flex align-items-center">
                                 <p class="mb-0 me-lg-4 me-3">Share:</p>
@@ -139,8 +150,7 @@
                     <div class="job-thumb job-thumb-detail-box bg-white shadow-lg">
                         <div class="d-flex align-items-center">
                             <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mb-3">
-                                <img src="images/descargas/<?php echo $verificarVacante2->results[0]->logo_empresa ?>"
-                                    class="job-image me-3 img-fluid" alt="">
+                                <img src="images/descargas/<?php echo $verificarVacante2->results[0]->logo_empresa ?>" class="job-image me-3 img-fluid" alt="">
 
                                 <p class="mb-0"><?php echo $verificarVacante2->results[0]->name_empresa ?></p>
                             </div>
@@ -185,8 +195,7 @@
             </div>
         </div>
     </section>
-    <div class="modal fade" id="postulado" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;"
-        aria-hidden="true">
+    <div class="modal fade" id="postulado" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;" aria-hidden="true">
         <div class="modal-dialog ">
             <div class="modal-content py-5 px-3 ">
 

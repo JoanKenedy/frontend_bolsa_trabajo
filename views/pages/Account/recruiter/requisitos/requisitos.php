@@ -1,84 +1,53 @@
-       <?php 
-       $addRequisitos = new RecruitersController();
-       $addRequisitos->addRequisitos();
+    <div class="col-lg-12 col-12 mt-3">
+        <div class="row">
+            <div class="col-lg-7 col-8">
+                <p class="text-requisito">Escribi los requisitos que solicitas:</p>
+            </div>
+            <div class="col-lg-5 col-4">
+                <button type="button" id="agregar">Agregar</button>
+            </div>
+        </div>
+    </div>
+    <div id="dinamic" class="col-lg-12 col-12">
 
-      ?>
-       <div class="ps-my-account">
-           <div class="container">
-               <form class="custom-form hero-form  " novalidate method="post" role="form">
-                   <p class=" text-center text-white">
-                       Los datos necesarios para que se puedan postular a tu vacante.
-                   </p>
+    </div>
+    <script>
+        const contenedor = document.querySelector('#dinamic');
+        const btnAgregar = document.querySelector('#agregar');
 
-                   <input type="hidden" value="<?php echo CurlController::api() ?>" id="urlApi">
-                   <div class="row ">
-                       <div class="col-lg-8 col-md-8 col-12">
-                           <div class="input-control">
+        let total = 1;
 
-                               <p class="text-label">Requisito:</p>
-                               <input type="text" name="requisito" class="form-control input-group datoInput"
-                                   placeholder="Atención al detalle" required id="requisito">
-                           </div>
-                       </div>
-                       <div class="col-lg-4 col-md-4 col-12 ">
-                           <div class="input-control">
-                               <button type="button" class="form-control mt-4" onclick="addRequisito()" id="btn-datos">
-                                   Agregar requisito
-                               </button>
-
-
-                           </div>
-                       </div>
-                       <div class="datos-array text-white" id="datos-array">
-
-                       </div>
-
-
-
-
-
-
-
-                       <div class="col-lg-12 col-12 m-auto">
-                           <button type="submit" class="form-control" id="btn-register" name="datos_requisitos">
-                               Enviar mis requisitos
+        btnAgregar.addEventListener('click', e => {
+            let div = document.createElement('div');
+            div.innerHTML = `
+                                   <input type="text" name="requisito[]" class="form-control input-group"
+                                    placeholder="Requisito ${total++}:" required>
+                               </div>
+                              
+                           <button  class="form-control" onclick="eliminar(this)" >
+                              Eliminar
                            </button>
-                       </div>
-
-
-                   </div>
-
-               </form>
-           </div>
-       </div>
-
-
-       </div>
-
-       <script>
-function addRequisito() {
-    let arrayInput = new Array();
-    let inputsValues = document.getElementsByClassName('datoInput');
-    let cajaDatos = document.getElementById('datos-array');
-    let btnDatos = document.getElementById('btn-datos');
-    namesValues = [].map.call(inputsValues, function(datoInput) {
-        arrayInput.push(datoInput.value)
-    });
-    arrayInput.forEach(function(inputsValuesData) {
-        console.log("El datos es:" + inputsValuesData)
-        // crea un nuevo div
-        // y añade contenido
-        var newDiv = document.createElement("p");
-        var newContent = document.createTextNode(inputsValuesData);
-        newDiv.appendChild(newContent); //añade texto al div creado.
-
-        // añade el elemento creado y su contenido al DOM
-        var currentDiv = document.getElementById("div1");
-        cajaDatos.insertBefore(newDiv, currentDiv);
-    })
+                       
+                               
+                       `;
+            contenedor.appendChild(div);
+        })
 
 
 
 
-}
-       </script>
+        const eliminar = (e) => {
+            const divPadre = e.parentNode;
+            contenedor.removeChild(divPadre);
+            actualizarContador();
+        }
+
+
+        const actualizarContador = () => {
+            let divs = contenedor.children;
+            total = 1;
+            for (let i = 0; i < divs.length; i++) {
+                div[i].children[0].innerHTML = total++;
+            }
+        }
+    </script>

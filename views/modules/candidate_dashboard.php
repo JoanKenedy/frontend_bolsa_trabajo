@@ -10,21 +10,17 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1"><i
-                                        class="bi-person custom-icon"></i></span>
+                                <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 
-                                <input type="text" name="job-title" class="form-control" placeholder="Job Title"
-                                    required>
+                                <input type="text" name="job-title" class="form-control" placeholder="Job Title" required>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-4 col-12 ">
                             <div class="input-group">
-                                <span class="input-group-text" id="basic-addon2"><i
-                                        class="bi-geo-alt custom-icon"></i></span>
+                                <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
 
-                                <input type="text" name="job-location" id="job-location" class="form-control"
-                                    placeholder="Location" required>
+                                <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Location" required>
                             </div>
                         </div>
 
@@ -52,21 +48,17 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1"><i
-                                        class="bi-person custom-icon"></i></span>
+                                <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 
-                                <input type="text" name="job-title" id="job-title" class="form-control"
-                                    placeholder="Job Title" required>
+                                <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Job Title" required>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="input-group">
-                                <span class="input-group-text" id="basic-addon2"><i
-                                        class="bi-geo-alt custom-icon"></i></span>
+                                <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
 
-                                <input type="text" name="job-location" id="job-location" class="form-control"
-                                    placeholder="Location" required>
+                                <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Location" required>
                             </div>
                         </div>
 
@@ -110,39 +102,37 @@
         <section class="job-section job-featured-section section-space" id="job-section">
             <div class="container">
                 <?php foreach ($totalVacantes as $key => $value) : ?>
-                <div class="col-lg-12 col-12 my-3">
-                    <div class="wraper-job">
-                        <div class="wraper-footer-job ">
+                    <div class="col-lg-12 col-12 my-3">
+                        <div class="wraper-job">
+                            <div class="wraper-footer-job ">
 
-                            <h4 class="job-titulo  text-center mb-lg-0">
-                                <a href="job-details.html"
-                                    class="job-title-link"><?php echo $value->title_vacante ?></a>
-                                <p class="">
+                                <h4 class="job-titulo  text-center mb-lg-0">
+                                    <a href="job-details.html" class="job-title-link"><?php echo $value->title_vacante ?></a>
+                                    <p class="">
 
-                                    <?php echo $value->fecha_de_publicacion ?>
-                                </p>
-                            </h4>
+                                        <?php echo $value->fecha_de_publicacion ?>
+                                    </p>
+                                </h4>
 
-                            <div class="wraper-footer-job-description">
-                                <p class="">
-                                    <i class="custom-icon bi-cash me-1"></i>
-                                    $<?php echo $value->rango_sueldo ?>MXN
-                                </p>
-                                <p class="">
-                                    <i class="custom-icon bi-geo-alt me-1"></i>
-                                    <?php echo $value->lugar_de_trabajo ?>
-                                </p>
-                            </div>
+                                <div class="wraper-footer-job-description">
+                                    <p class="">
+                                        <i class="custom-icon bi-cash me-1"></i>
+                                        $<?php echo $value->rango_sueldo ?>MXN
+                                    </p>
+                                    <p class="">
+                                        <i class="custom-icon bi-geo-alt me-1"></i>
+                                        <?php echo $value->lugar_de_trabajo ?>
+                                    </p>
+                                </div>
 
 
-                            <div class="container-btn-postular">
-                                <a href="<?php echo $path ?>account&candidate&dashboard&vacante_details?id_vacante=<?php echo $value->id_vacante  ?>"
-                                    class="custom-btn btn">Ver más</a>
+                                <div class="container-btn-postular">
+                                    <a href="<?php echo $path ?>account&candidate&dashboard&vacante_details?id_vacante=<?php echo $value->id_vacante  ?>" class="custom-btn btn">Ver más</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
+                    </div>
                 <?php endforeach ?>
             </div>
 
@@ -190,11 +180,11 @@
 
 </div>
 <script>
-let btnForm = document.getElementById("busquedaMobil");
-let btnHidden = document.getElementById("form-mobil");
+    let btnForm = document.getElementById("busquedaMobil");
+    let btnHidden = document.getElementById("form-mobil");
 
-btnForm.addEventListener("click", () => {
-    btnHidden.classList.add("aparecerInput");
-    btnForm.style.display = 'none';
-});
+    btnForm.addEventListener("click", () => {
+        btnHidden.classList.add("aparecerInput");
+        btnForm.style.display = 'none';
+    });
 </script>

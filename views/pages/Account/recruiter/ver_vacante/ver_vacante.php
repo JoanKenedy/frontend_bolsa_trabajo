@@ -74,23 +74,41 @@
 
                         <p><?php echo $verificarVacante->results[0]->descripcion ?></p>
 
-                        <h5 class="mt-4 mb-3">The Role</h5>
 
-                        <p class="mb-1"><strong>Benefits:</strong> Lorem Ipsum dolor sit amet, consectetur adipsicing
-                            kengan omeg kohm tokito adipcingi elit</p>
 
-                        <p><strong>Good salary:</strong> Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg
-                            kohm tokito</p>
+                        <h5 class="mt-4 mb-3">Requisitos</h5>
+                        <?php
+                        $decodedArray = json_decode($verificarVacante->results[0]->requisitos);
 
-                        <h5 class="mt-4 mb-3">Requirements</h5>
-
+                        ?>
                         <ul>
-                            <li>Strong knowledge in computing skill</li>
+                            <?php foreach ($decodedArray as $requisito) : ?>
 
-                            <li>Minimum 5 years of working experiences consectetur omeg</li>
+                                <li><?php echo $requisito ?></li>
 
-                            <li>Excellent interpersonal skills</li>
+
+
+
+                            <?php endforeach ?>
                         </ul>
+                        <h5 class="mt-1 mb-1">Beneficios:</h5>
+
+
+                        <?php
+                        $decodedBeneficio = json_decode($verificarVacante->results[0]->beneficios);
+
+                        ?>
+                        <ul>
+                            <?php foreach ($decodedBeneficio as $beneficio) : ?>
+
+                                <li><?php echo $beneficio ?></li>
+
+
+
+
+                            <?php endforeach ?>
+                        </ul>
+
 
                         <div class="d-flex justify-content-center flex-wrap mt-5 border-top pt-4">
 
