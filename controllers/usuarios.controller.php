@@ -1303,11 +1303,11 @@ setTimeout(() => {
         
     }
      
-    public function potularmeVacante(){
+    public function postularmeVacante(){
            if (isset($_POST['btn_postular'])) {
-            $id_vacante = $_POST['id_vacante'];
-            $id_user = $_SESSION['rol']->id_usuario;
-           
+                        $id_vacante = $_POST['id_vacante'];
+                         $id_user = $_SESSION['rol']->id_usuario;
+
                 $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
                   $sql = "INSERT INTO postulaciones ( `id_vacante_postulacion`, `id_usuario_postulacion` )

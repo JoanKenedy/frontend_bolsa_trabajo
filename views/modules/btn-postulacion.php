@@ -1,1 +1,0 @@
-<a class="custom-btn btn mt-2" href="<?php echo $path ?>account&candidate&dashboard&postularme?vacante=<?php echo $verificarVacante->results[0]->id_vacante  ?>">Postularme</a>

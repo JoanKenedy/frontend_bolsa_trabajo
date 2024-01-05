@@ -1135,6 +1135,11 @@ textarea {
   text-align: center;
   margin: auto;
 }
+.datos-array p {
+  color: #fff !important;
+  font-size: 1.1em !important;
+  margin: 2px auto !important;
+}
 
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {
