@@ -111,6 +111,46 @@
                                  </div>
                              </div>
                          </div>
+                         <?php include "views/pages/Account/recruiter/requisitos/requisitos.php"; ?>
+                         <div class="col-lg-12 col-md-12 col-12">
+                             <?php
+                                     $requisitos = json_decode($verificarEditarVacante->results[0]->requisitos);
+                                    
+                                   ?>
+                             <?php foreach($requisitos as $requisito): ?>
+
+                             <div class="edit-requisito">
+                                 <input type="text" name="editrequisito[]" class="form-control input-group"
+                                     placeholder="Requisito:" required value="<?php echo $requisito ?>">
+
+
+                                 <button class="form-control" onclick="eliminar(this)">
+                                     Eliminar
+                                 </button>
+                             </div>
+                             <?php endforeach; ?>
+                         </div>
+                         <?php include "views/pages/Account/recruiter/beneficios/beneficios.php"; ?>
+                         <div class="col-lg-12 col-md-12 col-12">
+                             <?php
+                                     $beneficios = json_decode($verificarEditarVacante->results[0]->beneficios);
+                                    
+                                   ?>
+                             <?php foreach($beneficios as $beneficio): ?>
+
+                             <div class="edit-requisito">
+                                 <input type="text" name="editbeneficio[]" class="form-control input-group"
+                                     placeholder="Requisito:" required value="<?php echo $beneficio ?>">
+
+
+                                 <button class="form-control" onclick="eliminar2(this)">
+                                     Eliminar
+                                 </button>
+                             </div>
+                             <?php endforeach; ?>
+                         </div>
+
+
                          <div class="col-lg-12 col-md-12 col-12">
 
                              <div class="col-lg-12 col-md-12 col-12">

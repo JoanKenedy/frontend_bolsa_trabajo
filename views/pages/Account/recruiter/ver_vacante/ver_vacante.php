@@ -56,21 +56,25 @@
 
                             <p class="job-price mb-0">
                                 <i class="custom-icon bi-cash me-1"></i>
-                                <?php echo $verificarVacante->results[0]->rango_sueldo ?>
+                                $<?php echo $verificarVacante->results[0]->rango_sueldo ?>MXN
                             </p>
 
-                            <div class="d-flex">
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge badge-level"><?php echo $verificarVacante->results[0]->educacion_requerida ?></a>
-                                </p>
 
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge"><?php echo $verificarVacante->results[0]->tipo_contratacion ?></a>
-                                </p>
-                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <p class="mb-0">
+                                Educación
+                                requerida: <a href="job-listings.html"
+                                    class="badge badge-level"><?php echo $verificarVacante->results[0]->educacion_requerida ?></a>
+                            </p>
+
+                            <p class="mb-0">
+                                Contratación: <a href="job-listings.html"
+                                    class="badge"><?php echo $verificarVacante->results[0]->tipo_contratacion ?></a>
+                            </p>
                         </div>
 
-                        <h4 class="mt-4 mb-2">Descripción:</h4>
+                        <h4 class="mt-4 mb-2">Descripción de funciones:</h4>
 
                         <p><?php echo $verificarVacante->results[0]->descripcion ?></p>
 
@@ -84,7 +88,7 @@
                         <ul>
                             <?php foreach ($decodedArray as $requisito) : ?>
 
-                                <li><?php echo $requisito ?></li>
+                            <li><?php echo $requisito ?></li>
 
 
 
@@ -101,7 +105,7 @@
                         <ul>
                             <?php foreach ($decodedBeneficio as $beneficio) : ?>
 
-                                <li><?php echo $beneficio ?></li>
+                            <li><?php echo $beneficio ?></li>
 
 
 
@@ -143,7 +147,8 @@
                     <div class="job-thumb job-thumb-detail-box bg-white shadow-lg">
                         <div class="d-flex align-items-center">
                             <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mb-3">
-                                <img src="images/descargas/<?php echo $verificarVacante2->results[0]->logo_empresa ?>" class="job-image me-3 img-fluid" alt="">
+                                <img src="images/descargas/<?php echo $verificarVacante2->results[0]->logo_empresa ?>"
+                                    class="job-image me-3 img-fluid" alt="">
 
                                 <p class="mb-0"><?php echo $verificarVacante2->results[0]->name_empresa ?></p>
                             </div>

@@ -32,41 +32,41 @@ class RecruitersController
             if ($datosEmpresa->status == 200) {
 ?>
 
-                <script>
-                    function modal() {
-                        let timerInterval;
-                        Swal.fire({
-                            title: "Cargando tus datos",
-                            html: "Cerraré en <b></b> milisegundos.",
-                            timer: 2000,
-                            timerProgressBar: true,
-                            didOpen: () => {
-                                Swal.showLoading();
-                                const timer = Swal.getPopup().querySelector("b");
-                                timerInterval = setInterval(() => {
-                                    timer.textContent = `${Swal.getTimerLeft()}`;
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Cargando tus datos",
+        html: "Cerraré en <b></b> milisegundos.",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
 
-                                }, 100);
-                            },
-                            willClose: () => {
-                                clearInterval(timerInterval);
-                            }
-                        }).then((result) => {
-                            /* Read more about handling dismissals below */
-                            if (result.dismiss === Swal.DismissReason.timer) {
-                                console.log("I was closed by the timer");
-                            }
-                        });
-                    }
-                    modal();
-                    fncFormatInputs();
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
 
-                    setTimeout(() => {
-                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                        location.href = `${urlEnvio}account&recruiter&datos_finales`;
-                    }, "2500");
-                </script>
-                <?php
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&recruiter&datos_finales`;
+}, "2500");
+</script>
+<?php
 
 
             } else {
@@ -102,41 +102,41 @@ class RecruitersController
                 if ($datosFinales->status == 200) {
                 ?>
 
-                    <script>
-                        function modal() {
-                            let timerInterval;
-                            Swal.fire({
-                                title: "Cargando tus datos",
-                                html: "Cerraré en <b></b> milisegundos.",
-                                timer: 2000,
-                                timerProgressBar: true,
-                                didOpen: () => {
-                                    Swal.showLoading();
-                                    const timer = Swal.getPopup().querySelector("b");
-                                    timerInterval = setInterval(() => {
-                                        timer.textContent = `${Swal.getTimerLeft()}`;
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Cargando tus datos",
+        html: "Cerraré en <b></b> milisegundos.",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
 
-                                    }, 100);
-                                },
-                                willClose: () => {
-                                    clearInterval(timerInterval);
-                                }
-                            }).then((result) => {
-                                /* Read more about handling dismissals below */
-                                if (result.dismiss === Swal.DismissReason.timer) {
-                                    console.log("I was closed by the timer");
-                                }
-                            });
-                        }
-                        modal();
-                        fncFormatInputs();
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
 
-                        setTimeout(() => {
-                            let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&recruiter&dashboard`;
-                        }, "2500");
-                    </script>
-                <?php
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&recruiter&dashboard`;
+}, "2500");
+</script>
+<?php
 
                 } else {
                     echo '<div class="alert alert-danger">Algo paso vuelva a intentar</div> <script>
@@ -188,44 +188,45 @@ class RecruitersController
                 );
 
                 $datosEmpresa = CurlController::request($url, $method, $fields, $header);
+               
 
                 if ($datosEmpresa->status == 200) {
                 ?>
 
-                    <script>
-                        function modal() {
-                            let timerInterval;
-                            Swal.fire({
-                                title: "Tu vacante se ha creado con éxito",
-                                html: "Cerraré en <b></b> milisegundos.",
-                                timer: 2000,
-                                timerProgressBar: true,
-                                didOpen: () => {
-                                    Swal.showLoading();
-                                    const timer = Swal.getPopup().querySelector("b");
-                                    timerInterval = setInterval(() => {
-                                        timer.textContent = `${Swal.getTimerLeft()}`;
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Tu vacante se ha creado con éxito",
+        html: "Cerraré en <b></b> milisegundos.",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
 
-                                    }, 100);
-                                },
-                                willClose: () => {
-                                    clearInterval(timerInterval);
-                                }
-                            }).then((result) => {
-                                /* Read more about handling dismissals below */
-                                if (result.dismiss === Swal.DismissReason.timer) {
-                                    console.log("I was closed by the timer");
-                                }
-                            });
-                        }
-                        modal();
-                        fncFormatInputs();
-                        setTimeout(() => {
-                            let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&recruiter&dashboard`;
-                        }, "2500");
-                    </script>
-                    <?php
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&recruiter&dashboard`;
+}, "2500");
+</script>
+<?php
                 } else {
                     echo '<div class="alert alert-danger">Algo paso vuelva a intentar</div> <script>
                     fncFormatInputs()
@@ -258,57 +259,57 @@ class RecruitersController
                     $result = mysqli_query($conn, $sql);
                     if (mysqli_affected_rows($conn) == 0) {
                     ?>
-                        <script>
-                            function modal() {
-                                Swal.fire({
-                                    position: "top",
-                                    icon: "error",
-                                    title: "Algo salio mal, verifiquemos que fue",
-                                    showConfirmButton: false,
-                                    timer: 1500,
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
 
 
-                                });
-                            }
-                            modal();
-                        </script>
-                    <?php } else { ?>
+    });
+}
+modal();
+</script>
+<?php } else { ?>
 
-                        <script>
-                            function modal() {
-                                let timerInterval;
-                                Swal.fire({
-                                    title: "Actualizando datos de tu perfil de empresa",
-                                    html: "Iremos a tu cv",
-                                    timer: 2000,
-                                    timerProgressBar: true,
-                                    didOpen: () => {
-                                        Swal.showLoading();
-                                        const timer = Swal.getPopup().querySelector("b");
-                                        timerInterval = setInterval(() => {
-                                            timer.textContent = `${Swal.getTimerLeft()}`;
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando datos de tu perfil de empresa",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
 
-                                        }, 100);
-                                    },
-                                    willClose: () => {
-                                        clearInterval(timerInterval);
-                                    }
-                                }).then((result) => {
-                                    /* Read more about handling dismissals below */
-                                    if (result.dismiss === Swal.DismissReason.timer) {
-                                        console.log("I was closed by the timer");
-                                    }
-                                });
-                            }
-                            modal();
-                            fncFormatInputs();
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
 
-                            setTimeout(() => {
-                                let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                                location.href = `${urlEnvio}account&recruiter&company_profile`;
-                            }, "2500");
-                        </script>
-                <?php
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&recruiter&company_profile`;
+}, "2500");
+</script>
+<?php
 
 
 
@@ -335,57 +336,57 @@ class RecruitersController
             $result = mysqli_query($conn, $sql);
             if (mysqli_affected_rows($conn) == 0) {
                 ?>
-                <script>
-                    function modal() {
-                        Swal.fire({
-                            position: "top",
-                            icon: "error",
-                            title: "Algo salio mal, verifiquemos que fue",
-                            showConfirmButton: false,
-                            timer: 1500,
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
 
 
-                        });
-                    }
-                    modal();
-                </script>
-            <?php } else { ?>
+    });
+}
+modal();
+</script>
+<?php } else { ?>
 
-                <script>
-                    function modal() {
-                        let timerInterval;
-                        Swal.fire({
-                            title: "Actualizando datos de tu perfil de empresa",
-                            html: "Iremos a tu cv",
-                            timer: 2000,
-                            timerProgressBar: true,
-                            didOpen: () => {
-                                Swal.showLoading();
-                                const timer = Swal.getPopup().querySelector("b");
-                                timerInterval = setInterval(() => {
-                                    timer.textContent = `${Swal.getTimerLeft()}`;
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando datos de tu perfil de empresa",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
 
-                                }, 100);
-                            },
-                            willClose: () => {
-                                clearInterval(timerInterval);
-                            }
-                        }).then((result) => {
-                            /* Read more about handling dismissals below */
-                            if (result.dismiss === Swal.DismissReason.timer) {
-                                console.log("I was closed by the timer");
-                            }
-                        });
-                    }
-                    modal();
-                    fncFormatInputs();
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
 
-                    setTimeout(() => {
-                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                        location.href = `${urlEnvio}account&recruiter&company_profile`;
-                    }, "2500");
-                </script>
-            <?php   }
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&recruiter&company_profile`;
+}, "2500");
+</script>
+<?php   }
         }
     }
 
@@ -408,57 +409,57 @@ class RecruitersController
             $result = mysqli_query($conn, $sql);
             if (mysqli_affected_rows($conn) == 0) {
             ?>
-                <script>
-                    function modal() {
-                        Swal.fire({
-                            position: "top",
-                            icon: "error",
-                            title: "Algo salio mal, verifiquemos que fue",
-                            showConfirmButton: false,
-                            timer: 1500,
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
 
 
-                        });
-                    }
-                    modal();
-                </script>
-            <?php } else { ?>
+    });
+}
+modal();
+</script>
+<?php } else { ?>
 
-                <script>
-                    function modal() {
-                        let timerInterval;
-                        Swal.fire({
-                            title: "Actualizando datos de tu perfil de empresa",
-                            html: "Iremos a tu cv",
-                            timer: 2000,
-                            timerProgressBar: true,
-                            didOpen: () => {
-                                Swal.showLoading();
-                                const timer = Swal.getPopup().querySelector("b");
-                                timerInterval = setInterval(() => {
-                                    timer.textContent = `${Swal.getTimerLeft()}`;
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando datos de tu perfil de empresa",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
 
-                                }, 100);
-                            },
-                            willClose: () => {
-                                clearInterval(timerInterval);
-                            }
-                        }).then((result) => {
-                            /* Read more about handling dismissals below */
-                            if (result.dismiss === Swal.DismissReason.timer) {
-                                console.log("I was closed by the timer");
-                            }
-                        });
-                    }
-                    modal();
-                    fncFormatInputs();
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
 
-                    setTimeout(() => {
-                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                        location.href = `${urlEnvio}account&recruiter&company_profile`;
-                    }, "2500");
-                </script>
-            <?php   }
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&recruiter&company_profile`;
+}, "2500");
+</script>
+<?php   }
         }
     }
 
@@ -476,57 +477,57 @@ class RecruitersController
             $result = mysqli_query($conn, $sql);
             if (mysqli_affected_rows($conn) == 0) {
             ?>
-                <script>
-                    function modal() {
-                        Swal.fire({
-                            position: "top",
-                            icon: "error",
-                            title: "Algo salio mal, verifiquemos que fue",
-                            showConfirmButton: false,
-                            timer: 1500,
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
 
 
-                        });
-                    }
-                    modal();
-                </script>
-            <?php } else { ?>
+    });
+}
+modal();
+</script>
+<?php } else { ?>
 
-                <script>
-                    function modal() {
-                        let timerInterval;
-                        Swal.fire({
-                            title: "Actualizando datos de tu perfil de empresa",
-                            html: "Iremos a tu cv",
-                            timer: 2000,
-                            timerProgressBar: true,
-                            didOpen: () => {
-                                Swal.showLoading();
-                                const timer = Swal.getPopup().querySelector("b");
-                                timerInterval = setInterval(() => {
-                                    timer.textContent = `${Swal.getTimerLeft()}`;
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando datos de tu perfil de empresa",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
 
-                                }, 100);
-                            },
-                            willClose: () => {
-                                clearInterval(timerInterval);
-                            }
-                        }).then((result) => {
-                            /* Read more about handling dismissals below */
-                            if (result.dismiss === Swal.DismissReason.timer) {
-                                console.log("I was closed by the timer");
-                            }
-                        });
-                    }
-                    modal();
-                    fncFormatInputs();
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
 
-                    setTimeout(() => {
-                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                        location.href = `${urlEnvio}account&recruiter&company_profile`;
-                    }, "2500");
-                </script>
-            <?php   }
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&recruiter&company_profile`;
+}, "2500");
+</script>
+<?php   }
         }
     }
 
@@ -534,6 +535,10 @@ class RecruitersController
     {
 
         if (isset($_POST['datos_edit_vacante'])) {
+                $requisito = $_POST['editrequisito'];
+                $jsonString = json_encode($requisito);
+                $beneficio = $_POST['editbeneficio'];
+                $jsonBeneficio = json_encode($beneficio);
             $id_vacante = $verificarEditarVacante->results[0]->id_vacante;
             $title_vacante = $_POST['titleEditVacante'];
             $sueldo = $_POST['sueldoEditVacante'];
@@ -541,65 +546,67 @@ class RecruitersController
             $contratacion = $_POST['tipoEditContratacion'];
             $horario = $_POST['horarioEditVacante'];
             $lugar_trabajo = $_POST['lugarEditTrabajo'];
+            $requisitos = $jsonString;
+            $beneficios = $jsonBeneficio;
             $desc = $_POST['descripcionEditVacante'];
 
             $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
-            $sql = "UPDATE crear_vacantes SET title_vacante='" . $title_vacante . "',rango_sueldo='" . $sueldo . "',educacion_requerida='" . $edu . "',tipo_contratacion='" . $contratacion . "',horario='" . $horario . "',lugar_de_trabajo='" . $lugar_trabajo . "',descripcion='" . $desc . "' WHERE id_vacante = '" . $id_vacante . "'";
+            $sql = "UPDATE crear_vacantes SET title_vacante='" . $title_vacante . "',rango_sueldo='" . $sueldo . "',educacion_requerida='" . $edu . "',tipo_contratacion='" . $contratacion . "',horario='" . $horario . "',lugar_de_trabajo='" . $lugar_trabajo . "',requisitos='".$requisitos."',beneficios='".$beneficios."',descripcion='" . $desc . "' WHERE id_vacante = '" . $id_vacante . "'";
 
             $result = mysqli_query($conn, $sql);
             if (mysqli_affected_rows($conn) == 0) {
             ?>
-                <script>
-                    function modal() {
-                        Swal.fire({
-                            position: "top",
-                            icon: "error",
-                            title: "Algo salio mal, verifiquemos que fue",
-                            showConfirmButton: false,
-                            timer: 1500,
+<script>
+function modal() {
+    Swal.fire({
+        position: "top",
+        icon: "error",
+        title: "Algo salio mal, verifiquemos que fue",
+        showConfirmButton: false,
+        timer: 1500,
 
 
-                        });
-                    }
-                    modal();
-                </script>
-            <?php } else { ?>
+    });
+}
+modal();
+</script>
+<?php } else { ?>
 
-                <script>
-                    function modal() {
-                        let timerInterval;
-                        Swal.fire({
-                            title: "Actualizando datos de tu vacante",
-                            html: "Iremos a tu cv",
-                            timer: 2000,
-                            timerProgressBar: true,
-                            didOpen: () => {
-                                Swal.showLoading();
-                                const timer = Swal.getPopup().querySelector("b");
-                                timerInterval = setInterval(() => {
-                                    timer.textContent = `${Swal.getTimerLeft()}`;
+<script>
+function modal() {
+    let timerInterval;
+    Swal.fire({
+        title: "Actualizando datos de tu vacante",
+        html: "Iremos a tu cv",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+            Swal.showLoading();
+            const timer = Swal.getPopup().querySelector("b");
+            timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
 
-                                }, 100);
-                            },
-                            willClose: () => {
-                                clearInterval(timerInterval);
-                            }
-                        }).then((result) => {
-                            /* Read more about handling dismissals below */
-                            if (result.dismiss === Swal.DismissReason.timer) {
-                                console.log("I was closed by the timer");
-                            }
-                        });
-                    }
-                    modal();
-                    fncFormatInputs();
+            }, 100);
+        },
+        willClose: () => {
+            clearInterval(timerInterval);
+        }
+    }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+            console.log("I was closed by the timer");
+        }
+    });
+}
+modal();
+fncFormatInputs();
 
-                    setTimeout(() => {
-                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                        location.href = `${urlEnvio}account&recruiter&dashboard`;
-                    }, "2500");
-                </script>
+setTimeout(() => {
+    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+    location.href = `${urlEnvio}account&recruiter&dashboard`;
+}, "2500");
+</script>
 <?php   }
         }
     }

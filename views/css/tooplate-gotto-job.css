@@ -1175,6 +1175,7 @@ textarea {
   margin-left: 7px;
   color: #000066;
   font-weight: 800;
+  margin-bottom: 0;
 }
 #beneficio {
   border-radius: 20px;
@@ -1198,6 +1199,23 @@ textarea {
 #beneficios div button {
   background-color: #000066;
   color: #fff;
+}
+.edit-requisito {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+  margin: 3px auto;
+}
+.edit-requisito input {
+  grid-column: 1/4;
+  padding: 0;
+}
+.edit-requisito button {
+  background-color: #000066;
+  color: #fff;
+}
+.edit-requisito input {
+  padding-left: 10px;
 }
 
 /*fin de estilos de mi perfil*/

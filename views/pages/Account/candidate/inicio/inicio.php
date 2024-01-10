@@ -1,3 +1,14 @@
+<?php 
+
+if (isset($urlParams[2])){
+    echo $urlParams[2];
+      if($urlParams[2] == 'search'){
+          include "views/pages/Account/candidate/search/search.php";
+      }
+   
+};
+
+?>
 <main>
 
     <section class="hero-section d-flex justify-content-center align-items-center">
@@ -17,7 +28,8 @@
                 </div>
 
                 <div class="col-lg-6 col-12">
-                    <form class="custom-form hero-form" action="#" method="get" role="form">
+                    <form class="custom-form hero-form" method="post" role="form"
+                        action="<?php echo $path ?>account&candidate&search">
                         <h3 class="text-white mb-3">
                             Busca el trabajo de tus sueños</h3>
 
@@ -27,8 +39,8 @@
                                     <span class="input-group-text" id="basic-addon1"><i
                                             class="bi-person custom-icon"></i></span>
 
-                                    <input type="text" name="job-title" id="job-title" class="form-control"
-                                        placeholder="Job Title" required>
+                                    <input type="text" name="job-title" id="job-title" class="form-control inputSearch"
+                                        placeholder="Titulo del trabajo" required>
                                 </div>
                             </div>
 
@@ -38,29 +50,17 @@
                                             class="bi-geo-alt custom-icon"></i></span>
 
                                     <input type="text" name="job-location" id="job-location" class="form-control"
-                                        placeholder="Location" required>
+                                        placeholder="Locación" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-12 col-12">
-                                <button type="submit" class="form-control">
+                                <button type="submit" class="form-control btnSearch" name="btnSearch">
                                     Buscar trabajo
                                 </button>
                             </div>
 
-                            <div class="col-12">
-                                <div class="d-flex flex-wrap align-items-center mt-4 mt-lg-0">
-                                    <span class="text-white mb-lg-0 mb-md-0 me-2">Popular keywords:</span>
 
-                                    <div>
-                                        <a href="job-listings.html" class="badge">Web design</a>
-
-                                        <a href="job-listings.html" class="badge">Marketing</a>
-
-                                        <a href="job-listings.html" class="badge">Customer support</a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </form>
                 </div>
