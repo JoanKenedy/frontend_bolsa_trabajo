@@ -344,9 +344,9 @@ if (isset($urlParams[3])) {
         </div>
         <div class="grid-8">
             <div class="grid-header">
-                <h6>Cursos y certificaciones</h6>
-                <p> Compártenos si tienes cursos complementarios o certificados que validan tus conocimientos. Solo
-                    documentos (WORD O PDF)</p>
+                <h6>Cartas de recomendación </h6>
+                <p> Compártenos documentos que avalen tus conocimientos o habilidades.
+                    Mínimo 2 documentos (WORD O PDF)</p>
                 <?php
 
                 $data = $_SESSION['rol']->id_usuario;

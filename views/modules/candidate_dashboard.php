@@ -1,9 +1,19 @@
+<?php
+
+if (isset($urlParams[2])) {
+
+    if ($urlParams[2] == 'search') {
+        include "views/pages/Account/candidate/search/search.php";
+    }
+};
+
+?>
 <section class="contenedor-buscador d-flex justify-content-center align-items-center">
     <div class="container">
         <div class="row">
 
             <div class="col-lg-12 col-12 form-mobil" id="form-mobil">
-                <form class="custom-form hero-form " action="#" method="get" role="form">
+                <form class="custom-form hero-form " action="<?php echo $path ?>account&candidate&search" method="post" role="form">
                     <h6 class="text-white mb-3 text-center">
                         Busca el trabajo de tus sueños</h6>
 
@@ -25,7 +35,7 @@
                         </div>
 
                         <div class="col-lg-4 col-12 ">
-                            <button type="submit" class="form-control">
+                            <button type="submit" class="form-control" name="btnSearch">
                                 Buscar trabajo
                             </button>
                         </div>
@@ -41,7 +51,7 @@
                 </button>
             </div>
             <div class="col-lg-12 col-12">
-                <form class="custom-form hero-form " action="#" method="get" role="form" id="form-compu">
+                <form class="custom-form hero-form " action="<?php echo $path ?>account&candidate&search" method="post" role="form" id="form-compu">
                     <h3 class="text-white mb-3 text-center">
                         Busca el trabajo de tus sueños</h3>
 
@@ -63,7 +73,7 @@
                         </div>
 
                         <div class="col-lg-4 col-12">
-                            <button type="submit" class="form-control">
+                            <button type="submit" class="form-control" name="btnSearch">
                                 Buscar trabajo
                             </button>
                         </div>
@@ -92,29 +102,29 @@
         $totalVacantes = CurlController::request($url, $method, $fields, $header)->results;
         ?>
 
-
-
-
-
-
-
-
         <section class="job-section job-featured-section section-space" id="job-section">
             <div class="container">
                 <?php foreach ($totalVacantes as $key => $value) : ?>
                     <div class="col-lg-12 col-12 my-3">
                         <div class="wraper-job">
                             <div class="wraper-footer-job ">
+                                <div class="foto">
+                                    <?php if ($value->foto_vacante != '') : ?>
+                                        <img src="images/descargas/<?php echo $value->foto_vacante ?>" alt="" class="img-redonda">
+                                    <?php else :  ?>
+                                        <img src="images/avatar/usuario.png" alt="">
+                                    <?php endif; ?>
+                                </div>
 
-                                <h4 class="job-titulo  text-center mb-lg-0">
-                                    <a href="job-details.html" class="job-title-link"><?php echo $value->title_vacante ?></a>
+                                <div class="job-titulo2 text-center mb-lg-0">
+                                    <p class="job-title-link"><?php echo $value->title_vacante ?></p>
                                     <p class="">
 
                                         <?php echo $value->fecha_de_publicacion ?>
                                     </p>
-                                </h4>
+                                </div>
 
-                                <div class="wraper-footer-job-description">
+                                <div class="wraper-footer-job-description text-center">
                                     <p class="">
                                         <i class="custom-icon bi-cash me-1"></i>
                                         $<?php echo $value->rango_sueldo ?>MXN
@@ -138,11 +148,17 @@
 
         </section>
         <section class="grid-curriculum-index">
+
             <div class="container container-grid-curriculum-index">
                 <div class="grid-item-curriculum-index">
-                    <img src="images/avatar/usuario.png" alt="">
-                    <h6 class="title-6">¡Hola Manuel!</h6>
-                    <span>Tu curriculum esta activo</span>
+                    <?php if ($_SESSION['rol']->foto_perfil != '') : ?>
+                        <img src="images/descargas/<?php echo $_SESSION['rol']->foto_perfil ?>" alt="" class="img-redonda">
+                    <?php else :  ?>
+                        <img src="images/avatar/usuario.png" alt="">
+                    <?php endif; ?>
+
+                    <h6 class="title-6 text-dorado">¡ <?php echo $_SESSION['rol']->nombre ?> !</h6>
+                    <span><i class="bi bi-check-circle-fill icon-check"></i> &nbsp; Tu curriculum esta activo</span>
                 </div>
                 <div class="grid-item-curriculum-index">
                     <h6>Visitas a mi curriculum</h6>

@@ -64,13 +64,11 @@
                         <div class="d-flex">
                             <p class="mb-0">
                                 Educación
-                                requerida: <a href="job-listings.html"
-                                    class="badge badge-level"><?php echo $verificarVacante->results[0]->educacion_requerida ?></a>
+                                requerida: <a href="job-listings.html" class="badge badge-level"><?php echo $verificarVacante->results[0]->educacion_requerida ?></a>
                             </p>
 
                             <p class="mb-0">
-                                Contratación: <a href="job-listings.html"
-                                    class="badge"><?php echo $verificarVacante->results[0]->tipo_contratacion ?></a>
+                                Contratación: <a href="job-listings.html" class="badge"><?php echo $verificarVacante->results[0]->tipo_contratacion ?></a>
                             </p>
                         </div>
 
@@ -88,7 +86,7 @@
                         <ul>
                             <?php foreach ($decodedArray as $requisito) : ?>
 
-                            <li><?php echo $requisito ?></li>
+                                <li><?php echo $requisito ?></li>
 
 
 
@@ -105,7 +103,7 @@
                         <ul>
                             <?php foreach ($decodedBeneficio as $beneficio) : ?>
 
-                            <li><?php echo $beneficio ?></li>
+                                <li><?php echo $beneficio ?></li>
 
 
 
@@ -117,7 +115,7 @@
                         <div class="d-flex justify-content-center flex-wrap mt-5 border-top pt-4">
 
 
-                            <div class="job-detail-share d-flex align-items-center">
+                            <!--  <div class="job-detail-share d-flex align-items-center">
                                 <p class="mb-0 me-lg-4 me-3">Share:</p>
 
                                 <a href="#" class="bi-facebook"></a>
@@ -125,7 +123,7 @@
                                 <a href="#" class="bi-twitter mx-3"></a>
 
                                 <a href="#" class="bi-share"></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -147,15 +145,14 @@
                     <div class="job-thumb job-thumb-detail-box bg-white shadow-lg">
                         <div class="d-flex align-items-center">
                             <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mb-3">
-                                <img src="images/descargas/<?php echo $verificarVacante2->results[0]->logo_empresa ?>"
-                                    class="job-image me-3 img-fluid" alt="">
+                                <img src="images/descargas/<?php echo $verificarVacante2->results[0]->logo_empresa ?>" class="job-image me-3 img-fluid" alt="">
 
-                                <p class="mb-0"><?php echo $verificarVacante2->results[0]->name_empresa ?></p>
+
                             </div>
+                            <p class="mb-0"><?php echo $verificarVacante2->results[0]->name_empresa ?></p>
+                            <!--  <a href="#" class="bi-bookmark ms-auto me-2"></a>
 
-                            <a href="#" class="bi-bookmark ms-auto me-2"></a>
-
-                            <a href="#" class="bi-heart"></a>
+                            <a href="#" class="bi-heart"></a> -->
                         </div>
 
                         <h6 class="mt-3 mb-2">Nosotros</h6>
@@ -165,11 +162,11 @@
                         <h6 class="mt-4 mb-3">Información de contacto</h6>
 
                         <p class="mb-2">
-                            <i class="custom-icon bi-globe me-1"></i>
+                            <!--  <i class="custom-icon bi-globe me-1"></i>
 
                             <a href="#" class="site-footer-link">
                                 www.jobbportal.com
-                            </a>
+                            </a>-->
                         </p>
 
                         <p class="mb-2">
@@ -183,7 +180,7 @@
                         <p>
                             <i class="custom-icon bi-envelope me-1"></i>
 
-                            <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                            <a href="mailto:<?php echo $verificarVacante2->results[0]->email_empresa ?>" class="site-footer-link">
                                 <?php echo $verificarVacante2->results[0]->email_empresa ?>
                             </a>
                         </p>

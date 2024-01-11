@@ -122,13 +122,13 @@
                             <a href="<?php echo $path ?>account&candidate&dashboard" class="custom-btn custom-border-btn btn mt-2 ms-lg-4 ms-3">Regresar</a>
 
                             <div class="job-detail-share d-flex align-items-center">
-                                <p class="mb-0 me-lg-4 me-3">Share:</p>
+                                <!--  <p class="mb-0 me-lg-4 me-3">Share:</p>
 
                                 <a href="#" class="bi-facebook"></a>
 
                                 <a href="#" class="bi-twitter mx-3"></a>
 
-                                <a href="#" class="bi-share"></a>
+                                <a href="#" class="bi-share"></a> -->
                             </div>
                         </div>
                     </div>
@@ -152,12 +152,13 @@
                             <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mb-3">
                                 <img src="images/descargas/<?php echo $verificarVacante2->results[0]->logo_empresa ?>" class="job-image me-3 img-fluid" alt="">
 
-                                <p class="mb-0"><?php echo $verificarVacante2->results[0]->name_empresa ?></p>
+
                             </div>
+                            <p class="mb-0"><?php echo $verificarVacante2->results[0]->name_empresa ?></p>
 
-                            <a href="#" class="bi-bookmark ms-auto me-2"></a>
+                            <!--    <a href="#" class="bi-bookmark ms-auto me-2"></a>
 
-                            <a href="#" class="bi-heart"></a>
+                            <a href="#" class="bi-heart"></a> -->
                         </div>
 
                         <h6 class="mt-3 mb-2">Nosotros</h6>
@@ -166,13 +167,13 @@
 
                         <h6 class="mt-4 mb-3">Información de contacto</h6>
 
-                        <p class="mb-2">
+                        <!-- <p class="mb-2">
                             <i class="custom-icon bi-globe me-1"></i>
 
                             <a href="#" class="site-footer-link">
                                 www.jobbportal.com
                             </a>
-                        </p>
+                        </p> -->
 
                         <p class="mb-2">
                             <i class="custom-icon bi-telephone me-1"></i>
