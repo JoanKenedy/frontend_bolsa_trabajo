@@ -1224,7 +1224,16 @@ textarea {
 .icon-check {
   color: green !important;
 }
-
+.modal-home {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: column !important;
+}
+.modal-home img {
+  margin: auto;
+  display: block;
+}
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {
   .modal-vacantes {

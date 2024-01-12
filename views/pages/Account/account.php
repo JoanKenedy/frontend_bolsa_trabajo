@@ -22,6 +22,10 @@
 <?php
 
 if (isset($urlParams[1])) {
-    include $urlParams[1] . "/" . $urlParams[1] . ".php";
+    echo '<pre>';print_r($urlParams);echo '</pre>';
+    if($urlParams[1] == "enrrollment" ||$urlParams[1] == "login"){
+       include $urlParams[1]."/".$urlParams[1].".php";
+    }
+   
 }
 ?>

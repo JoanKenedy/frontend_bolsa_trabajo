@@ -33,7 +33,7 @@ $totalVacantes = CurlController::request($url, $method, $fields, $header)->resul
         </div>
     </header>
 
-    <section class="section-padding pb-0 d-flex justify-content-center align-items-center">
+    <!--  <section class="section-padding pb-0 d-flex justify-content-center align-items-center">
         <div class="container">
             <div class="row">
 
@@ -125,7 +125,7 @@ $totalVacantes = CurlController::request($url, $method, $fields, $header)->resul
 
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <section class="job-section section-padding">
@@ -140,7 +140,8 @@ $totalVacantes = CurlController::request($url, $method, $fields, $header)->resul
                     <p class="mb-0 ms-lg-auto">Sort by:</p>
 
                     <div class="dropdown dropdown-sorting ms-3 me-4">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSortingButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSortingButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Newest Jobs
                         </button>
 
@@ -160,66 +161,68 @@ $totalVacantes = CurlController::request($url, $method, $fields, $header)->resul
                     </div>
                 </div>
                 <?php foreach ($totalVacantes as $key => $value) : ?>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="job-thumb job-thumb-box">
-                            <div class="job-image-box-wrap">
-                                <a href="job-details.html">
-                                    <img src="images/jobs/it-professional-works-startup-project.jpg" class="job-image img-fluid" alt="">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="job-thumb job-thumb-box">
+                        <div class="job-image-box-wrap">
+                            <a href="job-details.html">
+                                <img src="images/jobs/it-professional-works-startup-project.jpg"
+                                    class="job-image img-fluid" alt="">
+                            </a>
+
+                            <div class="job-image-box-wrap-info d-flex align-items-center">
+                                <p class="mb-0">
+                                    <a href="job-listings.html" class="badge badge-level">Internship</a>
+                                </p>
+
+                                <p class="mb-0">
+                                    <a href="job-listings.html" class="badge">Freelance</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="job-body">
+                            <h4 class="job-title">
+                                <a href="job-details.html"
+                                    class="job-title-link"><?php echo $value->title_vacante ?></a>
+                            </h4>
+
+                            <div class="d-flex align-items-center">
+                                <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
+                                    <img src="images/logos/salesforce.png" class="job-image me-3 img-fluid" alt="">
+
+                                    <p class="mb-0">Salesforce</p>
+                                </div>
+
+                                <a href="#" class="bi-bookmark ms-auto me-2">
                                 </a>
 
-                                <div class="job-image-box-wrap-info d-flex align-items-center">
-                                    <p class="mb-0">
-                                        <a href="job-listings.html" class="badge badge-level">Internship</a>
-                                    </p>
-
-                                    <p class="mb-0">
-                                        <a href="job-listings.html" class="badge">Freelance</a>
-                                    </p>
-                                </div>
+                                <a href="#" class="bi-heart">
+                                </a>
                             </div>
 
-                            <div class="job-body">
-                                <h4 class="job-title">
-                                    <a href="job-details.html" class="job-title-link"><?php echo $value->title_vacante ?></a>
-                                </h4>
+                            <div class="d-flex align-items-center">
+                                <p class="job-location">
+                                    <i class="custom-icon bi-geo-alt me-1"></i>
+                                    <?php echo $value->lugar_de_trabajo ?>
+                                </p>
 
-                                <div class="d-flex align-items-center">
-                                    <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
-                                        <img src="images/logos/salesforce.png" class="job-image me-3 img-fluid" alt="">
+                                <p class="job-date">
+                                    <i class="custom-icon bi-clock me-1"></i>
+                                    <?php echo $value->fecha_de_publicacion ?>
+                                </p>
+                            </div>
 
-                                        <p class="mb-0">Salesforce</p>
-                                    </div>
+                            <div class="d-flex align-items-center border-top pt-3">
+                                <p class="job-price mb-0">
+                                    <i class="custom-icon bi-cash me-1"></i>
+                                    $<?php echo $value->rango_sueldo ?>
+                                </p>
 
-                                    <a href="#" class="bi-bookmark ms-auto me-2">
-                                    </a>
-
-                                    <a href="#" class="bi-heart">
-                                    </a>
-                                </div>
-
-                                <div class="d-flex align-items-center">
-                                    <p class="job-location">
-                                        <i class="custom-icon bi-geo-alt me-1"></i>
-                                        <?php echo $value->lugar_de_trabajo ?>
-                                    </p>
-
-                                    <p class="job-date">
-                                        <i class="custom-icon bi-clock me-1"></i>
-                                        <?php echo $value->fecha_de_publicacion ?>
-                                    </p>
-                                </div>
-
-                                <div class="d-flex align-items-center border-top pt-3">
-                                    <p class="job-price mb-0">
-                                        <i class="custom-icon bi-cash me-1"></i>
-                                        $<?php echo $value->rango_sueldo ?>
-                                    </p>
-
-                                    <a href="job-details.html" class="custom-btn btn ms-auto">Postularme</a>
-                                </div>
+                                <a href="job-details.html" class="custom-btn btn ms-auto">Postularme</a>
                             </div>
                         </div>
                     </div>
+                </div>
 
                 <?php endforeach ?>
 
@@ -275,7 +278,9 @@ $totalVacantes = CurlController::request($url, $method, $fields, $header)->resul
                 <div class="col-lg-6 col-10">
                     <h2 class="text-white mb-2">Over 10k opening jobs</h2>
 
-                    <p class="text-white">Gotto Job is a free HTML CSS template for job hunting related websites. This layout is based on the famous Bootstrap 5 CSS framework. Thank you for visiting Tooplate website.</p>
+                    <p class="text-white">Gotto Job is a free HTML CSS template for job hunting related websites. This
+                        layout is based on the famous Bootstrap 5 CSS framework. Thank you for visiting Tooplate
+                        website.</p>
                 </div>
 
                 <div class="col-lg-4 col-12 ms-auto">

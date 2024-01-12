@@ -122,7 +122,7 @@
 
                 </div>
                 <div class="col-lg-12 col-md-12 col-12 my-3 ">
-                    <div class="container-btn-sociales">
+                    <!--  <div class="container-btn-sociales">
 
                         <button type="submit" class="form-facebook" name="entrarFacebook">
                             Iniciar sesión con: <i class="bi bi-facebook"></i>
@@ -133,7 +133,7 @@
                             Iniciar sesión con: <i class="bi bi-google"></i>
                         </button>
 
-                    </div>
+                    </div> -->
 
                 </div>
             </form>

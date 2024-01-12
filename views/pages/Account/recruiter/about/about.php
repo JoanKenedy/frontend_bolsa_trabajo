@@ -7,13 +7,13 @@
             <div class="row">
 
                 <div class="col-lg-12 col-12 text-center">
-                    <h1 class="text-white">About Gotto</h1>
+                    <h1 class="text-white">Conocé Multiservices Job</h1>
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
 
-                            <li class="breadcrumb-item active" aria-current="page">About</li>
+                            <li class="breadcrumb-item active" aria-current="page">Nosotros</li>
                         </ol>
                     </nav>
                 </div>
@@ -29,28 +29,34 @@
 
                 <div class="col-lg-5 col-12">
                     <div class="about-info-text">
-                        <h2 class="mb-0">Introducing Gotto Job</h2>
 
-                        <h4 class="mb-2">Get hired. Get your new job</h4>
 
-                        <p>Thank you for visiting our Gotto Job website. Are you looking for best HTML templates? Please visit Tooplate website to download free templates.</p>
+                        <h4 class="">En nuestra empresa</h4>
+
+                        <p>Creemos en la importancia de la igualdad de oportunidades y en conectar a
+                            las personas con empleos que se ajusten a sus habilidades y aspiraciones. Nos esforzamos por
+                            brindar un servicio confiable y efectivo, asegurando que los candidatos reciban
+                            oportunidades relevantes y los empleadores encuentren a los candidatos ideales.</p>
 
                         <div class="d-flex align-items-center mt-4">
-                            <a href="#services-section" class="custom-btn custom-border-btn btn me-4">Explore Services</a>
+                            <a href="<?php echo $path ?>contact.php"
+                                class="custom-btn custom-border-btn btn me-4">Contacto
+                            </a>
 
-                            <a href="contact.html" class="custom-link smoothscroll">Contact</a>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-5 col-12 mt-5 mt-lg-0">
                     <div class="about-image-wrap">
-                        <img src="images/horizontal-shot-happy-mixed-race-females.jpg" class="about-image about-image-border-radius img-fluid" alt="">
+                        <img src="images/horizontal-shot-happy-mixed-race-females.jpg"
+                            class="about-image about-image-border-radius img-fluid" alt="">
 
                         <div class="about-info d-flex">
-                            <h4 class="text-white mb-0 me-2">20</h4>
+                            <h4 class="text-white mb-0 me-2">10</h4>
 
-                            <p class="text-white mb-0">years of experience</p>
+                            <p class="text-white mb-0">años de experiencia</p>
                         </div>
                     </div>
                 </div>
@@ -65,7 +71,7 @@
             <div class="row">
 
                 <div class="col-lg-12 col-12 text-center">
-                    <h2 class="mb-5">We deliver best services</h2>
+                    <h2 class="mb-5">Entregamos los mejores servicios</h2>
                 </div>
 
                 <div class="services-block-wrap col-lg-4 col-md-6 col-12">
@@ -73,11 +79,13 @@
                         <div class="services-block-title-wrap">
                             <i class="services-block-icon bi-window"></i>
 
-                            <h4 class="services-block-title">Website design</h4>
+                            <h4 class="services-block-title">Busqueda de trabajo</h4>
                         </div>
 
                         <div class="services-block-body">
-                            <p>Tooplate provides a variety of free Bootstrap 5 website templates for your commercial or business websites.</p>
+                            <p>Contamos con un equipo de profesionales dedicados, que se encarga diariamente de
+                                actualizar y mantener nuestra plataforma, y de garantizar que tanto los candidatos como
+                                los empleadores tengan una experiencia positiva y exitosa. </p>
                         </div>
                     </div>
                 </div>
@@ -85,13 +93,17 @@
                 <div class="services-block-wrap col-lg-4 col-md-6 col-12 my-4 my-lg-0 my-md-0">
                     <div class="services-block">
                         <div class="services-block-title-wrap">
-                            <i class="services-block-icon bi-twitch"></i>
 
-                            <h4 class="services-block-title">Marketing</h4>
+
+                            <i class=" services-block-icon bi bi-briefcase-fill"></i>
+
+                            <h4 class="services-block-title">Encontrar talento para tu empresa</h4>
                         </div>
 
                         <div class="services-block-body">
-                            <p>You can download any free template for your website. Please tell your friends about Tooplate.</p>
+                            <p>Nuestra plataforma se adapta a diversos perfiles y sectores laborales, desde trabajos a
+                                tiempo parcial hasta puestos ejecutivos.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -99,13 +111,15 @@
                 <div class="services-block-wrap col-lg-4 col-md-6 col-12">
                     <div class="services-block">
                         <div class="services-block-title-wrap">
-                            <i class="services-block-icon bi-play-circle-fill"></i>
 
-                            <h4 class="services-block-title">Video</h4>
+                            <i class="services-block-icon bi bi-credit-card-2-back-fill"></i>
+
+                            <h4 class="services-block-title">Tarjeta de descuentos</h4>
                         </div>
 
                         <div class="services-block-body">
-                            <p>You are not allowed to redistribute the template ZIP file on any other template collection website.</p>
+                            <p>Tenemos multiservicescard que te da muchos beneficios, descuentos en varias
+                                negocios. Afíliate a con nosostros.</p>
                         </div>
                     </div>
                 </div>
@@ -120,13 +134,14 @@
             <div class="row">
 
                 <div class="col-lg-12 col-12">
-                    <h2 class="text-center mb-5">Happy customers</h2>
+                    <h2 class="text-center mb-5">Clientes felices</h2>
 
                     <div class="owl-carousel owl-theme reviews-carousel">
                         <div class="reviews-thumb">
 
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -147,13 +162,15 @@
                             <div class="reviews-body">
                                 <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
 
-                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt.</h4>
                             </div>
                         </div>
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -174,14 +191,16 @@
                             <div class="reviews-body">
                                 <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
 
-                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt.</h4>
                             </div>
                         </div>
 
                         <div class="reviews-thumb">
 
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-beautiful-young-woman-studying-table-with-laptop-computer-notebook-home-studying-online-e-learning-system.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/portrait-beautiful-young-woman-studying-table-with-laptop-computer-notebook-home-studying-online-e-learning-system.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -202,13 +221,15 @@
                             <div class="reviews-body">
                                 <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
 
-                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt.</h4>
                             </div>
                         </div>
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid"
+                                    alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -229,13 +250,15 @@
                             <div class="reviews-body">
                                 <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
 
-                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt.</h4>
                             </div>
                         </div>
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/university-study-abroad-lifestyle-concept-satisfied-happy-asian-male-student-glasses-shirt-showing-thumbs-up-approval-likes-studying-college-holding-laptop-backpack.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/university-study-abroad-lifestyle-concept-satisfied-happy-asian-male-student-glasses-shirt-showing-thumbs-up-approval-likes-studying-college-holding-laptop-backpack.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -256,7 +279,8 @@
                             <div class="reviews-body">
                                 <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
 
-                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt.</h4>
                             </div>
                         </div>
                     </div>
@@ -274,16 +298,17 @@
             <div class="row">
 
                 <div class="col-lg-6 col-10">
-                    <h2 class="text-white mb-2">Over 10k opening jobs</h2>
 
-                    <p class="text-white">Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito adipcingi elit eismuod larehai</p>
+
+                    <h2 class="text-white mb-2">Más de 10.000 puestos de trabajo vacantes</h2>
                 </div>
 
                 <div class="col-lg-4 col-12 ms-auto">
                     <div class="custom-border-btn-wrap d-flex align-items-center mt-lg-4 mt-2">
-                        <a href="#" class="custom-btn custom-border-btn btn me-4">Create an account</a>
+                        <a href="<?php echo $path?>account&enrrollment"
+                            class="custom-btn custom-border-btn btn me-4">Crear cuenta</a>
 
-                        <a href="#" class="custom-link">Post a job</a>
+                        <a href="<?php echo $path ?>account&enrrollment" class="custom-link">Anuciar trabajo</a>
                     </div>
                 </div>
 

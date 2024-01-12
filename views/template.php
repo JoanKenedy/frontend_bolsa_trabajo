@@ -28,36 +28,14 @@ if (!empty($urlParams[0])) {
     }
     switch ($urlParams[0]) {
         case "about.php":
-
             include 'pages/About/about.php';
             break;
         case "contact.php":
             include 'pages/Contact/contact.php';
             break;
-        case "job-details.php":
-            include 'pages/Job-details/job-details.php';
-            break;
-        case "job-listings.php":
-            include 'pages/Job-listings/job-listings.php';
-            break;
-        case "register.php":
-            include 'pages/Account/Register/register.php';
-            break;
-            /*case "login.php":
-            include 'pages/Account/Login/login.php';
-            break;
-        case "verificar_cuenta.php":
-            include 'pages/Account/Verificar/verificar_cuenta.php';
-            break;
-        case "candidate_profile.php":
-            include 'pages/Account/Candidato/candidate_profile.php';
-            break;
-        case "recruiter_profile.php":
-            include 'pages/Account/Reclutador/recruiter_profile.php';
-            break;
-        case "logout.php":
-            include 'pages/Account/Logout/logout.php';
-            break;    */
+       
+        
+      
     }
 } else if ($path) {
     include 'pages/Home/home.php';

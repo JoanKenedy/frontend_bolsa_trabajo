@@ -24,22 +24,27 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
+                                    <span class="input-group-text" id="basic-addon1"><i
+                                            class="bi-person custom-icon"></i></span>
 
-                                    <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Job Title" required>
+                                    <input type="text" name="job-title" id="job-title" class="form-control"
+                                        placeholder="Job Title" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
+                                    <span class="input-group-text" id="basic-addon2"><i
+                                            class="bi-geo-alt custom-icon"></i></span>
 
-                                    <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Location" required>
+                                    <input type="text" name="job-location" id="job-location" class="form-control"
+                                        placeholder="Location" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-12 col-12">
-                                <button type="submit" class="form-control">
+                                <button type="submit" data-bs-toggle="modal" data-bs-target="#Tres"
+                                    class="form-control">
                                     Buscar trabajo
                                 </button>
                             </div>
@@ -81,7 +86,8 @@
 
                             <small class="categories-block-title">Diseño Web</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">320</span>
                             </div>
                         </a>
@@ -95,7 +101,8 @@
 
                             <small class="categories-block-title">Marketing</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">180</span>
                             </div>
                         </a>
@@ -109,7 +116,8 @@
 
                             <small class="categories-block-title">Video</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">340</span>
                             </div>
                         </a>
@@ -123,7 +131,8 @@
 
                             <small class="categories-block-title">Desarrollo web</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">140</span>
                             </div>
                         </a>
@@ -137,7 +146,8 @@
 
                             <small class="categories-block-title">Soporte Técnico</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">84</span>
                             </div>
                         </a>
@@ -155,7 +165,8 @@
 
                 <div class="col-lg-3 col-12">
                     <div class="about-image-wrap custom-border-radius-start">
-                        <img src="images/dr_arturo.jpeg" class="about-image custom-border-radius-start img-fluid" alt="">
+                        <img src="images/dr_arturo.jpeg" class="about-image custom-border-radius-start img-fluid"
+                            alt="">
 
                         <div class="about-info">
                             <h4 class="text-white mb-0 me-2">Arturo Muñoz</h4>
@@ -169,10 +180,12 @@
                     <div class="custom-text-block">
                         <h2 class="text-white mb-2">Nuestro plus...</h2>
 
-                        <p class="text-white">Encuentra trabajos desde casa, medio tiempo y más, en la bolsa de trabajo de México. En Multiservices puedes buscar empleos ideales de acuerdo a tu perfil.</p>
+                        <p class="text-white">Encuentra trabajos desde casa, medio tiempo y más, en la bolsa de trabajo
+                            de México. En Multiservices puedes buscar empleos ideales de acuerdo a tu perfil.</p>
 
                         <div class="custom-border-btn-wrap d-flex align-items-center mt-5">
-                            <a href="<?php echo $path ?>account&recruiter&about" class="custom-btn custom-border-btn btn me-4">Conócenos</a>
+                            <a href="<?php echo $path ?>account&recruiter&about"
+                                class="custom-btn custom-border-btn btn me-4">Conócenos</a>
 
 
                         </div>
@@ -184,7 +197,8 @@
                         <img src="images/jobs/jobs.jpg" class="about-image custom-border-radius-end img-fluid" alt="">
 
                         <div class="instagram-block-text">
-                            <a href="https://www.instagram.com/multiservicecard/" class="custom-btn btn" target="_blank">
+                            <a href="https://www.instagram.com/multiservicecard/" class="custom-btn btn"
+                                target="_blank">
                                 <i class="bi-instagram"></i>
                                 @Multiservicescard
                             </a>
@@ -212,42 +226,48 @@
                         <?php foreach ($totalVacantes as $key => $value) : ?>
 
 
-                            <div class="job-thumb d-flex">
-                                <div class="job-image-wrap bg-white shadow-lg">
-                                    <img src="images/logos/google.png" class="job-image img-fluid" alt="">
+                        <div class="job-thumb d-flex">
+                            <div class="job-image-wrap bg-white shadow-lg">
+                                <?php if ($value->foto_vacante != '') : ?>
+                                <img src="images/descargas/<?php echo $value->foto_vacante ?>" class="img-redonda"
+                                    alt="">
+                                <?php else : ?>
+                                <img src="images/avatar/work.png" alt="" class="img-redonda">
+                                <?php endif; ?>
+                            </div>
+
+                            <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+                                <div class="mb-3">
+                                    <h4 class="job-title mb-lg-0">
+                                        <a href="job-details.html" class="job-title-link">
+                                            <?php echo $value->title_vacante ?></a>
+                                    </h4>
+
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <p class="job-location mb-0">
+                                            <i class="custom-icon bi-geo-alt me-1"></i>
+                                            <?php echo $value->lugar_de_trabajo ?>
+                                        </p>
+
+                                        <p class="job-date mb-0">
+                                            <i class="custom-icon bi-clock me-1"></i>
+                                            <?php echo $value->fecha_de_publicacion ?>
+                                        </p>
+
+                                        <p class="job-price mb-0">
+                                            <i class="custom-icon bi-cash me-1"></i>
+                                            $<?php echo $value->rango_sueldo ?>
+                                        </p>
+
+                                    </div>
                                 </div>
 
-                                <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                                    <div class="mb-3">
-                                        <h4 class="job-title mb-lg-0">
-                                            <a href="job-details.html" class="job-title-link">
-                                                <?php echo $value->title_vacante ?></a>
-                                        </h4>
-
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <p class="job-location mb-0">
-                                                <i class="custom-icon bi-geo-alt me-1"></i>
-                                                <?php echo $value->lugar_de_trabajo ?>
-                                            </p>
-
-                                            <p class="job-date mb-0">
-                                                <i class="custom-icon bi-clock me-1"></i>
-                                                <?php echo $value->fecha_de_publicacion ?>
-                                            </p>
-
-                                            <p class="job-price mb-0">
-                                                <i class="custom-icon bi-cash me-1"></i>
-                                                $<?php echo $value->rango_sueldo ?>
-                                            </p>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="job-section-btn-wrap">
-                                        <a href="<?php echo $path ?>account&recruiter&dashboard&ver_vacante?id_vacante=<?php echo $value->id_vacante  ?>" class="custom-btn btn">Solo ver</a>
-                                    </div>
+                                <div class="job-section-btn-wrap">
+                                    <a href="<?php echo $path ?>account&recruiter&dashboard&ver_vacante?id_vacante=<?php echo $value->id_vacante  ?>"
+                                        class="custom-btn btn">Solo ver</a>
                                 </div>
                             </div>
+                        </div>
 
 
 
@@ -344,7 +364,8 @@
 
                 <div class="col-lg-6 col-12">
                     <div class="video-thumb">
-                        <img src="images/people-working-as-team-company.jpg" class="about-image custom-border-radius-end img-fluid" alt="">
+                        <img src="images/people-working-as-team-company.jpg"
+                            class="about-image custom-border-radius-end img-fluid" alt="">
 
                         <div class="video-info">
                             <a href="https://www.youtube.com/tooplate" class="youtube-icon bi-youtube"></a>
@@ -370,7 +391,8 @@
                         <div class="reviews-thumb">
 
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -398,7 +420,8 @@
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -427,7 +450,8 @@
                         <div class="reviews-thumb">
 
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-beautiful-young-woman.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/portrait-beautiful-young-woman.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -455,7 +479,8 @@
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid"
+                                    alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -483,7 +508,8 @@
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/university-study-abroad-lifestyle-concept.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/university-study-abroad-lifestyle-concept.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -530,7 +556,8 @@
 
                 <div class="col-lg-4 col-12 ms-auto">
                     <div class="custom-border-btn-wrap d-flex align-items-center mt-lg-4 mt-2">
-                        <a href="#" onclick="return false" class="custom-btn custom-border-btn btn me-4">Crea una cuenta</a>
+                        <a href="#" onclick="return false" class="custom-btn custom-border-btn btn me-4">Crea una
+                            cuenta</a>
 
                         <a href="#" onclick="return false" class="custom-link">Anunciar un trabajo</a>
                     </div>
@@ -539,4 +566,19 @@
             </div>
         </div>
     </section>
+    <div class="modal fade" id="Tres" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;"
+        aria-hidden="true">
+        <div class="modal-dialog">
+
+            <div class="modal-content px-3 py-3 modal-home">
+                <img src="images/descargas/user.png" alt="" class="img-redonda">
+                <h6 class="text-center">Esta función para reclutadores esta deshabilitada, en mi cuenta puedes ver y
+                    editar
+                    vacantes que vas postulando.</h6>
+                <a href="<?php echo $path ?>account&recruiter&dashboard"
+                    class="custom-btn custom-border-btn btn me-4">Ir a mi cuenta</a>
+
+            </div>
+        </div>
+    </div>
 </main>

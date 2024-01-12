@@ -43,28 +43,35 @@
 
                 <ul class="footer-menu">
                     <?php if (isset($_SESSION['rol'])) : ?>
-                        <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
-                            <li class="footer-menu-item">
-                                <a class="footer-menu-link" href="<?php echo $path ?>account&candidate&about">Nosotros</a>
-                            </li>
+                    <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
+                    <li class="footer-menu-item">
+                        <a class="footer-menu-link" href="<?php echo $path ?>account&candidate&about">Nosotros</a>
+                    </li>
 
-                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&candidate&job-listings" class="footer-menu-link">Trabajos</a></li>
+                    <li class="footer-menu-item"><a href="<?php echo $path ?>account&candidate&job-listings"
+                            class="footer-menu-link">Trabajos</a></li>
 
-                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&candidate&contact" class="footer-menu-link">Contacto</a></li>
+                    <li class="footer-menu-item"><a href="<?php echo $path ?>account&candidate&contact"
+                            class="footer-menu-link">Contacto</a></li>
 
-                        <?php elseif ($_SESSION['rol']->rol_usuario_id  == 2) :  ?>
-                            <li class="footer-menu-item">
-                                <a class="footer-menu-link" href="<?php echo $path ?>account&recruiter&about">Nosotros</a>
-                            </li>
+                    <?php elseif ($_SESSION['rol']->rol_usuario_id  == 2) :  ?>
+                    <li class="footer-menu-item">
+                        <a class="footer-menu-link" href="<?php echo $path ?>account&recruiter&about">Nosotros</a>
+                    </li>
 
-                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&recruiter&job-listings" class="footer-menu-link">Trabajos</a></li>
+                    <li class="footer-menu-item"><a href="<?php echo $path ?>account&recruiter&job-listings"
+                            class="footer-menu-link">Trabajos</a></li>
 
-                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&recruiter&contact" class="footer-menu-link">Contacto</a></li>
-                        <?php endif; ?>
+                    <li class="footer-menu-item"><a href="<?php echo $path ?>account&recruiter&contact"
+                            class="footer-menu-link">Contacto</a></li>
+                    <?php endif; ?>
                     <?php else :  ?>
-                        <li class="footer-menu-item"><a href="<?php echo $path ?>about.php" class="footer-menu-link">Nosotros</a></li>
-                        <li class="footer-menu-item"><a href="<?php echo $path ?>job-listings.php" class="footer-menu-link">Trabajos</a></li>
-                        <li class="footer-menu-item"><a href="<?php echo $path ?>contact.php" class="footer-menu-link">Contacto</a></li>
+                    <li class="footer-menu-item"><a href="<?php echo $path ?>about.php"
+                            class="footer-menu-link">Nosotros</a></li>
+                    <li class="footer-menu-item"><a href="<?php echo $path ?>job-listings.php"
+                            class="footer-menu-link">Trabajos</a></li>
+                    <li class="footer-menu-item"><a href="<?php echo $path ?>contact.php"
+                            class="footer-menu-link">Contacto</a></li>
                     <?php endif; ?>
 
 
@@ -77,9 +84,11 @@
                 <h6 class="site-footer-title">Resources</h6>
 
                 <ul class="footer-menu">
-                    <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">Guía</a></li>
+                    <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">Guía</a>
+                    </li>
 
-                    <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">¿Cómo funciona?</a></li>
+                    <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">¿Cómo
+                            funciona?</a></li>
 
                 </ul>
             </div>
@@ -93,7 +102,8 @@
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1"><i class="bi-person"></i></span>
 
-                        <input type="text" name="newsletter-name" id="newsletter-name" class="form-control" placeholder="yourname@gmail.com" required>
+                        <input type="text" name="newsletter-name" id="newsletter-name" class="form-control"
+                            placeholder="yourname@gmail.com" required>
 
                         <button type="submit" class="form-control">
                             <i class="bi-send"></i>
@@ -110,13 +120,15 @@
             <div class="row">
 
                 <div class="col-lg-4 col-12 d-flex align-items-center">
-                    <p class="copyright-text">Copyright © MultiservicesCard 2023</p>
+                    <p class="copyright-text">Copyright © Multiservices Job 2024</p>
 
                     <ul class="footer-menu d-flex">
-                        <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">Política de privacidad</a>
+                        <li class="footer-menu-item"><a href="#" onclick="return false"
+                                class="footer-menu-link">Política de privacidad</a>
                         </li>
 
-                        <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">Términos</a></li>
+                        <li class="footer-menu-item"><a href="#" onclick="return false"
+                                class="footer-menu-link">Términos</a></li>
                     </ul>
                 </div>
 
@@ -124,11 +136,13 @@
                     <ul class="social-icon">
 
                         <li class="social-icon-item">
-                            <a href="https://www.facebook.com/multiservice.card" class="social-icon-link bi-facebook" target="_blank"></a>
+                            <a href="https://www.facebook.com/multiservice.card" class="social-icon-link bi-facebook"
+                                target="_blank"></a>
                         </li>
 
                         <li class="social-icon-item">
-                            <a href="https://www.instagram.com/multiservicecard/" class="social-icon-link bi-instagram" target="_blank"></a>
+                            <a href="https://www.instagram.com/multiservicecard/" class="social-icon-link bi-instagram"
+                                target="_blank"></a>
                         </li>
 
 
@@ -136,11 +150,13 @@
                 </div>
 
                 <div class="col-lg-3 col-12 mt-2 d-flex align-items-center mt-lg-0">
-                    <p class="text-white">Diseñado: <a class=" text-white" rel="sponsored" href="#" target="_blank">Agencia
+                    <p class="text-white">Diseñado: <a class=" text-white" rel="sponsored" href="#"
+                            target="_blank">Agencia
                             de Marketing Digital Inspiración</a></p>
                 </div>
 
-                <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center" href="#top"></a>
+                <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center"
+                    href="#top"></a>
 
             </div>
         </div>
