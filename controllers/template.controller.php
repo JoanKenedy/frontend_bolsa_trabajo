@@ -1,6 +1,8 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 
 
@@ -27,6 +29,15 @@ class TemplateController
 
         date_default_timezone_set('America/Mexico_City');
         $mail = new PHPMailer();
+        //Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp.ionos.mx';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'soporte@multiservices-job.mx';                     //SMTP username
+        $mail->Password   = '931125HGryyn04';                               //SMTP password
+        $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
+        $mail->Port       = 587;  
         $mail->CharSet = 'UTF-8';
         $mail->isMail();
         $mail->setFrom('futmipasion@hotmail.com', 'Bolsa de trabajo Multiservices');
