@@ -54,6 +54,7 @@ function validateEmailRepeat(event) {
   validateJS(event, "email");
 }
 validateEmailRepeat();
+
 function validateJS(event, type) {
   console.log("event", event.target.value);
 

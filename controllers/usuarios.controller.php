@@ -17,9 +17,6 @@ class UsersController
             ) {
 
                 $email = strtolower($_POST['regEmail']);
-
-
-
                 $url = CurlController::api() . 'usuarios?register=true';
                 $method = "POST";
                 $fields = array(
@@ -82,7 +79,7 @@ class UsersController
                     ';
                     }
                 }
-            } /* else {
+            } else {
                 echo '<div class="alert alert-danger">
                 Error de sintaxis en alguno de los campos
                   </div>
@@ -91,7 +88,7 @@ class UsersController
                 </script>
             
             ';
-            }*/
+            }
         }
     }
 

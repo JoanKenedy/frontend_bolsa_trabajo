@@ -1234,6 +1234,13 @@ textarea {
   margin: auto;
   display: block;
 }
+.postulaciones-item {
+  margin: 15px auto;
+}
+.postulaciones-job p {
+  margin: 0;
+  font-size: 1.1em;
+}
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {
   .modal-vacantes {
@@ -1247,6 +1254,9 @@ textarea {
     display: grid;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 20px !important;
+  }
+  .postulaciones-item {
+    margin: 0px auto;
   }
   .postulaciones-vacantes {
     display: flex;

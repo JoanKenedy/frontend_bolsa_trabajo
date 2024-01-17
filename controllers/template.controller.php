@@ -1,6 +1,9 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 
 
 
@@ -25,11 +28,21 @@ class TemplateController
     static public function sendEmail($name, $subject, $email, $message, $url)
     {
 
+
         date_default_timezone_set('America/Mexico_City');
         $mail = new PHPMailer();
+        //Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.ionos.mx';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'soporte@multiservices-job.mx';
+        $mail->Password   = 'job2024#Dent';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port       = 587;
         $mail->CharSet = 'UTF-8';
         $mail->isMail();
-        $mail->setFrom('futmipasion@hotmail.com', 'Bolsa de trabajo Multiservices');
+        $mail->setFrom('soporte@multiservices-job.mx', 'Multiservices Job Bolsa de trabajo');
         $mail->Subject = 'Hola' . $name . '-' . $subject;
         $mail->addAddress($email);
         $mail->msgHTML(
