@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 $id_usuario = $_SESSION['rol']->id_usuario;
 
@@ -16,3 +17,23 @@ if ($totalPostulacionesCandidato->status == 200) {
 } else {
     include "views/modules/postulaciones_vacio.php";
 }
+=======
+<?php 
+
+        $url = CurlController::api() . "postulaciones?linkTo=id_usuario_postulacion&equalTo=".$_SESSION['rol']->id_usuario."";
+        $method = "GET";
+        $fields = array();
+        $header = array();
+
+        $totalPostulaciones = CurlController::request($url, $method, $fields, $header);
+        echo '<pre>'; print_r($totalPostulaciones);echo '</pre>';
+        if($totalPostulaciones->status == 404){
+           include 'views/modules/postulaciones_vacio.php';
+        }else{
+           
+        }
+
+
+
+?>
+>>>>>>> dda478e85ccb7377eda8f4d75fd86e9f98135a79

@@ -1,11 +1,9 @@
 <div class="container">
-    <?php
-    $register = new UsersController();
-    $register->register();
-    ?>
+
     <div class="ps-my-account">
         <div class="container">
-            <form class="custom-form hero-form form-login requires-validation" novalidate method="post" role="form">
+            <form class="custom-form hero-form form-login requires-validation"
+                action="<?php echo $path ?>account&registro" novalidate method="post" role="form">
                 <h3 class=" text-center mb-3">
                     <a href="<?php echo $path ?>account&enrrollment" class="text-dorado"> Registro</a> &nbsp; <a href="<?php echo $path ?>account&login" class="text-gray">Iniciar sesión</a>
                 </h3>

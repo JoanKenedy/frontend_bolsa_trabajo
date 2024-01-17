@@ -22,8 +22,16 @@
 <?php
 
 if (isset($urlParams[1])) {
+<<<<<<< HEAD
     if ($urlParams[1] == "enrrollment" || $urlParams[1] == "login" || $urlParams[1] == "candidate" || $urlParams[1] == "recruiter" || $urlParams[1] == "logout") {
         include $urlParams[1] . "/" . $urlParams[1] . ".php";
     }
+=======
+
+    
+       include $urlParams[1]."/".$urlParams[1].".php";
+    
+   
+>>>>>>> dda478e85ccb7377eda8f4d75fd86e9f98135a79
 }
 ?>
