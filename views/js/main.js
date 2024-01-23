@@ -148,3 +148,27 @@ function validateJS(event, type) {
 }
 
 validatedBs5();
+
+function pagination() {
+  let target = $(".pagination");
+  if (target.length > 0) {
+    target.each(function () {
+      let el = $(this),
+        totalPages = el.data("total-pages"),
+        currentPage = el.data("current-page"),
+        urlPage = el.data("url-page");
+
+      el.twbsPagination({
+        totalPages: totalPages,
+        startPage: currentPage,
+        visiblePages: 3,
+        first: '<i class="fas fa-angle-double-left"></i>',
+        last: '<i class="fas fa-angle-double-right"></i>',
+        prev: '<i class="fas fa-angle-left"></i>',
+        next: '<i class="fas fa-angle-right"></i>',
+      });
+    });
+  }
+}
+
+pagination();

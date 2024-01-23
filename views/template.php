@@ -3,11 +3,24 @@
 $routesArray = explode("/", $_SERVER['REQUEST_URI']);
 $routesArray = array_filter($routesArray);
 $path = TemplateController::path();
-$url = CurlController::api() . "crear_vacantes";
-$method = "GET";
-$fields = array();
-$header = array();
-$totalVacantes = CurlController::request($url, $method, $fields, $header)->results;
+$conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+if ($conn->connect_errno != 0) {
+    echo $conn->connect_error;
+    exit();
+}
+$start = 0;
+$rows_per_page = 3;
+
+$records = $conn->query("SELECT * FROM crear_vacantes");
+$nr_of_rows =  $records->num_rows;
+
+$pages = ceil($nr_of_rows / $rows_per_page);
+if (isset($_GET['page-nr'])) {
+    $page = $_GET['page-nr'] - 1;
+    $start = $page * $rows_per_page;
+}
+$sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $start,$rows_per_page");
+
 include 'modules/header.php';
 ?>
 <?php
@@ -33,9 +46,6 @@ if (!empty($urlParams[0])) {
         case "contact.php":
             include 'pages/Contact/contact.php';
             break;
-       
-        
-      
     }
 } else if ($path) {
     include 'pages/Home/home.php';
