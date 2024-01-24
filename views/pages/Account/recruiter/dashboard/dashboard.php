@@ -7,4 +7,4 @@ if (isset($urlParams[3])) {
     }
 } else {
     include "views/modules/body_dashboard.php";
-}
+}            

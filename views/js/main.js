@@ -150,10 +150,10 @@ function validateJS(event, type) {
 validatedBs5();
 
 function pagination() {
-  let target = $(".pagination");
+  var target = $(".paginacion");
   if (target.length > 0) {
     target.each(function () {
-      let el = $(this),
+      var el = $(this),
         totalPages = el.data("total-pages"),
         currentPage = el.data("current-page"),
         urlPage = el.data("url-page");

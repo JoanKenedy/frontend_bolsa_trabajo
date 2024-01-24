@@ -8,18 +8,7 @@ if ($conn->connect_errno != 0) {
     echo $conn->connect_error;
     exit();
 }
-$start = 0;
-$rows_per_page = 3;
-
-$records = $conn->query("SELECT * FROM crear_vacantes");
-$nr_of_rows =  $records->num_rows;
-
-$pages = ceil($nr_of_rows / $rows_per_page);
-if (isset($_GET['page-nr'])) {
-    $page = $_GET['page-nr'] - 1;
-    $start = $page * $rows_per_page;
-}
-$sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $start,$rows_per_page");
+$sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0,4");
 
 include 'modules/header.php';
 ?>
@@ -46,6 +35,9 @@ if (!empty($urlParams[0])) {
         case "contact.php":
             include 'pages/Contact/contact.php';
             break;
+        case "job-listings.php":
+            include 'pages/Job-listings/job-listings.php';
+            break;    
     }
 } else if ($path) {
     include 'pages/Home/home.php';
