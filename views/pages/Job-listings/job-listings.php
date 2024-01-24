@@ -1,23 +1,26 @@
 <?php
-   if(isset($urlParams[1])){
-    if(is_numeric($urlParams[1])){
-        $startAt = ($urlParams[1]*3) -3;
-    }else{
-       echo '<script>
-       window.location = "'.$path.$urlParams[0].'"
+if (isset($urlParams[1])) {
+    if (is_numeric($urlParams[1])) {
+        $startAt = ($urlParams[1] * 3) - 3;
+    } else {
+        echo '<script>
+       window.location = "' . $path . $urlParams[0] . '"
        </script>';
     }
-
-   }else{
+} else {
     $startAt = 0;
-   }
+}
+$endArt = 2;
 
-     $url = CurlController::api() . 'crear_vacantes';
-        $method = 'GET';
-        $fields = array();
-        $header = array();
-        $totalVacantes = CurlController::request($url, $method, $fields, $header);
-        $rows = $totalVacantes->total;
+$conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+if ($conn->connect_errno != 0) {
+    echo $conn->connect_error;
+    exit();
+}
+$todos = $conn->query("SELECT * FROM crear_vacantes");
+$rows = $todos->num_rows;
+$sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
+
 
 
 
@@ -155,8 +158,7 @@
                     <p class="mb-0 ms-lg-auto">Sort by:</p>
 
                     <div class="dropdown dropdown-sorting ms-3 me-4">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSortingButton"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSortingButton" data-bs-toggle="dropdown" aria-expanded="false">
                             Newest Jobs
                         </button>
 
@@ -175,87 +177,89 @@
                         <a href="#" class="sorting-icon bi-grid"></a>
                     </div>
                 </div>
-                <?php foreach ($totalVacantes->results as $key=>$vacante) : ?>
-                <div class="col-lg-4 col-md-6 col-12">
-                    <div class="job-thumb job-thumb-box">
-                        <div class="job-image-box-wrap">
-                            <a href="job-details.html">
-                                <img src="images/jobs/it-professional-works-startup-project.jpg"
-                                    class="job-image img-fluid" alt="">
-                            </a>
+                <?php
+                while ($row = $sql->fetch_assoc()) {
+                ?>
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="job-thumb job-thumb-box">
+                            <div class="job-image-box-wrap">
+                                <a href="job-details.html">
+                                    <img src="images/jobs/it-professional-works-startup-project.jpg" class="job-image img-fluid" alt="">
+                                </a>
 
-                            <div class="job-image-box-wrap-info d-flex align-items-center">
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge badge-level">Internship</a>
-                                </p>
+                                <div class="job-image-box-wrap-info d-flex align-items-center">
+                                    <p class="mb-0">
+                                        <a href="job-listings.html" class="badge badge-level">Internship</a>
+                                    </p>
 
-                                <p class="mb-0">
-                                    <a href="job-listings.html" class="badge">Freelance</a>
-                                </p>
+                                    <p class="mb-0">
+                                        <a href="job-listings.html" class="badge">Freelance</a>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="job-body">
-                            <h4 class="job-title">
-                                <a href="job-details.html"
-                                    class="job-title-link"><?php echo $vacante->title_vacante ?></a>
-                            </h4>
+                            <div class="job-body">
+                                <h4 class="job-title">
+                                    <a href="job-details.html" class="job-title-link"><?php echo $row['title_vacante'] ?></a>
+                                </h4>
 
-                            <div class="d-flex align-items-center">
-                                <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
-                                    <img src="images/logos/salesforce.png" class="job-image me-3 img-fluid" alt="">
+                                <div class="d-flex align-items-center">
+                                    <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
+                                        <img src="images/logos/salesforce.png" class="job-image me-3 img-fluid" alt="">
 
-                                    <p class="mb-0">Salesforce</p>
+                                        <p class="mb-0">Salesforce</p>
+                                    </div>
+
+                                    <a href="#" class="bi-bookmark ms-auto me-2">
+                                    </a>
+
+                                    <a href="#" class="bi-heart">
+                                    </a>
                                 </div>
 
-                                <a href="#" class="bi-bookmark ms-auto me-2">
-                                </a>
+                                <div class="d-flex align-items-center">
+                                    <p class="job-location">
+                                        <i class="custom-icon bi-geo-alt me-1"></i>
+                                        <?php echo $row['lugar_de_trabajo']  ?>
+                                    </p>
 
-                                <a href="#" class="bi-heart">
-                                </a>
-                            </div>
+                                    <p class="job-date">
+                                        <i class="custom-icon bi-clock me-1"></i>
+                                        <?php echo $row['fecha_de_publicacion']  ?>
+                                    </p>
+                                </div>
 
-                            <div class="d-flex align-items-center">
-                                <p class="job-location">
-                                    <i class="custom-icon bi-geo-alt me-1"></i>
-                                    <?php echo $vacante->lugar_de_trabajo  ?>
-                                </p>
+                                <div class="d-flex align-items-center border-top pt-3">
+                                    <p class="job-price mb-0">
+                                        <i class="custom-icon bi-cash me-1"></i>
+                                        $<?php echo $row['rango_sueldo'] ?>
+                                    </p>
 
-                                <p class="job-date">
-                                    <i class="custom-icon bi-clock me-1"></i>
-                                    <?php echo $vacante->fecha_de_publicacion   ?>
-                                </p>
-                            </div>
-
-                            <div class="d-flex align-items-center border-top pt-3">
-                                <p class="job-price mb-0">
-                                    <i class="custom-icon bi-cash me-1"></i>
-                                    $<?php echo$vacante->rango_sueldo?>
-                                </p>
-
-                                <a href="job-details.html" class="custom-btn btn ms-auto">Postularme</a>
+                                    <a href="job-details.html" class="custom-btn btn ms-auto">Postularme</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <?php endforeach ?>
+                <?php
+                }
+
+                ?>
+
 
 
 
                 <div class="col-lg-12 col-12">
-                    <?php 
-                    if(isset($urlParams[1])){
+                    <?php
+                    if (isset($urlParams[1])) {
                         $currentPage = $urlParams[1];
-                    }else{
-                       $currentPage = 1;
+                    } else {
+                        $currentPage = 1;
                     }
-                
-                    
+
+
                     ?>
-                    <ul class="paginacion" data-total-pages="<?php echo ceil($rows/3) ?>"
-                        data-current-page="<?php echo $currentPage ?>"
-                        data-url-page="<?php echo $_SERVER['REQUEST_URI'] ?>">
+                    <ul class="paginacion" data-total-pages="<?php echo ceil($rows / 3) ?>" data-current-page="<?php echo $currentPage ?>" data-url-page="<?php echo $_SERVER['REQUEST_URI'] ?>">
 
                     </ul>
                 </div>

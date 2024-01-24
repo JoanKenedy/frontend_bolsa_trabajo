@@ -8,7 +8,7 @@ if ($conn->connect_errno != 0) {
     echo $conn->connect_error;
     exit();
 }
-$sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0,4");
+$sql = $conn->query("SELECT * FROM crear_vacantes");
 
 include 'modules/header.php';
 ?>
@@ -37,7 +37,7 @@ if (!empty($urlParams[0])) {
             break;
         case "job-listings.php":
             include 'pages/Job-listings/job-listings.php';
-            break;    
+            break;
     }
 } else if ($path) {
     include 'pages/Home/home.php';
