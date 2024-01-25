@@ -9,6 +9,31 @@ if (isset($urlParams[2])) {
 
 ?>
 <?php
+if (isset($urlParams[3])) {
+    if (is_numeric($urlParams[3])) {
+        $startAt = ($urlParams[3] * 3) - 3;
+    } else {
+        echo '<script>
+               window.location = "' . $path . $urlParams[2] . '"
+               </script>';
+    }
+} else {
+    $startAt = 0;
+}
+$endArt = 3;
+
+$conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+if ($conn->connect_errno != 0) {
+    echo $conn->connect_error;
+    exit();
+}
+$todos = $conn->query("SELECT * FROM crear_vacantes");
+$rows = $todos->num_rows;
+$sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
+$paginas = ceil($rows / $endArt);
+?>
+
+<?php
 
 
 $url = CurlController::api() . "relations?rel=curriculums,usuarios&type=curriculum,usuario&linkTo=id_usuario&equalTo=" . $_SESSION['rol']->id_usuario . "";
@@ -105,59 +130,73 @@ if ($siModal->status == 404) {
 </div>
 <div class="container-body d-flex justify-content-center align-items-center">
     <div class="container container-father">
-        <?php
 
-
-        $url = CurlController::api() . "crear_vacantes";
-        $method = "GET";
-        $fields = array();
-        $header = array();
-
-        $totalVacantes = CurlController::request($url, $method, $fields, $header)->results;
-        ?>
 
         <section class="job-section job-featured-section section-space" id="job-section">
             <div class="container">
-                <?php foreach ($totalVacantes as $key => $value) : ?>
+                <?php
+                while ($row = $sql->fetch_assoc()) {
+                ?>
                     <div class="col-lg-12 col-12 my-3">
                         <div class="wraper-job">
                             <div class="wraper-footer-job ">
                                 <div class="foto">
-                                    <?php if ($value->foto_vacante != '') : ?>
-                                        <img src="images/descargas/<?php echo $value->foto_vacante ?>" class="img-redonda" alt="">
+                                    <?php if ($row['foto_vacante']  != '') : ?>
+                                        <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="img-redonda" alt="">
                                     <?php else : ?>
                                         <img src="images/avatar/work.png" alt="" class="img-redonda">
                                     <?php endif; ?>
                                 </div>
 
                                 <div class="job-titulo2 text-center mb-lg-0">
-                                    <p class="job-title-link"><?php echo $value->title_vacante ?></p>
+                                    <p class="job-title-link"><?php echo  $row['title_vacante'] ?></p>
                                     <p class="">
 
-                                        <?php echo $value->fecha_de_publicacion ?>
+                                        <?php echo $row['fecha_de_publicacion']  ?>
                                     </p>
                                 </div>
 
                                 <div class="wraper-footer-job-description text-center">
                                     <p class="">
                                         <i class="custom-icon bi-cash me-1"></i>
-                                        $<?php echo $value->rango_sueldo ?>MXN
+                                        $<?php echo  $row['rango_sueldo']  ?>MXN
                                     </p>
                                     <p class="">
                                         <i class="custom-icon bi-geo-alt me-1"></i>
-                                        <?php echo $value->lugar_de_trabajo ?>
+                                        <?php echo $row['lugar_de_trabajo'] ?>
                                     </p>
                                 </div>
 
 
                                 <div class="container-btn-postular">
-                                    <a href="<?php echo $path ?>account&candidate&dashboard&vacante_details?id_vacante=<?php echo $value->id_vacante  ?>" class="custom-btn btn">Ver más</a>
+                                    <a href="<?php echo $path ?>account&candidate&dashboard&vacante_details?id_vacante=<?php echo $row['id_vacante']   ?>" class="custom-btn btn">Ver más</a>
                                 </div>
                             </div>
                         </div>
 
                     </div>
-                <?php endforeach ?>
+
+                <?php
+
+                }
+
+                ?>
+
+            </div>
+
+            <div class="col-lg-12 col-12 paginacion-padre">
+                <ul class="pagination">
+                    <li class="page-item first disabled"><a href="#" class="page-link">Inicio</a></li>
+                    <li class="page-item prev disabled"><a href="#" class="page-link"><i class="bi bi-arrow-left-circle-fill"></i></a></li>
+                    <?php for ($i = 0; $i < $paginas; $i++) : ?>
+                        <li class="page-item active"><a href="#" class="page-link"><?php echo $i + 1 ?></a></li>
+                    <?php endfor; ?>
+
+
+                    <li class="page-item next"><a href="#" class="page-link"><i class="bi bi-arrow-right-circle-fill"></i></a></li>
+                    <li class="page-item last"><a href="#" class="page-link">Final</a></li>
+                </ul>
+
             </div>
 
         </section>

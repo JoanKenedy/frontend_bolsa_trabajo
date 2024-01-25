@@ -233,14 +233,15 @@ nav[aria-label="breadcrumb"] {
   border-color: var(--border-color);
   border-radius: var(--border-radius-large);
   color: var(--p-color);
-  font-size: var(--copyright-font-size);
+  font-size: 17px;
   padding: 0;
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
   text-align: center;
   margin-right: 10px;
   margin-left: 10px;
+  font-weight: 500;
 }
 
 .page-item.active .page-link,
@@ -1255,6 +1256,11 @@ textarea {
 .chow {
   display: block;
 }
+.paginacion-padre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {
   .modal-vacantes {
@@ -2172,8 +2178,21 @@ input[type="radio"] {
 }
 
 .job-image {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+.job-todos {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.job-base {
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   border-radius: 50%;
 }

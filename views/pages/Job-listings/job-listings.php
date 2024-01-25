@@ -10,7 +10,7 @@ if (isset($urlParams[1])) {
 } else {
     $startAt = 0;
 }
-$endArt = 2;
+$endArt = 3;
 
 $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 if ($conn->connect_errno != 0) {
@@ -151,31 +151,17 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
             <div class="row align-items-center">
 
                 <div class="col-lg-6 col-12 mb-lg-4">
-                    <h3>Results of 30-65 of 1500 jobs</h3>
+                    <?php if (isset($urlParams[1])) : ?>
+                        <h3>Pagina <?php echo $urlParams[1] ?> de <?php echo ceil($rows / 3) ?></h3>
+                    <?php else : ?>
+                        <h3>Pagina 1 de <?php echo ceil($rows / 3) ?></h3>
+                    <?php endif ?>
+
                 </div>
 
                 <div class="col-lg-4 col-12 d-flex align-items-center ms-auto mb-5 mb-lg-4">
-                    <p class="mb-0 ms-lg-auto">Sort by:</p>
 
-                    <div class="dropdown dropdown-sorting ms-3 me-4">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownSortingButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Newest Jobs
-                        </button>
 
-                        <ul class="dropdown-menu" aria-labelledby="dropdownSortingButton">
-                            <li><a class="dropdown-item" href="#">Lastest Jobs</a></li>
-
-                            <li><a class="dropdown-item" href="#">Highed Salary Jobs</a></li>
-
-                            <li><a class="dropdown-item" href="#">Internship Jobs</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="d-flex">
-                        <a href="#" class="sorting-icon active bi-list me-2"></a>
-
-                        <a href="#" class="sorting-icon bi-grid"></a>
-                    </div>
                 </div>
                 <?php
                 while ($row = $sql->fetch_assoc()) {
@@ -184,18 +170,15 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
                         <div class="job-thumb job-thumb-box">
                             <div class="job-image-box-wrap">
                                 <a href="job-details.html">
-                                    <img src="images/jobs/it-professional-works-startup-project.jpg" class="job-image img-fluid" alt="">
+                                    <?php if ($row['foto_vacante'] != '') : ?>
+                                        <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="job-base img-fluid" alt="">
+                                    <?php else : ?>
+                                        <img src="images/avatar/job.png" class="job-todos img-fluid" alt="">
+                                    <?php endif; ?>
+
                                 </a>
 
-                                <div class="job-image-box-wrap-info d-flex align-items-center">
-                                    <p class="mb-0">
-                                        <a href="job-listings.html" class="badge badge-level">Internship</a>
-                                    </p>
 
-                                    <p class="mb-0">
-                                        <a href="job-listings.html" class="badge">Freelance</a>
-                                    </p>
-                                </div>
                             </div>
 
                             <div class="job-body">
@@ -203,19 +186,6 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
                                     <a href="job-details.html" class="job-title-link"><?php echo $row['title_vacante'] ?></a>
                                 </h4>
 
-                                <div class="d-flex align-items-center">
-                                    <div class="job-image-wrap d-flex align-items-center bg-white shadow-lg mt-2 mb-4">
-                                        <img src="images/logos/salesforce.png" class="job-image me-3 img-fluid" alt="">
-
-                                        <p class="mb-0">Salesforce</p>
-                                    </div>
-
-                                    <a href="#" class="bi-bookmark ms-auto me-2">
-                                    </a>
-
-                                    <a href="#" class="bi-heart">
-                                    </a>
-                                </div>
 
                                 <div class="d-flex align-items-center">
                                     <p class="job-location">
@@ -235,7 +205,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
                                         $<?php echo $row['rango_sueldo'] ?>
                                     </p>
 
-                                    <a href="job-details.html" class="custom-btn btn ms-auto">Postularme</a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#Tres" class="custom-btn btn ms-auto">Postularme</a>
+
                                 </div>
                             </div>
                         </div>
@@ -249,7 +220,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
 
 
 
-                <div class="col-lg-12 col-12">
+                <div class="col-lg-12 col-12 paginacion-padre">
                     <?php
                     if (isset($urlParams[1])) {
                         $currentPage = $urlParams[1];
@@ -294,4 +265,51 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
             </div>
         </div>
     </section>
+    <div class="modal fade" id="Tres" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+
+            <div class=" modal-content px-3 py-3 modal-home">
+                <img src="images/descargas/user.png" alt="" class="img-redonda text-center">
+                <h6 class="text-center">Para poder utilizar la plataforma tienes que registrarte.</h6>
+                <a href="<?php echo $path ?>account&enrrollment" class="custom-btn custom-border-btn btn me-4">Registrarme</a>
+
+            </div>
+
+
+        </div>
+    </div>
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>
+<script>
+    function pagination() {
+        var target = $(".paginacion");
+        if (target.length > 0) {
+            target.each(function() {
+                var el = $(this),
+                    totalPages = el.data("total-pages"),
+                    currentPage = el.data("current-page"),
+                    urlPage = el.data("url-page");
+
+                el.twbsPagination({
+                    totalPages: totalPages,
+                    startPage: currentPage,
+                    visiblePages: 3,
+                    first: 'Inicio',
+                    last: 'Final',
+                    prev: '<i class="bi bi-arrow-left-circle-fill"></i>',
+                    next: '<i class="bi bi-arrow-right-circle-fill"></i>',
+                }).on("page", function(evt, page) {
+                    if (urlPage.includes("&", 1)) {
+                        urlPage = urlPage.replace("&" + currentPage, "&" + page);
+                        window.location = urlPage;
+                    } else {
+                        window.location = urlPage + "&" + page;
+                    }
+
+                })
+            });
+        }
+    }
+
+    pagination();
+</script>
