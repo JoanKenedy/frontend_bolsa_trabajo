@@ -1,17 +1,10 @@
 <?php
-echo '<pre>';
-print_r($urlParams);
-echo '</pre>';
 if (isset($urlParams[2])) {
 
     if ($urlParams[2] == 'search') {
         include "views/pages/Account/candidate/search/search.php";
     }
-} else if (isset($urlParams[3])) {
-    if ($urlParams[3] == $_GET['page']) {
-        include "views/pages/Account/candidate/dashboard/paginas/paginas.php";
-    }
-}
+};
 $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 if ($conn->connect_errno != 0) {
     echo $conn->connect_error;
@@ -179,20 +172,37 @@ if ($siModal->status == 404) {
                 <div class="col-lg-12 col-12 paginacion-2">
 
                     <ul class="paginar">
-                        <li><a href="">
-                                <span>&laquo; Previous</span>
-                            </a></li>
+                        <?php if ($_GET['page'] - 1 == 0) : ?>
+
+                            <li><a href="#" onclick="return false">
+                                    <span>&laquo; Previous</span>
+                                </a></li>
+                        <?php else : ?>
+                            <li><a href="<?php echo $path ?>account&candidate&dashboard&paginas?page=<?php echo $_GET['page'] - 1 ?>">
+                                    <span>&laquo; Previous</span>
+                                </a></li>
+                        <?php endif; ?>
                         <?php for ($i = 1; $i <= $pages; $i++) : ?>
                             <li>
                                 <a href="<?php echo $path ?>account&candidate&dashboard&paginas?page=<?php echo $i ?>"><?php echo $i ?></a>
                             </li>
                         <?php endfor; ?>
 
-                        <li>
-                            <a href="">
-                                <span>Next&raquo;</span>
-                            </a>
-                        </li>
+                        <?php if ($_GET['page'] + 1 > $pages) : ?>
+                            <li>
+                                <a href="#" onclick="return false">
+                                    <span>Next&raquo;</span>
+                                </a>
+                            </li>
+                        <?php else : ?>
+                            <li>
+                                <a href="<?php echo $path ?>account&candidate&dashboard&paginas?page=<?php echo $_GET['page'] + 1 ?>">
+                                    <span>Next&raquo;</span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
+
+
 
                     </ul>
 

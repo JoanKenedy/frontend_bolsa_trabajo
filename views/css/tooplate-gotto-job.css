@@ -1261,6 +1261,18 @@ textarea {
   justify-content: center;
   align-items: center;
 }
+.paginacion-2 {
+  width: 100%;
+}
+.paginar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 22px;
+}
+
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {
   .modal-vacantes {

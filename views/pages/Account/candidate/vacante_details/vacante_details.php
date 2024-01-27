@@ -1,5 +1,9 @@
 <main>
+
     <?php
+    echo '<pre>';
+    print_r($urlParams);
+    echo '</pre>';
     $id_vacante = $_GET['id_vacante'];
     $data = $_SESSION['rol']->id_usuario;
 
