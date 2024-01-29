@@ -175,11 +175,11 @@ if ($siModal->status == 404) {
                         <?php if ($_GET['page'] - 1 == 0) : ?>
 
                             <li><a href="#" onclick="return false">
-                                    <span>&laquo; Previous</span>
+                                    <span><i class="bi bi-arrow-left-circle-fill"></i></span>
                                 </a></li>
                         <?php else : ?>
                             <li><a href="<?php echo $path ?>account&candidate&dashboard&paginas?page=<?php echo $_GET['page'] - 1 ?>">
-                                    <span>&laquo; Previous</span>
+                                    <span><i class="bi bi-arrow-left-circle-fill"></i></span>
                                 </a></li>
                         <?php endif; ?>
                         <?php for ($i = 1; $i <= $pages; $i++) : ?>
@@ -191,13 +191,13 @@ if ($siModal->status == 404) {
                         <?php if ($_GET['page'] + 1 > $pages) : ?>
                             <li>
                                 <a href="#" onclick="return false">
-                                    <span>Next&raquo;</span>
+                                    <span><i class="bi bi-arrow-right-circle-fill"></i></span>
                                 </a>
                             </li>
                         <?php else : ?>
                             <li>
                                 <a href="<?php echo $path ?>account&candidate&dashboard&paginas?page=<?php echo $_GET['page'] + 1 ?>">
-                                    <span>Next&raquo;</span>
+                                    <span><i class="bi bi-arrow-right-circle-fill"></i></span>
                                 </a>
                             </li>
                         <?php endif; ?>

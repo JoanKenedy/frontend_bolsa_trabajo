@@ -1272,6 +1272,12 @@ textarea {
   list-style: none;
   gap: 22px;
 }
+.paginar .li-item .a-item {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  border-color: gray !important;
+}
 
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {

@@ -1,7 +1,5 @@
 <?php
-echo '<pre>';
-print_r($urlParams);
-echo '</pre>';
+
 if (isset($urlParams[2])) {
 
     if ($urlParams[2] == 'search') {
@@ -139,7 +137,7 @@ if ($siModal->status == 404) {
                                     <?php if ($row['foto_vacante']  != '') : ?>
                                         <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="img-redonda" alt="">
                                     <?php else : ?>
-                                        <img src="images/avatar/work.png" alt="" class="img-redonda">
+                                        <img src="images/avatar/job.png" alt="" class="img-redonda">
                                     <?php endif; ?>
                                 </div>
 
@@ -179,20 +177,28 @@ if ($siModal->status == 404) {
                 <div class="col-lg-12 col-12 paginacion-2">
 
                     <ul class="paginar">
-                        <li><a href="">
-                                <span>&laquo; Previous</span>
+
+
+                        <li class="li-item"><a class="a-item" href="#" onclick="return false">
+                                <span><i class="bi bi-arrow-left-circle-fill"></i></span>
                             </a></li>
+
                         <?php for ($i = 1; $i <= $pages; $i++) : ?>
-                            <li>
-                                <a href="<?php echo $path ?>account&candidate&dashboard&paginas?page=<?php echo $i ?>"><?php echo $i ?></a>
+                            <li class="li-item">
+                                <a class="a-item" href="<?php echo $path ?>account&candidate&dashboard&paginas?page=<?php echo $i ?>"><?php echo $i ?></a>
                             </li>
                         <?php endfor; ?>
 
-                        <li>
-                            <a href="">
-                                <span>Next&raquo;</span>
+
+                        <li class="li-item">
+                            <a class="a-item" href="<?php echo $path ?>account&candidate&dashboard&paginas?page=<?php echo 2 ?>">
+                                <span><i class="bi bi-arrow-right-circle-fill"></i></span>
                             </a>
                         </li>
+
+
+
+
 
                     </ul>
 
