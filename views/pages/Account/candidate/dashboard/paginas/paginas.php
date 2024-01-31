@@ -6,6 +6,7 @@ if (isset($urlParams[2])) {
     }
 };
 $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+$conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
 if ($conn->connect_errno != 0) {
     echo $conn->connect_error;
     exit();

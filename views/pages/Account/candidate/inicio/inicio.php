@@ -51,7 +51,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 
-                                    <input type="text" name="job-title" id="job-title" class="form-control inputSearch" placeholder="Titulo del trabajo" required>
+                                    <input type="text" name="job-title" id="job-title" class="form-control inputSearch" placeholder="Titulo del trabajo">
                                 </div>
                             </div>
 
@@ -59,7 +59,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
 
-                                    <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Locación" required>
+                                    <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Locación">
                                 </div>
                             </div>
 

@@ -1278,9 +1278,22 @@ textarea {
   border-radius: 50% !important;
   border-color: gray !important;
 }
+.icon-atras {
+  font-size: 30px !important;
+}
+.regresar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 7px;
+  line-height: 10px;
+}
 
 /*fin de estilos de mi perfil*/
 @media screen and (min-width: 992px) {
+  .icon-atras {
+    font-size: 25px !important;
+  }
   .modal-vacantes {
     max-width: 550px !important;
   }

@@ -220,7 +220,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
 
 
 
-                <!--   <div class="col-lg-12 col-12 paginacion-padre">
+                <div class="col-lg-12 col-12 paginacion-padre">
                     <?php
                     if (isset($urlParams[1])) {
                         $currentPage = $urlParams[1];
@@ -233,7 +233,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
                     <ul class="paginacion" data-total-pages="<?php echo ceil($rows / 3) ?>" data-current-page="<?php echo $currentPage ?>" data-url-page="<?php echo $_SERVER['REQUEST_URI'] ?>">
 
                     </ul>
-                </div> -->
+                </div>
 
             </div>
         </div>
