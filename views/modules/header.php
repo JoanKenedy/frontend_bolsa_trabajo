@@ -62,35 +62,35 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
                     <?php if (isset($_SESSION['rol'])) : ?>
                         <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
                             <li class="nav-item">
-                                <a class="nav-link active" href="<?php echo $path ?>account&candidate&inicio">Inicio</a>
+                                <a class="nav-link active" href="<?php echo $path ?>cuenta&candidato&inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo $path ?>account&candidate&about">Nosotros</a>
+                                <a class="nav-link" href="<?php echo $path ?>cuenta&candidato&nosotros">Nosotros</a>
                             </li>
-                            <li class="nav-item"><a class="nav-link " href="<?php echo $path ?>account&candidate&job-listings&1">Lista de trabajos</a></li>
+                            <li class="nav-item"><a class="nav-link " href="<?php echo $path ?>cuenta&candidato&lista-trabajos&1">Lista de trabajos</a></li>
 
-                            <li class="nav-item"><a class="nav-link " href="<?php echo $path ?>account&candidate&contact">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link " href="<?php echo $path ?>cuenta&candidato&contacto">Contacto</a></li>
                         <?php elseif ($_SESSION['rol']->rol_usuario_id  == 2) :  ?>
                             <li class="nav-item">
-                                <a class="nav-link active" href="<?php echo $path ?>account&recruiter&inicio">Inicio</a>
+                                <a class="nav-link active" href="<?php echo $path ?>cuenta&reclutador&inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo $path ?>account&recruiter&about">Nosotros</a>
+                                <a class="nav-link" href="<?php echo $path ?>cuenta&reclutador&nosotros">Nosotros</a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link " href="<?php echo $path ?>account&recruiter&contact">Conctacto</a></li>
+                            <li class="nav-item"><a class="nav-link " href="<?php echo $path ?>cuenta&reclutador&contacto">Conctacto</a></li>
                         <?php endif; ?>
                     <?php else :  ?>
                         <li class="nav-item">
                             <a class="nav-link active" href="<?php echo $path ?> ">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?php echo $path ?>about.php">Nosotros</a>
+                            <a class="nav-link" href="<?php echo $path ?>nosotros.php">Nosotros</a>
                         </li>
                         <!-- <li><a class="nav-link" href="<?php echo $path ?>job-listings.php">Listado de
                             trabajos</a></li>-->
                         <li class="nav-item">
-                            <a class="nav-link " href="<?php echo $path ?>contact.php">Conctacto</a>
+                            <a class="nav-link " href="<?php echo $path ?>contacto.php">Conctacto</a>
                         </li>
                     <?php endif; ?>
 
@@ -100,11 +100,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
                         <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
 
                             <li class="nav-item ms-lg-auto mx-3 ">
-                                <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&candidate&curriculum">MI
+                                <a class="nav-link custom-btn btn" href="<?php echo $path ?>cuenta&candidato&curriculum">MI
                                     CV</a>
                             </li>
                             <li class="nav-item ms-lg-auto mx-3 ">
-                                <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&candidate&dashboard">Mi
+                                <a class="nav-link custom-btn btn" href="<?php echo $path ?>cuenta&candidato&panel">Mi
                                     perfil</a>
                             </li>
                             <li class="nav-item ms-lg-auto btn-compu">
@@ -114,11 +114,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
                             </li>
                         <?php elseif ($_SESSION['rol']->rol_usuario_id  == 2) :  ?>
                             <li class="nav-item ms-lg-auto mx-3 ">
-                                <a class="nav-link custom-btn btn " href="<?php echo $path ?>account&recruiter&company_profile">CV
+                                <a class="nav-link custom-btn btn " href="<?php echo $path ?>cuenta&reclutador&perfil-empresa">CV
                                     Empresa</a>
                             </li>
                             <li class="nav-item ms-lg-auto mx-3 ">
-                                <a class="nav-link custom-btn btn " href="<?php echo $path ?>account&recruiter&dashboard">Mi
+                                <a class="nav-link custom-btn btn " href="<?php echo $path ?>cuenta&reclutador&panel">Mi
                                     cuenta</a>
                             </li>
 
@@ -127,10 +127,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
                         <?php endif; ?>
                     <?php else :  ?>
                         <li class="nav-item ms-lg-auto">
-                            <a class="nav-link" href="<?php echo $path ?>account&enrrollment">Registrarse</a>
+                            <a class="nav-link" href="<?php echo $path ?>cuenta&enrrolarse">Registrarse</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link custom-btn btn" href="<?php echo $path ?>account&login">Acceso</a>
+                            <a class="nav-link custom-btn btn" href="<?php echo $path ?>cuenta&acceso">Acceso</a>
                         </li>
                     <?php endif; ?>
                 </ul>

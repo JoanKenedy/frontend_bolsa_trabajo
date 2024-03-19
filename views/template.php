@@ -25,17 +25,17 @@ if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
 }
 
 if (!empty($urlParams[0])) {
-    if ($urlParams[0] == "account") {
+    if ($urlParams[0] == "cuenta") {
         include "pages/" . $urlParams[0] . "/" . $urlParams[0] . ".php";
     }
     switch ($urlParams[0]) {
-        case "about.php":
+        case "nosotros.php":
             include 'pages/About/about.php';
             break;
-        case "contact.php":
+        case "contacto.php":
             include 'pages/Contact/contact.php';
             break;
-        case "job-listings.php":
+        case "lista-trabajos.php":
             include 'pages/Job-listings/job-listings.php';
             break;
     }

@@ -3,7 +3,7 @@
     <section class="job-section job-featured-section section-space" id="job-section">
 
         <div class="container">
-            <a href="<?php echo $path ?>account&candidate&dashboard">
+            <a href="<?php echo $path ?>cuenta&candidato&panel">
                 <span class="regresar"><i class="bi bi-arrow-return-left icon-atras"></i>Regresar</span>
             </a>
             <h4 class="text-dorado mt-2">Estos son tus resultados</h4>
@@ -43,7 +43,7 @@
 
 
                             <div class="container-btn-postular">
-                                <a href="<?php echo $path ?>account&candidate&dashboard&vacante_details?id_vacante=<?php echo $filas['id_vacante']     ?>" class="custom-btn btn">Ver más</a>
+                                <a href="<?php echo $path ?>cuenta&candidato&panel&vacante_detalles?id_vacante=<?php echo $filas['id_vacante']     ?>" class="custom-btn btn">Ver más</a>
                             </div>
                         </div>
                     </div>

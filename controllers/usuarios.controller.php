@@ -3,94 +3,7 @@ ob_start();
 class UsersController
 {
 
-    public function register()
-    {
 
-        if (isset($_POST['enviaRegistro']) && isset($_POST['regEmail'])) {
-            if (
-                preg_match("/^[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}$/", $_POST['regNombre']) &&
-                preg_match("/^[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}$/", $_POST['regApellidos']) &&
-                preg_match("/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/", $_POST['regEmail']) &&
-                preg_match("/^(\(\+?\d{2,3}\)[\*|\s|\-|\.]?(([\d][\*|\s|\-|\.]?){6})(([\d][\s|\-|\.]?){2})?|(\+?[\d][\s|\-|\.]?){8}(([\d][\s|\-|\.]?){2}(([\d][\s|\-|\.]?){2})?)?)$/", $_POST['regTelefono']) &&
-                preg_match("/^(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*$/", $_POST['regPassword'])
-
-            ) {
-
-                $email = strtolower($_POST['regEmail']);
-                $url = CurlController::api() . 'usuarios?register=true';
-                $method = "POST";
-                $fields = array(
-                    "rol_usuario_id" => $_POST['regRol'],
-                    "nombre" => $_POST['regNombre'],
-                    "apellidos" => $_POST['regApellidos'],
-                    "email" => $email,
-                    "telefono" => $_POST['regTelefono'],
-                    "password" => $_POST['regPassword'],
-                    "method_user" => 'directo',
-                    "created_at" => date('Y-m-d')
-                );
-
-
-                $header = array(
-                    'Content-Type' =>  'application/x-www-form-urlencoded'
-                );
-
-                $register = CurlController::request($url, $method, $fields, $header);
-
-                if ($register->status == 200) {
-
-                    $name = $_POST['regNombre'];
-                    $subject = 'Verifica tu cuenta';
-                    $email = $email;
-                    $message = 'Debemos verificar tu cuenta para que puedas ingresar a nuestra bolsa de trabajo haz click en el siguiente enlace';
-                    $url = TemplateController::path() . "account&login&" . base64_encode($email);
-                    $sendEmail = TemplateController::sendEmail($name, $subject, $email, $message, $url);
-
-
-                    if ($sendEmail == 'ok') {
-?>
-                        <script>
-                            function modal() {
-
-                                Swal.fire({
-                                    position: "top",
-                                    icon: "success",
-                                    title: " Se ha registrado con éxito, se te ha enviado un correo al que ingresaste , verifica tu cuenta solo dando click a el enlace.",
-                                    showConfirmButton: false,
-
-
-
-                                });
-                            }
-                            modal();
-                            fncFormatInputs();
-                        </script>
-                    <?php
-
-                    } else {
-                        echo '<div class="alert alert-danger">
-                        ' . $sendEmail . '
-                    </div>
-                     <script>
-                             fncFormatInputs()
-                             </script>
-                    
-                    
-                    ';
-                    }
-                }
-            } else {
-                echo '<div class="alert alert-danger">
-                Error de sintaxis en alguno de los campos
-                  </div>
-                <script>
-                    fncFormatInputs()
-                </script>
-            
-            ';
-            }
-        }
-    }
 
     public function login()
     {
@@ -124,17 +37,17 @@ class UsersController
                         $rol = $login->results[0];
                         $_SESSION['rol'] = $rol;
                         if ($_SESSION['rol']->rol_usuario_id == 1) {
-                            header('Location:account&candidate&dashboard');
+                            header('Location:cuenta&candidato&panel');
                             return;
                         } elseif ($_SESSION['rol']->rol_usuario_id == 2) {
-                            header('Location:account&recruiter&dashboard');
+                            header('Location:cuenta&reclutador&panel');
                             return;
                         } else {
-                            header('Location:account&login');
+                            header('Location:cuenta&acceso');
                             return;
                         }
                     } else {
-                    ?>
+?>
                         <script>
                             function modal() {
                                 Swal.fire({
