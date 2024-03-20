@@ -130,9 +130,9 @@
 
                 <div class="col-lg-4 col-12 ms-auto">
                     <div class="custom-border-btn-wrap d-flex align-items-center mt-lg-4 mt-2">
-                        <a href="<?php echo $path ?>account&enrrollment" class="custom-btn custom-border-btn btn me-4">Crear cuenta</a>
+                        <a href="<?php echo $path ?>cuenta&enrrolarse" class="custom-btn custom-border-btn btn me-4">Crear cuenta</a>
 
-                        <a href="<?php echo $path ?>account&enrrollment" class="custom-link">Anuciar trabajo</a>
+                        <a href="<?php echo $path ?>cuenta&enrrolarse" class="custom-link">Anuciar trabajo</a>
                     </div>
                 </div>
 

@@ -164,7 +164,7 @@
                             facilitamos el proceso de búsqueda y contratación.</p>
 
                         <div class="custom-border-btn-wrap d-flex align-items-center mt-5">
-                            <a href="<?php echo $path ?>about.php" class="custom-btn custom-border-btn btn me-4">Conócenos</a>
+                            <a href="<?php echo $path ?>nosotros.php" class="custom-btn custom-border-btn btn me-4">Conócenos</a>
 
 
                         </div>
@@ -191,7 +191,7 @@
 
     <section class="job-section job-featured-section section-padding" id="job-section">
         <div class="container">
-            <div class="row">
+            <div class="row row-inicio">
 
                 <div class="col-lg-6 col-12 text-center mx-auto mb-4">
                     <h2>Trabajos destacados</h2>
@@ -199,16 +199,25 @@
                     <p><strong>Encuentra las mejores oportunidades</strong> </p>
                 </div>
 
-                <div class="col-lg-12 col-12">
+                <div class="col-lg-10 col-12 text-center">
 
                     <?php
 
                     while ($row = $sql->fetch_assoc()) {
                     ?>
 
-                        <div class="job-thumb d-flex">
+                        <div class="job-thumb  job-thumb-inicio">
                             <div class="job-image-wrap bg-white shadow-lg">
-                                <img src="images/logos/google.png" class="job-image img-fluid" alt="">
+
+                                <?php if ($row['foto_vacante'] != '') : ?>
+                                    <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="job-base img-fluid" alt="">
+                                <?php else : ?>
+                                    <img src="images/avatar/job.png" class="job-todos img-fluid" alt="">
+                                <?php endif; ?>
+
+
+
+
                             </div>
 
                             <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
@@ -237,10 +246,12 @@
                                     </div>
                                 </div>
 
-                                <div class="job-section-btn-wrap">
-                                    <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#Dos" class="custom-btn btn">Postularme</a>
 
-                                </div>
+                            </div>
+
+                            <div class="job-section-footer">
+                                <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#Dos" class="custom-btn btn">Postularme</a>
+
                             </div>
                         </div>
 
@@ -483,9 +494,9 @@
 
                 <div class="col-lg-4 col-12 ms-auto">
                     <div class="custom-border-btn-wrap d-flex align-items-center mt-lg-4 mt-2">
-                        <a href="<?php echo $path ?>account&enrrollment" class="custom-btn custom-border-btn btn me-4">Crea una cuenta</a>
+                        <a href="<?php echo $path ?>cuenta&enrrolarse" class="custom-btn custom-border-btn btn me-4">Crea una cuenta</a>
 
-                        <a href="<?php echo $path ?>account&enrrollment" class="custom-link">Anunciar un trabajo</a>
+                        <a href="<?php echo $path ?>cuenta&enrrolarse" class="custom-link">Anunciar un trabajo</a>
                     </div>
                 </div>
 
@@ -498,7 +509,7 @@
             <div class="modal-content px-3 py-3 modal-home">
                 <img src="images/descargas/user.png" alt="" class="img-redonda">
                 <h6 class="text-center">Para poder utilizar la plataforma tienes que registrarte.</h6>
-                <a href="<?php echo $path ?>account&enrrollment" class="custom-btn custom-border-btn btn me-4">Registrarme</a>
+                <a href="<?php echo $path ?>cuenta&enrrolarse" class="custom-btn custom-border-btn btn me-4">Registrarme</a>
 
             </div>
         </div>
@@ -509,7 +520,7 @@
             <div class=" modal-content px-3 py-3 modal-home">
                 <img src="images/descargas/user.png" alt="" class="img-redonda text-center">
                 <h6 class="text-center">Para poder utilizar la plataforma tienes que registrarte.</h6>
-                <a href="<?php echo $path ?>account&enrrollment" class="custom-btn custom-border-btn btn me-4">Registrarme</a>
+                <a href="<?php echo $path ?>cuenta&enrrolarse" class="custom-btn custom-border-btn btn me-4">Registrarme</a>
 
             </div>
 

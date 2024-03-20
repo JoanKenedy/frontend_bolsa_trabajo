@@ -40,7 +40,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<? echo $path ?>">Home</a></li>
 
                             <li class="breadcrumb-item active" aria-current="page">Job listings</li>
                         </ol>
@@ -169,7 +169,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="job-thumb job-thumb-box">
                             <div class="job-image-box-wrap">
-                                <a href="job-details.html">
+                                <a href="#">
                                     <?php if ($row['foto_vacante'] != '') : ?>
                                         <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="job-base img-fluid" alt="">
                                     <?php else : ?>

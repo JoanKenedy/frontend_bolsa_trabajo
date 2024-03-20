@@ -2,7 +2,7 @@
 
 if (isset($urlParams[2])) {
     if ($urlParams[2] == 'search') {
-        include "views/pages/Account/candidate/search/search.php";
+        include "views/pages/cuenta/candidate/search/search.php";
     }
 };
 
@@ -42,7 +42,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                 </div>
 
                 <div class="col-lg-6 col-12">
-                    <form class="custom-form hero-form" method="post" role="form" action="<?php echo $path ?>account&candidate&search">
+                    <form class="custom-form hero-form" method="post" role="form" action="<?php echo $path ?>cuenta&candidato&busqueda">
                         <h3 class="text-white mb-3">
                             Busca el trabajo de tus sueños</h3>
 
@@ -266,7 +266,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                                     </div>
 
                                     <div class="job-section-btn-wrap">
-                                        <a href="<?php echo $path ?>account&candidate&dashboard&ver_vacante?id_vacante=<?php echo $row['id_vacante']  ?>" class="custom-btn btn">Solo ver</a>
+                                        <a href="<?php echo $path ?>cuenta&candidato&panel&ver_vacante?id_vacante=<?php echo $row['id_vacante']  ?>" class="custom-btn btn">Solo ver</a>
                                     </div>
                                 </div>
                             </div>
@@ -296,7 +296,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
 
                     <div class="col-lg-12 col-12 text-center">
-                        <a href="<?php echo $path ?>account&candidate&job-listings&1" class="custom-btn btn mt-5">Todas las
+                        <a href="<?php echo $path ?>cuenta&candidato&lista-trabajos&1" class="custom-btn btn mt-5">Todas las
                             vacantes</a>
                     </div>
 

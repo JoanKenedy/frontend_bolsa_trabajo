@@ -17,7 +17,8 @@ class RecruitersController
             $direccion = $_POST['direccionEmpresa'];
             $codigo_postal = $_POST['postalEmpresa'];
 
-            $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+            // $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+            $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
             $sql = "INSERT INTO reclutadores ( `id_usuario_reclutador`, `email_empresa`, `telefono_empresa`, `name_empresa`, `pais`, `estado`, `direccion`,`codigo_postal`)
                          VALUES ('$id_usuario_reclutador','$email_empresa','$telefono_empresa','$name_empresa','$pais','$estado','$direccion','$codigo_postal')";
@@ -70,8 +71,8 @@ class RecruitersController
                     fncFormatInputs();
 
                     setTimeout(() => {
-                        let urlEnvio = 'https://multiservices-job.mx/';
-                        location.href = `${urlEnvio}account&recruiter&datos_finales`;
+                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                        location.href = `${urlEnvio}cuenta&reclutador&datos_finales`;
                     }, "2500");
                 </script>
                 <?php
@@ -137,8 +138,8 @@ class RecruitersController
                         fncFormatInputs();
 
                         setTimeout(() => {
-                            let urlEnvio = 'https://multiservices-job.mx/';
-                            location.href = `${urlEnvio}account&recruiter&dashboard`;
+                            let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                            location.href = `${urlEnvio}cuenta&reclutador&panel`;
                         }, "2500");
                     </script>
                     <?php
@@ -187,7 +188,8 @@ class RecruitersController
                 $extensiones = strtolower(pathinfo($nombre_docu, PATHINFO_EXTENSION));
                 if ($extensiones == "png" || $extensiones == "jpg" || $extensiones == 'jpeg') {
                     if (move_uploaded_file($_FILES['fotoVacante']['tmp_name'], $carpeta_fin . $nombre_docu)) {
-                        $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+                        //  $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+                        $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
                         $sql = "INSERT INTO crear_vacantes ( `title_vacante`, `foto_vacante`, `rango_sueldo`, `fecha_de_publicacion`, `educacion_requerida`, `tipo_contratacion`, `horario`,`lugar_de_trabajo`, `requisitos`,`beneficios`,`descripcion`,`id_reclutador_vacante`,`id_usuario_vacante`)
                          VALUES ('$title_vacante','$nombre_docu','$rango_sueldo','$fecha_publicacion','$educacion_requerida','$tipo_contratacion','$horario','$lugar_de_trabajo','$requisitos','$beneficios','$descripcion','$id_reclutador_vacante','$id_usuario_vacante')";
@@ -241,8 +243,8 @@ class RecruitersController
                                 fncFormatInputs();
 
                                 setTimeout(() => {
-                                    let urlEnvio = 'https://multiservices-job.mx/';
-                                    location.href = `${urlEnvio}account&recruiter&company_profile`;
+                                    let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                                    location.href = `${urlEnvio}cuenta&reclutador&panel`;
                                 }, "2500");
                             </script>
                         <?php
@@ -272,7 +274,8 @@ class RecruitersController
             if ($extensiones == "png" || $extensiones == "jpg" || $extensiones == 'jpeg') {
 
                 if (move_uploaded_file($_FILES['fotoEditEmpresa']['tmp_name'], $carpeta_fin . $nombre_docu)) {
-                    $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+                    //$conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+                    $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
                     $sql = "UPDATE reclutadores SET logo_empresa='" . $nombre_docu . "',email_empresa='" . $correo . "',telefono_empresa='" . $tel . "', name_empresa='" . $nombre . "' WHERE id_usuario_reclutador = '" . $id_user . "'";
 
@@ -325,8 +328,8 @@ class RecruitersController
                             fncFormatInputs();
 
                             setTimeout(() => {
-                                let urlEnvio = 'https://multiservices-job.mx/';
-                                location.href = `${urlEnvio}account&recruiter&company_profile`;
+                                let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                                location.href = `${urlEnvio}cuenta&reclutador&perfil-empresa`;
                             }, "2500");
                         </script>
                 <?php
@@ -349,7 +352,8 @@ class RecruitersController
             $postal = $_POST['postalEditEmpresa'];
             $direc = $_POST['direccionEditEmpresa'];
 
-            $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+            //$conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+            $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
             $sql = "UPDATE reclutadores SET pais='" . $country . "',estado='" . $stado . "',direccion='" . $direc . "',codigo_postal='" . $postal . "' WHERE id_usuario_reclutador = '" . $id_user . "'";
 
@@ -402,8 +406,8 @@ class RecruitersController
                     fncFormatInputs();
 
                     setTimeout(() => {
-                        let urlEnvio = 'https://multiservices-job.mx/';
-                        location.href = `${urlEnvio}account&recruiter&company_profile`;
+                        let urlEnvio = 'https://prueba_bolsa_de_trabajo.com/';
+                        location.href = `${urlEnvio}cuenta&reclutador&perfil-empresa`;
                     }, "2500");
                 </script>
             <?php   }
@@ -418,7 +422,8 @@ class RecruitersController
             $empleados = $_POST['numEditEmpleado'];
             $text = $_POST['descripcionEditR'];
 
-            $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+            // $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+            $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
             $sql = "UPDATE reclutadores SET giro_empresa='" . $giro . "',num_trabajadores='" . $empleados . "',descripcion='" . $text . "' WHERE id_usuario_reclutador = '" . $id_user . "'";
 
@@ -471,8 +476,8 @@ class RecruitersController
                     fncFormatInputs();
 
                     setTimeout(() => {
-                        let urlEnvio = 'https://multiservices-job.mx/';
-                        location.href = `${urlEnvio}account&recruiter&company_profile`;
+                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                        location.href = `${urlEnvio}cuenta&reclutador&perfil-empresa`;
                     }, "2500");
                 </script>
             <?php   }
@@ -486,7 +491,8 @@ class RecruitersController
             $razon = $_POST['razonEditEmpresa'];
             $rfc = $_POST['rfcEditContacto'];
 
-            $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+            //$conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+            $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
             $sql = "UPDATE reclutadores SET razon_social='" . $razon . "',rfc='" . $rfc . "' WHERE id_usuario_reclutador = '" . $id_user . "'";
 
@@ -539,8 +545,8 @@ class RecruitersController
                     fncFormatInputs();
 
                     setTimeout(() => {
-                        let urlEnvio = 'https://multiservices-job.mx/';
-                        location.href = `${urlEnvio}account&recruiter&company_profile`;
+                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                        location.href = `${urlEnvio}cuenta&reclutador&perfil-empresa`;
                     }, "2500");
                 </script>
             <?php   }
@@ -566,7 +572,8 @@ class RecruitersController
             $beneficios = $jsonBeneficio;
             $desc = $_POST['descripcionEditVacante'];
 
-            $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+            // $conn = mysqli_connect('db5015003865.hosting-data.io', 'dbu2212005', '931125hgryyn04', 'dbs12467465');
+            $conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
 
             $sql = "UPDATE crear_vacantes SET title_vacante='" . $title_vacante . "',rango_sueldo='" . $sueldo . "',educacion_requerida='" . $edu . "',tipo_contratacion='" . $contratacion . "',horario='" . $horario . "',lugar_de_trabajo='" . $lugar_trabajo . "',requisitos='" . $requisitos . "',beneficios='" . $beneficios . "',descripcion='" . $desc . "' WHERE id_vacante = '" . $id_vacante . "'";
 
@@ -619,8 +626,8 @@ class RecruitersController
                     fncFormatInputs();
 
                     setTimeout(() => {
-                        let urlEnvio = 'https://multiservices-job.mx/';
-                        location.href = `${urlEnvio}account&recruiter&dashboard`;
+                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                        location.href = `${urlEnvio}cuenta&reclutador&panel`;
                     }, "2500");
                 </script>
 <?php   }

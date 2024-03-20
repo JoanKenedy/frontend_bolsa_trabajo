@@ -120,8 +120,8 @@ if ($siModal->status == 404) {
                                         </div>
                                     </div>
                                 </div>
-                                <?php include "views/pages/Account/recruiter/requisitos/requisitos.php"; ?>
-                                <?php include "views/pages/Account/recruiter/beneficios/beneficios.php"; ?>
+                                <?php include "views/pages/cuenta/reclutador/requisitos/requisitos.php"; ?>
+                                <?php include "views/pages/cuenta/reclutador/beneficios/beneficios.php"; ?>
 
                                 <div class="col-lg-12 col-md-12 col-12">
 
@@ -260,8 +260,8 @@ if ($siModal->status == 404) {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <?php include "views/pages/Account/recruiter/requisitos/requisitos.php"; ?>
-                                            <?php include "views/pages/Account/recruiter/beneficios/beneficios.php"; ?>
+                                            <?php include "views/pages/cuenta/reclutador/requisitos/requisitos.php"; ?>
+                                            <?php include "views/pages/cuenta/reclutador/beneficios/beneficios.php"; ?>
                                             <div class="col-lg-12 col-md-12 col-12">
 
                                                 <div class="col-lg-12 col-md-12 col-12">
@@ -334,7 +334,7 @@ if ($siModal->status == 404) {
                                     <div class="item-container-vacante">
                                         <div class="mb-3">
                                             <h4 class="job-title mb-lg-0">
-                                                <a href="job-details.html" class="job-title-link">
+                                                <a href="<?php echo $path ?>cuenta&reclutador&panel&ver_vacante?id_vacante=<?php echo $value->id_vacante  ?>" class="job-title-link">
                                                     <?php echo $value->title_vacante ?></a>
                                             </h4>
 
@@ -359,9 +359,9 @@ if ($siModal->status == 404) {
 
                                     </div>
                                     <div class="item-container-vacante">
-                                        <a href="<?php echo $path ?>account&recruiter&dashboard&ver_vacante?id_vacante=<?php echo $value->id_vacante  ?>" class="custom-btn btn">Ver</a>
+                                        <a href="<?php echo $path ?>cuenta&reclutador&panel&ver_vacante?id_vacante=<?php echo $value->id_vacante  ?>" class="custom-btn btn">Ver</a>
 
-                                        <a href="<?php echo $path ?>account&recruiter&dashboard&editar_vacante?editar=<?php echo $value->id_vacante  ?>" class="custom-btn btn">Editar</a>
+                                        <a href="<?php echo $path ?>cuenta&reclutador&panel&editar_vacante?editar=<?php echo $value->id_vacante  ?>" class="custom-btn btn">Editar</a>
 
                                     </div>
                                 </div>
@@ -416,7 +416,7 @@ if ($siModal->status == 404) {
                             <span>Hace 1 día</span>
                         </div>
                     </div> -->
-                    <a href="<?php echo $path ?>account&recruiter&postulaciones" class="custom-btn btn">Ver
+                    <a href="<?php echo $path ?>cuenta&reclutador&postulaciones" class="custom-btn btn">Ver
                         Postulaciones</a>
                 </div>
             </div>
@@ -445,6 +445,6 @@ if ($siModal->status == 404) {
         }, 2000);
     })
     document.getElementById('cerrar_modal2').addEventListener('click', () => {
-        document.getElementById('automatic').classList.remove('chow');
+        document.getElementById('automatico').classList.remove('chow');
     })
 </script>

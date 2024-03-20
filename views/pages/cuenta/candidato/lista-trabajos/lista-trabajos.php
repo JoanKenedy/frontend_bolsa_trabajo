@@ -117,7 +117,7 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
                                         $<?php echo $row['rango_sueldo'] ?>
                                     </p>
 
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#Tres" class="custom-btn btn ms-auto">Postularme</a>
+                                    <a href="<?php echo $path ?>cuenta&candidato&panel&ver_vacante?id_vacante=<?php echo $row['id_vacante']  ?>" class="custom-btn btn">Ver más</a>
 
                                 </div>
                             </div>

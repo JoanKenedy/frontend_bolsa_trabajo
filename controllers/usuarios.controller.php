@@ -152,8 +152,8 @@ class UsersController
                     fncFormatInputs();
 
                     setTimeout(() => {
-                        let urlEnvio = 'https://multiservices-job.mx/';
-                        location.href = `${urlEnvio}account&candidate&profesion`;
+                        let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
+                        location.href = `${urlEnvio}cuenta&candidato&profesion`;
                     }, "2500");
                 </script>
                 <?php
@@ -234,7 +234,7 @@ class UsersController
 
                         setTimeout(() => {
                             let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                            location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                         }, "2500");
                     </script>
                 <?php
@@ -315,7 +315,7 @@ class UsersController
 
                         setTimeout(() => {
                             let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                            location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                         }, "2500");
                     </script>
                 <?php
@@ -396,7 +396,7 @@ class UsersController
 
                         setTimeout(() => {
                             let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                            location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                         }, "2500");
                     </script>
                     <?php
@@ -486,7 +486,7 @@ class UsersController
 
                                 setTimeout(() => {
                                     let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                                    location.href = `${urlEnvio}account&candidate&curriculum`;
+                                    location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                                 }, "2500");
                             </script>
                         <?php
@@ -578,7 +578,7 @@ class UsersController
 
                                 setTimeout(() => {
                                     let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                                    location.href = `${urlEnvio}account&candidate&curriculum`;
+                                    location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                                 }, "2500");
                             </script>
                         <?php
@@ -660,7 +660,7 @@ class UsersController
 
                             setTimeout(() => {
                                 let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                                location.href = `${urlEnvio}account&candidate&curriculum`;
+                                location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                             }, "2500");
                         </script>
                     <?php
@@ -741,7 +741,7 @@ class UsersController
 
                         setTimeout(() => {
                             let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                            location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                         }, "2500");
                     </script>
                 <?php
@@ -818,7 +818,7 @@ class UsersController
 
                         setTimeout(() => {
                             let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                            location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                         }, "2500");
                     </script>
                 <?php
@@ -892,7 +892,7 @@ class UsersController
 
                         setTimeout(() => {
                             let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                            location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                         }, "2500");
                     </script>
                 <?php
@@ -963,7 +963,7 @@ class UsersController
 
                         setTimeout(() => {
                             let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                            location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                         }, "2500");
                     </script>
                 <?php
@@ -1033,7 +1033,7 @@ class UsersController
 
                         setTimeout(() => {
                             let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                            location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                         }, "2500");
                     </script>
                 <?php
@@ -1105,7 +1105,7 @@ class UsersController
 
                         setTimeout(() => {
                             let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                            location.href = `${urlEnvio}account&candidate&curriculum`;
+                            location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                         }, "2500");
                     </script>
                     <?php
@@ -1181,7 +1181,7 @@ class UsersController
 
                                 setTimeout(() => {
                                     let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                                    location.href = `${urlEnvio}account&candidate&curriculum`;
+                                    location.href = `${urlEnvio}cuenta&candidato&curriculum`;
                                 }, "2500");
                             </script>
                 <?php
@@ -1256,7 +1256,7 @@ class UsersController
 
                     setTimeout(() => {
                         let urlEnvio = 'http://prueba_bolsa_de_trabajo.com/';
-                        location.href = `${urlEnvio}account&candidate&dashboard`;
+                        location.href = `${urlEnvio}cuenta&candidato&panel`;
                     }, "2500");
                 </script>
 <?php

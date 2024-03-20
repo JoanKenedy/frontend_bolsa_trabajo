@@ -173,7 +173,7 @@
                             de México. En Multiservices puedes buscar empleos ideales de acuerdo a tu perfil.</p>
 
                         <div class="custom-border-btn-wrap d-flex align-items-center mt-5">
-                            <a href="<?php echo $path ?>account&recruiter&about" class="custom-btn custom-border-btn btn me-4">Conócenos</a>
+                            <a href="<?php echo $path ?>cuenta&reclutador&nosotros" class="custom-btn custom-border-btn btn me-4">Conócenos</a>
 
 
                         </div>
@@ -553,7 +553,7 @@
                 <h6 class="text-center">Esta función para reclutadores esta deshabilitada, en mi cuenta puedes ver y
                     editar
                     vacantes que vas postulando.</h6>
-                <a href="<?php echo $path ?>account&recruiter&dashboard" class="custom-btn custom-border-btn btn me-4">Ir a mi cuenta</a>
+                <a href="<?php echo $path ?>cuenta&reclutador&panel" class="custom-btn custom-border-btn btn me-4">Ir a mi cuenta</a>
 
             </div>
         </div>

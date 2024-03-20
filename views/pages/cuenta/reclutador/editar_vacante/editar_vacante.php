@@ -117,7 +117,7 @@
                                  </div>
                              <?php endforeach; ?>
                          </div>
-                         <?php include "views/pages/account/reclutador/beneficios/beneficios.php"; ?>
+                         <?php include "views/pages/cuenta/reclutador/beneficios/beneficios.php"; ?>
                          <div class="col-lg-12 col-md-12 col-12">
                              <?php
                                 $beneficios = json_decode($verificarEditarVacante->results[0]->beneficios);

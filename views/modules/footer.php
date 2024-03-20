@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-4 col-md-6 col-12 mb-3">
+            <div class="col-lg-5 col-md-6 col-12 mb-3">
                 <div class="d-flex align-items-center mb-4">
                     <img src="images/logo.png" class="img-fluid logo-image">
 
@@ -38,33 +38,33 @@
 
             </div>
 
-            <div class="col-lg-2 col-md-3 col-6 ms-lg-auto">
+            <div class="col-lg-2 col-md-3 col-12 ms-lg-auto">
                 <h6 class="site-footer-title">Compañia</h6>
 
                 <ul class="footer-menu">
                     <?php if (isset($_SESSION['rol'])) : ?>
                         <?php if ($_SESSION['rol']->rol_usuario_id == 1) : ?>
                             <li class="footer-menu-item">
-                                <a class="footer-menu-link" href="<?php echo $path ?>account&candidate&about">Nosotros</a>
+                                <a class="footer-menu-link" href="<?php echo $path ?>cuenta&candidato&nosotros">Nosotros</a>
                             </li>
 
-                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&candidate&job-listings" class="footer-menu-link">Trabajos</a></li>
+                            <li class="footer-menu-item"><a href="<?php echo $path ?>cuenta&candidato&lista-trabajos" class="footer-menu-link">Trabajos</a></li>
 
-                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&candidate&contact" class="footer-menu-link">Contacto</a></li>
+                            <li class="footer-menu-item"><a href="<?php echo $path ?>cuenta&candidato&contacto" class="footer-menu-link">Contacto</a></li>
 
                         <?php elseif ($_SESSION['rol']->rol_usuario_id  == 2) :  ?>
                             <li class="footer-menu-item">
-                                <a class="footer-menu-link" href="<?php echo $path ?>account&recruiter&about">Nosotros</a>
+                                <a class="footer-menu-link" href="<?php echo $path ?>cuenta&reclutador&nosotros">Nosotros</a>
                             </li>
 
-                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&recruiter&job-listings" class="footer-menu-link">Trabajos</a></li>
+                            <li class="footer-menu-item"><a href="<?php echo $path ?>cuenta&reclutador&lista-trabajos" class="footer-menu-link">Trabajos</a></li>
 
-                            <li class="footer-menu-item"><a href="<?php echo $path ?>account&recruiter&contact" class="footer-menu-link">Contacto</a></li>
+                            <li class="footer-menu-item"><a href="<?php echo $path ?>cuenta&reclutador&contacto" class="footer-menu-link">Contacto</a></li>
                         <?php endif; ?>
                     <?php else :  ?>
-                        <li class="footer-menu-item"><a href="<?php echo $path ?>about.php" class="footer-menu-link">Nosotros</a></li>
-                        <li class="footer-menu-item"><a href="<?php echo $path ?>job-listings.php" class="footer-menu-link">Trabajos</a></li>
-                        <li class="footer-menu-item"><a href="<?php echo $path ?>contact.php" class="footer-menu-link">Contacto</a></li>
+                        <li class="footer-menu-item"><a href="<?php echo $path ?>nosotros.php" class="footer-menu-link">Nosotros</a></li>
+                        <li class="footer-menu-item"><a href="<?php echo $path ?>lista-trabajos.php" class="footer-menu-link">Trabajos</a></li>
+                        <li class="footer-menu-item"><a href="<?php echo $path ?>contacto.php" class="footer-menu-link">Contacto</a></li>
                     <?php endif; ?>
 
 
@@ -73,23 +73,13 @@
                 </ul>
             </div>
 
-            <div class="col-lg-2 col-md-3 col-6">
-                <h6 class="site-footer-title">Resources</h6>
 
-                <ul class="footer-menu">
-                    <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">Guía</a>
-                    </li>
 
-                    <li class="footer-menu-item"><a href="#" onclick="return false" class="footer-menu-link">¿Cómo
-                            funciona?</a></li>
+            <div class="col-lg-5 col-md-8 col-12 mt-3 mt-lg-0">
 
-                </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-8 col-12 mt-3 mt-lg-0">
-                <h6 class="site-footer-title">Boletin informativo</h6>
 
                 <form class="custom-form newsletter-form" action="#" method="post" role="form">
+                    <h6 class="site-footer-title">Boletin informativo</h6>
                     <h6 class="site-footer-title">Recibe notificaciones de noticias de empleo</h6>
 
                     <div class="input-group">

@@ -7,7 +7,7 @@
 
             <div class="row ">
                 <h6 class="text-center text-dorado">Ya estas postulado. <br> Sigue postulandote a nuevas vacantes</h6>
-                <a href="<?php echo $path ?>account&candidate&dashboard" class="custom-btn btn ">Regresar</a>
+                <a href="<?php echo $path ?>cuenta&candidato&panel" class="custom-btn btn ">Regresar</a>
 
                 <div class="col-lg-12 col-12 my-3  ">
 
