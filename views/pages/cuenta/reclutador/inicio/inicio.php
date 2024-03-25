@@ -1,3 +1,12 @@
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'bolsa_de_trabajo');
+if ($conn->connect_errno != 0) {
+    echo $conn->connect_error;
+    exit();
+}
+
+$sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
+?>
 <main>
 
     <section class="hero-section d-flex justify-content-center align-items-center">
@@ -26,7 +35,7 @@
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 
-                                    <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Job Title" required>
+                                    <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Puesto de trabajo que busca" required>
                                 </div>
                             </div>
 
@@ -34,7 +43,7 @@
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
 
-                                    <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Location" required>
+                                    <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Ubicación" required>
                                 </div>
                             </div>
 
@@ -45,17 +54,7 @@
                             </div>
 
                             <div class="col-12">
-                                <div class="d-flex flex-wrap align-items-center mt-4 mt-lg-0">
-                                    <span class="text-white mb-lg-0 mb-md-0 me-2">Popular keywords:</span>
 
-                                    <div>
-                                        <a href="job-listings.html" class="badge">Web design</a>
-
-                                        <a href="job-listings.html" class="badge">Marketing</a>
-
-                                        <a href="job-listings.html" class="badge">Customer support</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </form>
@@ -76,7 +75,7 @@
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-window"></i>
 
                             <small class="categories-block-title">Diseño Web</small>
@@ -84,13 +83,13 @@
                             <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">320</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-twitch"></i>
 
                             <small class="categories-block-title">Marketing</small>
@@ -98,13 +97,13 @@
                             <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">180</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-play-circle-fill"></i>
 
                             <small class="categories-block-title">Video</small>
@@ -112,13 +111,13 @@
                             <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">340</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-globe"></i>
 
                             <small class="categories-block-title">Desarrollo web</small>
@@ -126,13 +125,13 @@
                             <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">140</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-people"></i>
 
                             <small class="categories-block-title">Soporte Técnico</small>
@@ -140,7 +139,7 @@
                             <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">84</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
@@ -198,6 +197,7 @@
     </section>
 
 
+
     <section class="job-section job-featured-section section-padding" id="job-section">
         <div class="container">
             <div class="row">
@@ -210,15 +210,17 @@
 
                 <div class="col-lg-12 col-12">
                     <div class="grid-jobs">
-                        <?php foreach ($totalVacantes as $key => $value) : ?>
 
 
+                        <?php
+                        while ($row = $sql->fetch_assoc()) {
+                        ?>
                             <div class="job-thumb d-flex">
                                 <div class="job-image-wrap bg-white shadow-lg">
-                                    <?php if ($value->foto_vacante != '') : ?>
-                                        <img src="images/descargas/<?php echo $value->foto_vacante ?>" class="img-redonda" alt="">
+                                    <?php if ($row['foto_vacante']  != '') : ?>
+                                        <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="img-redonda" alt="">
                                     <?php else : ?>
-                                        <img src="images/avatar/work.png" alt="" class="img-redonda">
+                                        <img src="images/avatar/job.png" alt="" class="job-todos">
                                     <?php endif; ?>
                                 </div>
 
@@ -226,41 +228,61 @@
                                     <div class="mb-3">
                                         <h4 class="job-title mb-lg-0">
                                             <a href="job-details.html" class="job-title-link">
-                                                <?php echo $value->title_vacante ?></a>
+                                                <?php echo $row['title_vacante'] ?></a>
                                         </h4>
 
                                         <div class="d-flex flex-wrap align-items-center">
                                             <p class="job-location mb-0">
                                                 <i class="custom-icon bi-geo-alt me-1"></i>
-                                                <?php echo $value->lugar_de_trabajo ?>
+                                                <?php echo $row['lugar_de_trabajo'] ?>
                                             </p>
 
                                             <p class="job-date mb-0">
                                                 <i class="custom-icon bi-clock me-1"></i>
-                                                <?php echo $value->fecha_de_publicacion ?>
+                                                <?php echo $row['fecha_de_publicacion'] ?>
                                             </p>
 
                                             <p class="job-price mb-0">
                                                 <i class="custom-icon bi-cash me-1"></i>
-                                                $<?php echo $value->rango_sueldo ?>
+                                                $<?php echo $row['rango_sueldo'] ?>
                                             </p>
 
                                         </div>
                                     </div>
 
                                     <div class="job-section-btn-wrap">
-                                        <a href="<?php echo $path ?>cuenta&reclutador&panel&ver_vacante?id_vacante=<?php echo $value->id_vacante  ?>" class="custom-btn btn">Solo ver</a>
+                                        <a href="<?php echo $path ?>cuenta&reclutador&panel&ver_vacante?id_vacante=<?php echo $row['id_vacante']  ?>" class="custom-btn btn">Solo ver</a>
                                     </div>
                                 </div>
                             </div>
 
 
+                        <?php
+
+
+
+
+                        }
+
+                        ?>
 
 
 
 
 
-                        <?php endforeach ?>
+
+
+
+
+
+                    </div>
+
+
+
+
+                    <div class="col-lg-12 col-12 text-center">
+                        <a href="<?php echo $path ?>cuenta&reclutador&lista-trabajos&1" class="custom-btn btn mt-5">Todas las
+                            vacantes</a>
                     </div>
 
 
@@ -268,51 +290,11 @@
 
 
 
-
-
-
-
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center mt-5">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">Prev</span>
-                                </a>
-                            </li>
-
-                            <li class="page-item active" aria-current="page">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link" href="#">4</a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link" href="#">5</a>
-                            </li>
-
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
 
             </div>
         </div>
     </section>
-
 
     <section>
         <div class="container">

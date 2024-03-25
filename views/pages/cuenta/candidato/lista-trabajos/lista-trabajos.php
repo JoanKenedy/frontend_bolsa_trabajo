@@ -37,13 +37,13 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
             <div class="row">
 
                 <div class="col-lg-12 col-12 text-center">
-                    <h1 class="text-white">Job Listings</h1>
+                    <h1 class="text-white">Lista de Trabajos</h1>
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
 
-                            <li class="breadcrumb-item active" aria-current="page">Job listings</li>
+                            <li class="breadcrumb-item active" aria-current="page">Lista de trabajos</li>
                         </ol>
                     </nav>
                 </div>

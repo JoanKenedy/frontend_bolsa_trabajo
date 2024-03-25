@@ -26,7 +26,7 @@
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 
-                                    <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Job Title" required>
+                                    <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Puesto de trabajo que busca" required>
                                 </div>
                             </div>
 
@@ -34,7 +34,7 @@
                                 <div class="input-group">
                                     <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
 
-                                    <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Location" required>
+                                    <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Ubicación" required>
                                 </div>
                             </div>
 
@@ -65,7 +65,7 @@
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-window"></i>
 
                             <small class="categories-block-title">Diseño Web</small>
@@ -73,13 +73,13 @@
                             <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">320</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-twitch"></i>
 
                             <small class="categories-block-title">Marketing</small>
@@ -87,13 +87,13 @@
                             <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">180</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-play-circle-fill"></i>
 
                             <small class="categories-block-title">Video</small>
@@ -101,13 +101,13 @@
                             <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">340</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-globe"></i>
 
                             <small class="categories-block-title">Desarrollo web</small>
@@ -115,13 +115,13 @@
                             <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">140</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-people"></i>
 
                             <small class="categories-block-title">Soporte Técnico</small>
@@ -129,7 +129,7 @@
                             <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">84</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
@@ -267,7 +267,7 @@
 
                 </div>
                 <div class="col-lg-12 col-12 text-center">
-                    <a href="<?php echo $path ?>job-listings.php" class="custom-btn btn mt-5">Todas las
+                    <a href="<?php echo $path ?>lista-trabajos.php" class="custom-btn btn mt-5">Todas las
                         vacantes</a>
                 </div>
 

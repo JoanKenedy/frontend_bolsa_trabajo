@@ -66,20 +66,18 @@ $editarUsuarioPerfil->editarUsuarioPerfil();
 if (isset($urlParams[3])) {
 
     if (isset($_GET['id_especialidad'])) {
-        include "views/pages/Account/candidate/curriculum/edit_especialidad/edit_especialidad.php";
+        include "views/pages/cuenta/candidato/curriculum/editar_especialidad/editar_especialidad.php";
     } elseif (isset($_GET['id_habilidad'])) {
-        include "views/pages/Account/candidate/curriculum/edit_habilidad/edit_habilidad.php";
+        include "views/pages/cuenta/candidato/curriculum/editar_habilidad/editar_habilidad.php";
     } elseif (isset($_GET['id_idioma'])) {
-        include "views/pages/Account/candidate/curriculum/edit_idioma/edit_idioma.php";
+        include "views/pages/cuenta/candidato/curriculum/editar_idioma/editar_idioma.php";
     } elseif (isset($_GET['id_certificacion'])) {
-        include "views/pages/Account/candidate/curriculum/edit_certificacion/edit_certificacion.php";
+        include "views/pages/cuenta/candidato/curriculum/editar_certificacion/editar_certificacion.php";
     }
 };
 
 ?>
 <div class="container grid-padre">
-
-
     <div class="grid-container">
         <div class="grid-1">
             <div class="grid-inter">
@@ -143,7 +141,7 @@ if (isset($urlParams[3])) {
                                     <div class="item-container-habilidades">
 
                                         <p><?php echo $value->title_habilidad ?></p>
-                                        <a href='<?php echo $path ?>account&candidate&curriculum&edit_habilidad?id_habilidad=<?php echo $value->id_habilidad ?>' class="editar">
+                                        <a href='<?php echo $path ?>cuenta&candidato&curriculum&editar_habilidad?id_habilidad=<?php echo $value->id_habilidad ?>' class="editar">
                                             <i class=" bi bi-pencil-fill icon-editar"></i>
 
                                         </a>
@@ -312,7 +310,7 @@ if (isset($urlParams[3])) {
 
                                     <p>Idioma: <?php echo $value->title_idioma ?></p>
                                     <p>Nivel: <?php echo $value->nivel_idioma ?></p>
-                                    <a href='<?php echo $path ?>account&candidate&curriculum&edit_idioma?id_idioma=<?php echo $value->id_idioma ?>' class="editar">
+                                    <a href='<?php echo $path ?>cuenta&candidato&curriculum&editar_idioma?id_idioma=<?php echo $value->id_idioma ?>' class="editar">
                                         <i class=" bi bi-pencil-fill icon-editar"></i>
 
                                     </a>
@@ -377,7 +375,7 @@ if (isset($urlParams[3])) {
                                     <p><?php echo $value->nombre_certificacion ?></p>
 
                                     <a href="images/descargas/<?php echo $value->enlace ?>" target="_blank">Certificado <i class="bi bi-cloud-download-fill"></i></a>
-                                    <a href='<?php echo $path ?>account&candidate&curriculum&edit_certificacion?id_certificacion=<?php echo $value->id_certificacion ?>' class="editar">
+                                    <a href='<?php echo $path ?>cuenta&candidato&curriculum&editar_certificacion?id_certificacion=<?php echo $value->id_certificacion ?>' class="editar">
                                         <i class=" bi bi-pencil-fill icon-editar"></i>
 
                                     </a>
@@ -433,7 +431,7 @@ if (isset($urlParams[3])) {
 
                                     <p><?php echo $value->title_especialidad ?></p>
 
-                                    <a href='<?php echo $path ?>account&candidate&curriculum&edit_especialidad?id_especialidad=<?php echo $value->id_especialidad ?>' class="editar editar-especialidades" name="id-especialidad">
+                                    <a href='<?php echo $path ?>cuenta&candidato&curriculum&editar_especialidad?id_especialidad=<?php echo $value->id_especialidad ?>' class="editar editar-especialidades" name="id-especialidad">
                                         <i class=" bi bi-pencil-fill icon-editar"></i>
 
                                     </a>

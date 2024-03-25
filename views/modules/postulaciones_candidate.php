@@ -39,15 +39,24 @@
                                     Empresa: <?php echo $datosContacto->results[0]->name_empresa ?>
 
                                 </p>
-                                <p class="">
-
+                                <p class="anclas">
+                                <p>
                                     <i class="custom-icon bi bi-envelope"></i>
-                                    Email: <?php echo $datosContacto->results[0]->email_empresa ?>
+                                    Email:
+                                    <a href="mailto:<?php echo $datosContacto->results[0]->email_empresa ?>">
+                                        <?php echo $datosContacto->results[0]->email_empresa ?>
+                                    </a>
+                                </p>
+
+
 
                                 </p>
-                                <p class="">
+                                <p class="anclas">
+
+                                <p>
                                     <i class="custom-icon bi bi-telephone"></i>
-                                    Teléfono de contacto: <?php echo $datosContacto->results[0]->telefono_empresa ?>
+                                    Teléfono de contacto: <a href="tel:<?php echo $datosContacto->results[0]->telefono_empresa ?>"> <?php echo $datosContacto->results[0]->telefono_empresa ?></a>
+                                </p>
 
                                 </p>
                             </div>

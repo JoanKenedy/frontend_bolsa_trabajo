@@ -60,11 +60,11 @@
 
                             <div class="d-flex">
                                 <p class="mb-0">
-                                    <a href="job-listings.html" class="badge badge-level"><?php echo $verificarVacante->results[0]->educacion_requerida ?></a>
+                                    <a href="#" onclick="return false;" class="badge badge-level"><?php echo $verificarVacante->results[0]->educacion_requerida ?></a>
                                 </p>
 
                                 <p class="mb-0">
-                                    <a href="job-listings.html" class="badge"><?php echo $verificarVacante->results[0]->tipo_contratacion ?></a>
+                                    <a href="#" onclick="return false;" class="badge"><?php echo $verificarVacante->results[0]->tipo_contratacion ?></a>
                                 </p>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                         <p class="mb-2">
                             <i class="custom-icon bi-telephone me-1"></i>
 
-                            <a href="tel: 305-240-9671" class="site-footer-link">
+                            <a href="tel:<?php echo $verificarVacante2->results[0]->telefono_empresa ?>" class="site-footer-link">
                                 <?php echo $verificarVacante2->results[0]->telefono_empresa ?>
                             </a>
                         </p>
@@ -182,7 +182,7 @@
                         <p>
                             <i class="custom-icon bi-envelope me-1"></i>
 
-                            <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                            <a href="mailto:<?php echo $verificarVacante2->results[0]->email_empresa ?>" class="site-footer-link">
                                 <?php echo $verificarVacante2->results[0]->email_empresa ?>
                             </a>
                         </p>

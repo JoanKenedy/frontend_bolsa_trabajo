@@ -92,7 +92,7 @@ if ($siModal->status == 404) {
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 
-                                <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Job Title">
+                                <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Puesto de trabajo que busca">
                             </div>
                         </div>
 
@@ -100,7 +100,7 @@ if ($siModal->status == 404) {
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
 
-                                <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Location">
+                                <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Ubicación">
                             </div>
                         </div>
 

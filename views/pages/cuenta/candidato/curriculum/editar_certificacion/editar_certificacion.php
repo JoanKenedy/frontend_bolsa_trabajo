@@ -1,20 +1,23 @@
 <div class="container-edit">
+    <a href="<?php echo $path ?>cuenta&candidato&curriculum" class="btn-regresar">
+        <span class="regresar"><i class="bi bi-arrow-return-left icon-atras"></i>Regresar</span>
+    </a>
     <div class="modal-dialog">
         <div class="modal-content px-3 py-3">
             <form class="" novalidate method="post" role="form" enctype="multipart/form-data">
                 <?php
                 $id_data = $_GET['id_certificacion'];
                 $data = $_SESSION['rol']->id_usuario;
-                    $url = CurlController::api() . "cursos_certificaciones?linkTo=id_certificacion&equalTo=" . $id_data . "&token=no";
-                    $method = "GET";
-                    $fields = array();
-                    $header = array();
-                    $verificarCertificacion = CurlController::request($url, $method, $fields, $header);
-                    $editCertificacionPerfil = new UsersController();
-                    $editCertificacionPerfil->editCertificacionPerfil($verificarCertificacion);
-                    
+                $url = CurlController::api() . "cursos_certificaciones?linkTo=id_certificacion&equalTo=" . $id_data . "&token=no";
+                $method = "GET";
+                $fields = array();
+                $header = array();
+                $verificarCertificacion = CurlController::request($url, $method, $fields, $header);
+                $editCertificacionPerfil = new UsersController();
+                $editCertificacionPerfil->editCertificacionPerfil($verificarCertificacion);
 
-              ?>
+
+                ?>
 
                 <input type="hidden" value="<?php echo CurlController::api() ?>" id="urlApi">
                 <div class="row ">
@@ -22,9 +25,7 @@
                         <div class="input-control">
 
                             <p class="text-label2">Titulo de curso o certificación:</p>
-                            <input type="text" name="title_edit_certificacion" class="form-control input-group"
-                                placeholder="Desarrollo web con Js" required
-                                value="<?php echo $verificarCertificacion->results[0]->nombre_certificacion ?>">
+                            <input type="text" name="title_edit_certificacion" class="form-control input-group" placeholder="Desarrollo web con Js" required value="<?php echo $verificarCertificacion->results[0]->nombre_certificacion ?>">
 
                             <div class="valid-feedback">
                                 Válido
