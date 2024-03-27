@@ -39,8 +39,7 @@
                             oportunidades relevantes y los empleadores encuentren a los candidatos ideales.</p>
 
                         <div class="d-flex align-items-center mt-4">
-                            <a href="<?php echo $path ?>cuenta&reclutador&contacto"
-                                class="custom-btn custom-border-btn btn me-4">Contacto
+                            <a href="<?php echo $path ?>cuenta&reclutador&contacto" class="custom-btn custom-border-btn btn me-4">Contacto
                             </a>
 
 
@@ -50,8 +49,7 @@
 
                 <div class="col-lg-5 col-12 mt-5 mt-lg-0">
                     <div class="about-image-wrap">
-                        <img src="images/horizontal-shot-happy-mixed-race-females.jpg"
-                            class="about-image about-image-border-radius img-fluid" alt="">
+                        <img src="images/horizontal-shot-happy-mixed-race-females.jpg" class="about-image about-image-border-radius img-fluid" alt="">
 
                         <div class="about-info d-flex">
                             <h4 class="text-white mb-0 me-2">10</h4>
@@ -136,153 +134,347 @@
                 <div class="col-lg-12 col-12">
                     <h2 class="text-center mb-5">Clientes felices</h2>
 
-                    <div class="owl-carousel owl-theme reviews-carousel">
-                        <div class="reviews-thumb">
+                    <div class="owl-carousel owl-theme reviews-carousel owl-loaded owl-drag">
 
-                            <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg"
-                                    class="avatar-image img-fluid" alt="">
 
-                                <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                    <p class="mb-0">
-                                        <strong>Susan L</strong>
-                                        <small>Product Manager</small>
-                                    </p>
 
-                                    <div class="reviews-icons">
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
+
+
+
+
+
+
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(-1932px, 0px, 0px); transition: all 0.25s ease 0s; width: 5313px;">
+                                <div class="owl-item cloned" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/slider3.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Jose R.</strong>
+                                                    <small>Vendedor a detalle</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">En la bolsa de trabajo hay varias opciones y oportunidades de
+                                                trabajo.Se los recomiendo.</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item cloned" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/foto.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Jackson Dev</strong>
+                                                    <small>Desallorador de apps</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star"></i>
+                                                    <i class="bi-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">Encontre una gran oportunidad de trabajo en Puerto Vallarta y
+                                                la aproveche.Excelente pagina de busqueda de trabajo.</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item cloned" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/foto2.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Kevin Saavedra</strong>
+                                                    <small>Reclutador</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">Cubri mis vacantes en menos de 2 meses.Es una plataforma
+                                                intituiva y facil de entender la recomiendo al 100%.</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/slider1.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Susan L</strong>
+                                                    <small>Abogada</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">Encontre la opotunidad de trabajo en multiservices job, no
+                                                pense que fuera tan rapido, estoy muy feliz.</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/slider2.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Jaquelin R.</strong>
+                                                    <small>Diseñadora web</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star"></i>
+                                                    <i class="bi-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">Tenia dos meses sin encontrar trabajo,me entere de
+                                                multiservices job y fue muy facil.Tambien he adquirido su tarjeta der descuentos.
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item active" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/slider3.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Jose R.</strong>
+                                                    <small>Vendedor a detalle</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">En la bolsa de trabajo hay varias opciones y oportunidades de
+                                                trabajo.Se los recomiendo.</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/foto.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Jackson Dev</strong>
+                                                    <small>Desallorador de apps</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star"></i>
+                                                    <i class="bi-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">Encontre una gran oportunidad de trabajo en Puerto Vallarta y
+                                                la aproveche.Excelente pagina de busqueda de trabajo.</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/foto2.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Kevin Saavedra</strong>
+                                                    <small>Reclutador</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">Cubri mis vacantes en menos de 2 meses.Es una plataforma
+                                                intituiva y facil de entender la recomiendo al 100%.</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item cloned" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/slider1.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Susan L</strong>
+                                                    <small>Abogada</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">Encontre la opotunidad de trabajo en multiservices job, no
+                                                pense que fuera tan rapido, estoy muy feliz.</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item cloned" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/slider2.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Jaquelin R.</strong>
+                                                    <small>Diseñadora web</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star"></i>
+                                                    <i class="bi-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">Tenia dos meses sin encontrar trabajo,me entere de
+                                                multiservices job y fue muy facil.Tambien he adquirido su tarjeta der descuentos.
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="owl-item cloned" style="width: 453px; margin-right: 30px;">
+                                    <div class="reviews-thumb">
+
+                                        <div class="reviews-info d-flex align-items-center">
+                                            <img src="images/avatar/slider3.jpg" class="avatar-image img-fluid" alt="">
+
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
+                                                <p class="mb-0">
+                                                    <strong>Jose R.</strong>
+                                                    <small>Vendedor a detalle</small>
+                                                </p>
+
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="reviews-body">
+                                            <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
+
+                                            <h4 class="reviews-title">En la bolsa de trabajo hay varias opciones y oportunidades de
+                                                trabajo.Se los recomiendo.</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="reviews-body">
-                                <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
-
-                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt.</h4>
-                            </div>
                         </div>
 
-                        <div class="reviews-thumb">
-                            <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg"
-                                    class="avatar-image img-fluid" alt="">
-
-                                <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                    <p class="mb-0">
-                                        <strong>Jack</strong>
-                                        <small>Technical Lead</small>
-                                    </p>
-
-                                    <div class="reviews-icons">
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star"></i>
-                                        <i class="bi-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="reviews-body">
-                                <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
-
-                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt.</h4>
-                            </div>
-                        </div>
-
-                        <div class="reviews-thumb">
-
-                            <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-beautiful-young-woman-studying-table-with-laptop-computer-notebook-home-studying-online-e-learning-system.jpg"
-                                    class="avatar-image img-fluid" alt="">
-
-                                <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                    <p class="mb-0">
-                                        <strong>Haley</strong>
-                                        <small>Sales & Marketing</small>
-                                    </p>
-
-                                    <div class="reviews-icons">
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="reviews-body">
-                                <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
-
-                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt.</h4>
-                            </div>
-                        </div>
-
-                        <div class="reviews-thumb">
-                            <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid"
-                                    alt="">
-
-                                <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                    <p class="mb-0">
-                                        <strong>Jackson</strong>
-                                        <small>Dev Ops</small>
-                                    </p>
-
-                                    <div class="reviews-icons">
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star"></i>
-                                        <i class="bi-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="reviews-body">
-                                <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
-
-                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt.</h4>
-                            </div>
-                        </div>
-
-                        <div class="reviews-thumb">
-                            <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/university-study-abroad-lifestyle-concept-satisfied-happy-asian-male-student-glasses-shirt-showing-thumbs-up-approval-likes-studying-college-holding-laptop-backpack.jpg"
-                                    class="avatar-image img-fluid" alt="">
-
-                                <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
-                                    <p class="mb-0">
-                                        <strong>Kevin</strong>
-                                        <small>Internship</small>
-                                    </p>
-
-                                    <div class="reviews-icons">
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                        <i class="bi-star-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="reviews-body">
-                                <img src="images/left-quote.png" class="quote-icon img-fluid" alt="">
-
-                                <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt.</h4>
-                            </div>
-                        </div>
                     </div>
                 </div>
 

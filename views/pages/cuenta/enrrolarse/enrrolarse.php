@@ -75,8 +75,8 @@
                             <p class="text-label">Rol que deseas desempeñar:</p>
 
                             <select name="regRol" class=" input-group select">
-                                <option value="1">Candidato</option>
-                                <option value="2">Reclutador</option>
+                                <option value="1">Busco trabajo</option>
+                                <option value="2">Empleador</option>
 
                             </select>
 
