@@ -42,24 +42,29 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                 </div>
 
                 <div class="col-lg-6 col-12">
-                    <form class="custom-form hero-form" method="post" role="form" action="<?php echo $path ?>cuenta&candidato&busqueda">
+                    <form class="custom-form hero-form" method="post" role="form"
+                        action="<?php echo $path ?>cuenta&candidato&busqueda">
                         <h3 class="text-white mb-3">
                             Busca el trabajo de tus sueños</h3>
 
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
+                                    <span class="input-group-text" id="basic-addon1"><i
+                                            class="bi-person custom-icon"></i></span>
 
-                                    <input type="text" name="job-title" id="job-title" class="form-control inputSearch" placeholder="Puesta de trabajo que busca">
+                                    <input type="text" name="job-title" id="job-title" class="form-control inputSearch"
+                                        placeholder="Puesta de trabajo que busca">
                                 </div>
                             </div>
 
                             <div class=" col-lg-6 col-md-6 col-12">
                                 <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
+                                    <span class="input-group-text" id="basic-addon2"><i
+                                            class="bi-geo-alt custom-icon"></i></span>
 
-                                    <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Ubicación">
+                                    <input type="text" name="job-location" id="job-location" class="form-control"
+                                        placeholder="Ubicación">
                                 </div>
                             </div>
 
@@ -89,71 +94,76 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-window"></i>
 
                             <small class="categories-block-title">Diseño Web</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">320</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-twitch"></i>
 
                             <small class="categories-block-title">Marketing</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">180</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-play-circle-fill"></i>
 
                             <small class="categories-block-title">Video</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">340</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-globe"></i>
 
                             <small class="categories-block-title">Desarrollo web</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">140</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6">
                     <div class="categories-block">
-                        <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                        <div class="d-flex flex-column justify-content-center align-items-center h-100">
                             <i class="categories-icon bi-people"></i>
 
                             <small class="categories-block-title">Soporte Técnico</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">84</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
 
@@ -168,7 +178,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                 <div class="col-lg-3 col-12">
                     <div class="about-image-wrap custom-border-radius-start">
-                        <img src="images/dr_arturo.jpeg" class="about-image custom-border-radius-start img-fluid" alt="">
+                        <img src="images/dr_arturo.jpeg" class="about-image custom-border-radius-start img-fluid"
+                            alt="">
 
                         <div class="about-info">
                             <h4 class="text-white mb-0 me-2">Arturo Muñoz</h4>
@@ -200,7 +211,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                         <img src="images/jobs/jobs.jpg" class="about-image custom-border-radius-end img-fluid" alt="">
 
                         <div class="instagram-block-text">
-                            <a href="https://www.instagram.com/multiservicecard/?igshid=ZDdkNTZiNTM%3D" class="custom-btn btn">
+                            <a href="https://www.instagram.com/multiservicecard/?igshid=ZDdkNTZiNTM%3D"
+                                class="custom-btn btn">
                                 <i class="bi-instagram"></i>
                                 @Multiservicescard
                             </a>
@@ -230,46 +242,48 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                         <?php
                         while ($row = $sql->fetch_assoc()) {
                         ?>
-                            <div class="job-thumb d-flex">
-                                <div class="job-image-wrap bg-white shadow-lg">
-                                    <?php if ($row['foto_vacante']  != '') : ?>
-                                        <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="img-redonda" alt="">
-                                    <?php else : ?>
-                                        <img src="images/avatar/job.png" alt="" class="job-todos">
-                                    <?php endif; ?>
+                        <div class="job-thumb d-flex">
+                            <div class="job-image-wrap bg-white shadow-lg">
+                                <?php if ($row['foto_vacante']  != '') : ?>
+                                <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="img-redonda"
+                                    alt="">
+                                <?php else : ?>
+                                <img src="images/avatar/job.png" alt="" class="job-todos">
+                                <?php endif; ?>
+                            </div>
+
+                            <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+                                <div class="mb-3">
+                                    <h4 class="job-title mb-lg-0">
+                                        <a href="job-details.html" class="job-title-link">
+                                            <?php echo $row['title_vacante'] ?></a>
+                                    </h4>
+
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <p class="job-location mb-0">
+                                            <i class="custom-icon bi-geo-alt me-1"></i>
+                                            <?php echo $row['lugar_de_trabajo'] ?>
+                                        </p>
+
+                                        <p class="job-date mb-0">
+                                            <i class="custom-icon bi-clock me-1"></i>
+                                            <?php echo $row['fecha_de_publicacion'] ?>
+                                        </p>
+
+                                        <p class="job-price mb-0">
+                                            <i class="custom-icon bi-cash me-1"></i>
+                                            $<?php echo $row['rango_sueldo'] ?>
+                                        </p>
+
+                                    </div>
                                 </div>
 
-                                <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                                    <div class="mb-3">
-                                        <h4 class="job-title mb-lg-0">
-                                            <a href="job-details.html" class="job-title-link">
-                                                <?php echo $row['title_vacante'] ?></a>
-                                        </h4>
-
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <p class="job-location mb-0">
-                                                <i class="custom-icon bi-geo-alt me-1"></i>
-                                                <?php echo $row['lugar_de_trabajo'] ?>
-                                            </p>
-
-                                            <p class="job-date mb-0">
-                                                <i class="custom-icon bi-clock me-1"></i>
-                                                <?php echo $row['fecha_de_publicacion'] ?>
-                                            </p>
-
-                                            <p class="job-price mb-0">
-                                                <i class="custom-icon bi-cash me-1"></i>
-                                                $<?php echo $row['rango_sueldo'] ?>
-                                            </p>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="job-section-btn-wrap">
-                                        <a href="<?php echo $path ?>cuenta&candidato&panel&ver_vacante?id_vacante=<?php echo $row['id_vacante']  ?>" class="custom-btn btn">Solo ver</a>
-                                    </div>
+                                <div class="job-section-btn-wrap">
+                                    <a href="<?php echo $path ?>cuenta&candidato&panel&ver_vacante?id_vacante=<?php echo $row['id_vacante']  ?>"
+                                        class="custom-btn btn">Solo ver</a>
                                 </div>
                             </div>
+                        </div>
 
 
                         <?php
@@ -296,7 +310,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
 
                     <div class="col-lg-12 col-12 text-center">
-                        <a href="<?php echo $path ?>cuenta&candidato&lista-trabajos&1" class="custom-btn btn mt-5">Todas las
+                        <a href="<?php echo $path ?>cuenta&candidato&lista-trabajos&1" class="custom-btn btn mt-5">Todas
+                            las
                             vacantes</a>
                     </div>
 
@@ -348,7 +363,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                 <div class="col-lg-6 col-12">
                     <div class="video-thumb">
-                        <img src="images/people-working-as-team-company.jpg" class="about-image custom-border-radius-end img-fluid" alt="">
+                        <img src="images/people-working-as-team-company.jpg"
+                            class="about-image custom-border-radius-end img-fluid" alt="">
 
                         <div class="video-info">
                             <a href="https://www.youtube.com/tooplate" class="youtube-icon bi-youtube"></a>
@@ -374,7 +390,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                         <div class="reviews-thumb">
 
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -402,7 +419,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -431,7 +449,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                         <div class="reviews-thumb">
 
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-beautiful-young-woman.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/portrait-beautiful-young-woman.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -459,7 +478,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid"
+                                    alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -487,7 +507,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/university-study-abroad-lifestyle-concept.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/university-study-abroad-lifestyle-concept.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -518,8 +539,6 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
             </div>
         </div>
     </section>
-
-
     <section class="cta-section">
         <div class="section-overlay"></div>
 
@@ -527,20 +546,18 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
             <div class="row">
 
                 <div class="col-lg-6 col-10">
+
+
                     <h2 class="text-white mb-2">Más de 10.000 puestos de trabajo vacantes</h2>
-
-
                 </div>
 
                 <div class="col-lg-4 col-12 ms-auto">
-                    <div class="custom-border-btn-wrap d-flex align-items-center mt-lg-4 mt-2">
-                        <a href="#" class="custom-btn custom-border-btn btn me-4">Crea una cuenta</a>
 
-                        <a href="#" class="custom-link">Anunciar un trabajo</a>
-                    </div>
                 </div>
 
             </div>
         </div>
     </section>
+
+
 </main>

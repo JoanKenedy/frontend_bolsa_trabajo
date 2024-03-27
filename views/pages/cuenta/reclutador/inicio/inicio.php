@@ -33,22 +33,27 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
+                                    <span class="input-group-text" id="basic-addon1"><i
+                                            class="bi-person custom-icon"></i></span>
 
-                                    <input type="text" name="job-title" id="job-title" class="form-control" placeholder="Puesto de trabajo que busca" required>
+                                    <input type="text" name="job-title" id="job-title" class="form-control"
+                                        placeholder="Puesto de trabajo que busca" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon2"><i class="bi-geo-alt custom-icon"></i></span>
+                                    <span class="input-group-text" id="basic-addon2"><i
+                                            class="bi-geo-alt custom-icon"></i></span>
 
-                                    <input type="text" name="job-location" id="job-location" class="form-control" placeholder="Ubicación" required>
+                                    <input type="text" name="job-location" id="job-location" class="form-control"
+                                        placeholder="Ubicación" required>
                                 </div>
                             </div>
 
                             <div class="col-lg-12 col-12">
-                                <button type="submit" data-bs-toggle="modal" data-bs-target="#Tres" class="form-control">
+                                <button type="submit" data-bs-toggle="modal" data-bs-target="#Tres"
+                                    class="form-control">
                                     Buscar trabajo
                                 </button>
                             </div>
@@ -80,7 +85,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                             <small class="categories-block-title">Diseño Web</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">320</span>
                             </div>
                         </div>
@@ -94,7 +100,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                             <small class="categories-block-title">Marketing</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">180</span>
                             </div>
                         </div>
@@ -108,7 +115,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                             <small class="categories-block-title">Video</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">340</span>
                             </div>
                         </div>
@@ -122,7 +130,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                             <small class="categories-block-title">Desarrollo web</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">140</span>
                             </div>
                         </div>
@@ -136,7 +145,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                             <small class="categories-block-title">Soporte Técnico</small>
 
-                            <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
+                            <div
+                                class="categories-block-number d-flex flex-column justify-content-center align-items-center">
                                 <span class="categories-block-number-text">84</span>
                             </div>
                         </div>
@@ -154,7 +164,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                 <div class="col-lg-3 col-12">
                     <div class="about-image-wrap custom-border-radius-start">
-                        <img src="images/dr_arturo.jpeg" class="about-image custom-border-radius-start img-fluid" alt="">
+                        <img src="images/dr_arturo.jpeg" class="about-image custom-border-radius-start img-fluid"
+                            alt="">
 
                         <div class="about-info">
                             <h4 class="text-white mb-0 me-2">Arturo Muñoz</h4>
@@ -172,7 +183,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                             de México. En Multiservices puedes buscar empleos ideales de acuerdo a tu perfil.</p>
 
                         <div class="custom-border-btn-wrap d-flex align-items-center mt-5">
-                            <a href="<?php echo $path ?>cuenta&reclutador&nosotros" class="custom-btn custom-border-btn btn me-4">Conócenos</a>
+                            <a href="<?php echo $path ?>cuenta&reclutador&nosotros"
+                                class="custom-btn custom-border-btn btn me-4">Conócenos</a>
 
 
                         </div>
@@ -184,7 +196,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                         <img src="images/jobs/jobs.jpg" class="about-image custom-border-radius-end img-fluid" alt="">
 
                         <div class="instagram-block-text">
-                            <a href="https://www.instagram.com/multiservicecard/" class="custom-btn btn" target="_blank">
+                            <a href="https://www.instagram.com/multiservicecard/" class="custom-btn btn"
+                                target="_blank">
                                 <i class="bi-instagram"></i>
                                 @Multiservicescard
                             </a>
@@ -215,46 +228,48 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                         <?php
                         while ($row = $sql->fetch_assoc()) {
                         ?>
-                            <div class="job-thumb d-flex">
-                                <div class="job-image-wrap bg-white shadow-lg">
-                                    <?php if ($row['foto_vacante']  != '') : ?>
-                                        <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="img-redonda" alt="">
-                                    <?php else : ?>
-                                        <img src="images/avatar/job.png" alt="" class="job-todos">
-                                    <?php endif; ?>
+                        <div class="job-thumb d-flex">
+                            <div class="job-image-wrap bg-white shadow-lg">
+                                <?php if ($row['foto_vacante']  != '') : ?>
+                                <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="img-redonda"
+                                    alt="">
+                                <?php else : ?>
+                                <img src="images/avatar/job.png" alt="" class="job-todos">
+                                <?php endif; ?>
+                            </div>
+
+                            <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
+                                <div class="mb-3">
+                                    <h4 class="job-title mb-lg-0">
+                                        <a href="job-details.html" class="job-title-link">
+                                            <?php echo $row['title_vacante'] ?></a>
+                                    </h4>
+
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <p class="job-location mb-0">
+                                            <i class="custom-icon bi-geo-alt me-1"></i>
+                                            <?php echo $row['lugar_de_trabajo'] ?>
+                                        </p>
+
+                                        <p class="job-date mb-0">
+                                            <i class="custom-icon bi-clock me-1"></i>
+                                            <?php echo $row['fecha_de_publicacion'] ?>
+                                        </p>
+
+                                        <p class="job-price mb-0">
+                                            <i class="custom-icon bi-cash me-1"></i>
+                                            $<?php echo $row['rango_sueldo'] ?>
+                                        </p>
+
+                                    </div>
                                 </div>
 
-                                <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                                    <div class="mb-3">
-                                        <h4 class="job-title mb-lg-0">
-                                            <a href="job-details.html" class="job-title-link">
-                                                <?php echo $row['title_vacante'] ?></a>
-                                        </h4>
-
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <p class="job-location mb-0">
-                                                <i class="custom-icon bi-geo-alt me-1"></i>
-                                                <?php echo $row['lugar_de_trabajo'] ?>
-                                            </p>
-
-                                            <p class="job-date mb-0">
-                                                <i class="custom-icon bi-clock me-1"></i>
-                                                <?php echo $row['fecha_de_publicacion'] ?>
-                                            </p>
-
-                                            <p class="job-price mb-0">
-                                                <i class="custom-icon bi-cash me-1"></i>
-                                                $<?php echo $row['rango_sueldo'] ?>
-                                            </p>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="job-section-btn-wrap">
-                                        <a href="<?php echo $path ?>cuenta&reclutador&panel&ver_vacante?id_vacante=<?php echo $row['id_vacante']  ?>" class="custom-btn btn">Solo ver</a>
-                                    </div>
+                                <div class="job-section-btn-wrap">
+                                    <a href="<?php echo $path ?>cuenta&reclutador&panel&ver_vacante?id_vacante=<?php echo $row['id_vacante']  ?>"
+                                        class="custom-btn btn">Solo ver</a>
                                 </div>
                             </div>
+                        </div>
 
 
                         <?php
@@ -281,7 +296,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
 
                     <div class="col-lg-12 col-12 text-center">
-                        <a href="<?php echo $path ?>cuenta&reclutador&lista-trabajos&1" class="custom-btn btn mt-5">Todas las
+                        <a href="<?php echo $path ?>cuenta&reclutador&lista-trabajos&1"
+                            class="custom-btn btn mt-5">Todas las
                             vacantes</a>
                     </div>
 
@@ -331,7 +347,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                 <div class="col-lg-6 col-12">
                     <div class="video-thumb">
-                        <img src="images/people-working-as-team-company.jpg" class="about-image custom-border-radius-end img-fluid" alt="">
+                        <img src="images/people-working-as-team-company.jpg"
+                            class="about-image custom-border-radius-end img-fluid" alt="">
 
                         <div class="video-info">
                             <a href="https://www.youtube.com/tooplate" class="youtube-icon bi-youtube"></a>
@@ -357,7 +374,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                         <div class="reviews-thumb">
 
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -385,7 +403,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -414,7 +433,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                         <div class="reviews-thumb">
 
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-beautiful-young-woman.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/portrait-beautiful-young-woman.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -442,7 +462,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid"
+                                    alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -470,7 +491,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/university-study-abroad-lifestyle-concept.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/university-study-abroad-lifestyle-concept.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -516,18 +538,14 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                 </div>
 
                 <div class="col-lg-4 col-12 ms-auto">
-                    <div class="custom-border-btn-wrap d-flex align-items-center mt-lg-4 mt-2">
-                        <a href="#" onclick="return false" class="custom-btn custom-border-btn btn me-4">Crea una
-                            cuenta</a>
 
-                        <a href="#" onclick="return false" class="custom-link">Anunciar un trabajo</a>
-                    </div>
                 </div>
 
             </div>
         </div>
     </section>
-    <div class="modal fade" id="Tres" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;" aria-hidden="true">
+    <div class="modal fade" id="Tres" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;"
+        aria-hidden="true">
         <div class="modal-dialog">
 
             <div class="modal-content px-3 py-3 modal-home">
@@ -535,7 +553,8 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT 0, 4");
                 <h6 class="text-center">Esta función para reclutadores esta deshabilitada, en mi cuenta puedes ver y
                     editar
                     vacantes que vas postulando.</h6>
-                <a href="<?php echo $path ?>cuenta&reclutador&panel" class="custom-btn custom-border-btn btn me-4">Ir a mi cuenta</a>
+                <a href="<?php echo $path ?>cuenta&reclutador&panel" class="custom-btn custom-border-btn btn me-4">Ir a
+                    mi cuenta</a>
 
             </div>
         </div>

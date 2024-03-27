@@ -39,7 +39,8 @@
                             oportunidades relevantes y los empleadores encuentren a los candidatos ideales.</p>
 
                         <div class="d-flex align-items-center mt-4">
-                            <a href="<?php echo $path ?>cuenta&reclutador&contacto" class="custom-btn custom-border-btn btn me-4">Contacto
+                            <a href="<?php echo $path ?>cuenta&reclutador&contacto"
+                                class="custom-btn custom-border-btn btn me-4">Contacto
                             </a>
 
 
@@ -49,7 +50,8 @@
 
                 <div class="col-lg-5 col-12 mt-5 mt-lg-0">
                     <div class="about-image-wrap">
-                        <img src="images/horizontal-shot-happy-mixed-race-females.jpg" class="about-image about-image-border-radius img-fluid" alt="">
+                        <img src="images/horizontal-shot-happy-mixed-race-females.jpg"
+                            class="about-image about-image-border-radius img-fluid" alt="">
 
                         <div class="about-info d-flex">
                             <h4 class="text-white mb-0 me-2">10</h4>
@@ -138,7 +140,8 @@
                         <div class="reviews-thumb">
 
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -166,7 +169,8 @@
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/medium-shot-smiley-senior-man.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -195,7 +199,8 @@
                         <div class="reviews-thumb">
 
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/portrait-beautiful-young-woman-studying-table-with-laptop-computer-notebook-home-studying-online-e-learning-system.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/portrait-beautiful-young-woman-studying-table-with-laptop-computer-notebook-home-studying-online-e-learning-system.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -223,7 +228,8 @@
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/blond-man-happy-expression.jpg" class="avatar-image img-fluid"
+                                    alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -251,7 +257,8 @@
 
                         <div class="reviews-thumb">
                             <div class="reviews-info d-flex align-items-center">
-                                <img src="images/avatar/university-study-abroad-lifestyle-concept-satisfied-happy-asian-male-student-glasses-shirt-showing-thumbs-up-approval-likes-studying-college-holding-laptop-backpack.jpg" class="avatar-image img-fluid" alt="">
+                                <img src="images/avatar/university-study-abroad-lifestyle-concept-satisfied-happy-asian-male-student-glasses-shirt-showing-thumbs-up-approval-likes-studying-college-holding-laptop-backpack.jpg"
+                                    class="avatar-image img-fluid" alt="">
 
                                 <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                     <p class="mb-0">
@@ -297,11 +304,7 @@
                 </div>
 
                 <div class="col-lg-4 col-12 ms-auto">
-                    <div class="custom-border-btn-wrap d-flex align-items-center mt-lg-4 mt-2">
-                        <a href="<?php echo $path ?>cuenta&enrrolarse" class="custom-btn custom-border-btn btn me-4">Crear cuenta</a>
 
-                        <a href="<?php echo $path ?>cuenta&enrrolarse" class="custom-link">Anuciar trabajo</a>
-                    </div>
                 </div>
 
             </div>

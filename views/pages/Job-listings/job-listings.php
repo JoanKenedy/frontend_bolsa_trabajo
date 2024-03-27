@@ -36,13 +36,13 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
             <div class="row">
 
                 <div class="col-lg-12 col-12 text-center">
-                    <h1 class="text-white">Job Listings</h1>
+                    <h1 class="text-white">Lista de Trabajos</h1>
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="<? echo $path ?>">Home</a></li>
+                            <li class="breadcrumb-item"><a href="<? echo $path ?>">Inicio</a></li>
 
-                            <li class="breadcrumb-item active" aria-current="page">Job listings</li>
+                            <li class="breadcrumb-item active" aria-current="page">Lista de trabajos</li>
                         </ol>
                     </nav>
                 </div>
@@ -152,9 +152,9 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
 
                 <div class="col-lg-6 col-12 mb-lg-4">
                     <?php if (isset($urlParams[1])) : ?>
-                        <h3>Pagina <?php echo $urlParams[1] ?> de <?php echo ceil($rows / 3) ?></h3>
+                    <h3>Pagina <?php echo $urlParams[1] ?> de <?php echo ceil($rows / 3) ?></h3>
                     <?php else : ?>
-                        <h3>Pagina 1 de <?php echo ceil($rows / 3) ?></h3>
+                    <h3>Pagina 1 de <?php echo ceil($rows / 3) ?></h3>
                     <?php endif ?>
 
                 </div>
@@ -166,51 +166,54 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
                 <?php
                 while ($row = $sql->fetch_assoc()) {
                 ?>
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <div class="job-thumb job-thumb-box">
-                            <div class="job-image-box-wrap">
-                                <a href="#">
-                                    <?php if ($row['foto_vacante'] != '') : ?>
-                                        <img src="images/descargas/<?php echo $row['foto_vacante'] ?>" class="job-base img-fluid" alt="">
-                                    <?php else : ?>
-                                        <img src="images/avatar/job.png" class="job-todos img-fluid" alt="">
-                                    <?php endif; ?>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="job-thumb job-thumb-box">
+                        <div class="job-image-box-wrap">
+                            <a href="#">
+                                <?php if ($row['foto_vacante'] != '') : ?>
+                                <img src="images/descargas/<?php echo $row['foto_vacante'] ?>"
+                                    class="job-base img-fluid" alt="">
+                                <?php else : ?>
+                                <img src="images/avatar/job.png" class="job-todos img-fluid" alt="">
+                                <?php endif; ?>
 
-                                </a>
+                            </a>
 
 
+                        </div>
+
+                        <div class="job-body">
+                            <h4 class="job-title">
+                                <a href="job-details.html"
+                                    class="job-title-link"><?php echo $row['title_vacante'] ?></a>
+                            </h4>
+
+
+                            <div class="d-flex align-items-center">
+                                <p class="job-location">
+                                    <i class="custom-icon bi-geo-alt me-1"></i>
+                                    <?php echo $row['lugar_de_trabajo']  ?>
+                                </p>
+
+                                <p class="job-date">
+                                    <i class="custom-icon bi-clock me-1"></i>
+                                    <?php echo $row['fecha_de_publicacion']  ?>
+                                </p>
                             </div>
 
-                            <div class="job-body">
-                                <h4 class="job-title">
-                                    <a href="job-details.html" class="job-title-link"><?php echo $row['title_vacante'] ?></a>
-                                </h4>
+                            <div class="d-flex align-items-center border-top pt-3">
+                                <p class="job-price mb-0">
+                                    <i class="custom-icon bi-cash me-1"></i>
+                                    $<?php echo $row['rango_sueldo'] ?>
+                                </p>
 
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#Tres"
+                                    class="custom-btn btn ms-auto">Postularme</a>
 
-                                <div class="d-flex align-items-center">
-                                    <p class="job-location">
-                                        <i class="custom-icon bi-geo-alt me-1"></i>
-                                        <?php echo $row['lugar_de_trabajo']  ?>
-                                    </p>
-
-                                    <p class="job-date">
-                                        <i class="custom-icon bi-clock me-1"></i>
-                                        <?php echo $row['fecha_de_publicacion']  ?>
-                                    </p>
-                                </div>
-
-                                <div class="d-flex align-items-center border-top pt-3">
-                                    <p class="job-price mb-0">
-                                        <i class="custom-icon bi-cash me-1"></i>
-                                        $<?php echo $row['rango_sueldo'] ?>
-                                    </p>
-
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#Tres" class="custom-btn btn ms-auto">Postularme</a>
-
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
                 <?php
                 }
@@ -230,7 +233,9 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
 
 
                     ?>
-                    <ul class="paginacion" data-total-pages="<?php echo ceil($rows / 3) ?>" data-current-page="<?php echo $currentPage ?>" data-url-page="<?php echo $_SERVER['REQUEST_URI'] ?>">
+                    <ul class="paginacion" data-total-pages="<?php echo ceil($rows / 3) ?>"
+                        data-current-page="<?php echo $currentPage ?>"
+                        data-url-page="<?php echo $_SERVER['REQUEST_URI'] ?>">
 
                     </ul>
                 </div>
@@ -265,13 +270,15 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
             </div>
         </div>
     </section>
-    <div class="modal fade" id="Tres" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;" aria-hidden="true">
+    <div class="modal fade" id="Tres" tabindex="-1" aria-labelledby="exampleModalLiveLabel" style="display: none;"
+        aria-hidden="true">
         <div class="modal-dialog">
 
             <div class=" modal-content px-3 py-3 modal-home">
                 <img src="images/descargas/user.png" alt="" class="img-redonda text-center">
                 <h6 class="text-center">Para poder utilizar la plataforma tienes que registrarte.</h6>
-                <a href="<?php echo $path ?>account&enrrollment" class="custom-btn custom-border-btn btn me-4">Registrarme</a>
+                <a href="<?php echo $path ?>account&enrrollment"
+                    class="custom-btn custom-border-btn btn me-4">Registrarme</a>
 
             </div>
 
@@ -281,35 +288,35 @@ $sql = $conn->query("SELECT * FROM crear_vacantes LIMIT $startAt, $endArt");
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.2/jquery.twbsPagination.min.js"></script>
 <script>
-    function pagination() {
-        var target = $(".paginacion");
-        if (target.length > 0) {
-            target.each(function() {
-                var el = $(this),
-                    totalPages = el.data("total-pages"),
-                    currentPage = el.data("current-page"),
-                    urlPage = el.data("url-page");
+function pagination() {
+    var target = $(".paginacion");
+    if (target.length > 0) {
+        target.each(function() {
+            var el = $(this),
+                totalPages = el.data("total-pages"),
+                currentPage = el.data("current-page"),
+                urlPage = el.data("url-page");
 
-                el.twbsPagination({
-                    totalPages: totalPages,
-                    startPage: currentPage,
-                    visiblePages: 3,
-                    first: 'Inicio',
-                    last: 'Final',
-                    prev: '<i class="bi bi-arrow-left-circle-fill"></i>',
-                    next: '<i class="bi bi-arrow-right-circle-fill"></i>',
-                }).on("page", function(evt, page) {
-                    if (urlPage.includes("&", 1)) {
-                        urlPage = urlPage.replace("&" + currentPage, "&" + page);
-                        window.location = urlPage;
-                    } else {
-                        window.location = urlPage + "&" + page;
-                    }
+            el.twbsPagination({
+                totalPages: totalPages,
+                startPage: currentPage,
+                visiblePages: 3,
+                first: 'Inicio',
+                last: 'Final',
+                prev: '<i class="bi bi-arrow-left-circle-fill"></i>',
+                next: '<i class="bi bi-arrow-right-circle-fill"></i>',
+            }).on("page", function(evt, page) {
+                if (urlPage.includes("&", 1)) {
+                    urlPage = urlPage.replace("&" + currentPage, "&" + page);
+                    window.location = urlPage;
+                } else {
+                    window.location = urlPage + "&" + page;
+                }
 
-                })
-            });
-        }
+            })
+        });
     }
+}
 
-    pagination();
+pagination();
 </script>
